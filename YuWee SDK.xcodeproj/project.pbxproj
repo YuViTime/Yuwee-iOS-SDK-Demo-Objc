@@ -1,0 +1,1491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49B66625171F2BEE66FD0C27 /* Pods_YuWee_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656ECF072D12299B6228CC28 /* Pods_YuWee_SDK.framework */; };
+		4FA3D3D3A493FDD8CA461523 /* Pods_notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC865E868E5A028355EA40FA /* Pods_notification.framework */; };
+		71102B59213FAE47003A189C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71102B56213FAE46003A189C /* main.m */; };
+		7170D120213E84B600C2268B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7170D11E213E84B600C2268B /* Main.storyboard */; };
+		7170D122213E84BE00C2268B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7170D121213E84BE00C2268B /* Assets.xcassets */; };
+		7170D1B0213EC1F500C2268B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7170D1AF213EC1F500C2268B /* CoreVideo.framework */; };
+		7170D1B4213EC24300C2268B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7170D1B3213EC24300C2268B /* GLKit.framework */; };
+		71895F6F213FACE300C0723E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71895F6E213FACE300C0723E /* AppDelegate.m */; };
+		71895F73213FACF000C0723E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71895F72213FACEF00C0723E /* ViewController.m */; };
+		71AD9817214BF8DA003B9AD8 /* CallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AD9812214BF8DA003B9AD8 /* CallController.m */; };
+		A612CE4723D8236D005156A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A612CE4623D8236D005156A6 /* LoginViewController.m */; };
+		A612CE4A23D83566005156A6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A612CE4923D83566005156A6 /* RegisterViewController.m */; };
+		A61908B723E2C2F300E8EDE6 /* CustomMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */; };
+		A61908BB23E2F22F00E8EDE6 /* MessageDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */; };
+		A64F439823FBCF310040D160 /* ScheduleCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439723FBCF310040D160 /* ScheduleCallViewController.m */; };
+		A64F439C23FBCF550040D160 /* RecentCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439B23FBCF550040D160 /* RecentCallViewController.m */; };
+		A64F439F23FBD5680040D160 /* AddScheduleCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439E23FBD5680040D160 /* AddScheduleCallViewController.m */; };
+		A67FC53123E1CC110036DA14 /* ChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67FC53023E1CC110036DA14 /* ChatDetailsViewController.m */; };
+		A6959E2B23FC37FA00308F8E /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6959E2A23FC37FA00308F8E /* AddContactViewController.m */; };
+		A6E426ED23E99281009E1719 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E426EC23E99281009E1719 /* ContactViewController.m */; };
+		A6FEB59023E06E3200E2C6A5 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEB58F23E06E3200E2C6A5 /* ChatListViewController.m */; };
+		A6FEB59223E080DE00E2C6A5 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEB59123E080DE00E2C6A5 /* CallViewController.m */; };
+		A6FFC05423FA793C007A3DB4 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FFC05323FA793C007A3DB4 /* DashboardViewController.m */; };
+		C802A818246C1A4D00A09729 /* YuviTimeRecentCallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C802A817246C1A4D00A09729 /* YuviTimeRecentCallCell.xib */; };
+		C8151DFE2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151DFB2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m */; };
+		C8151DFF2403ADFD0003A67D /* YuViTimeSelectTimeZoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8151DFD2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.xib */; };
+		C8151E012403B9280003A67D /* timezone.json in Resources */ = {isa = PBXBuildFile; fileRef = C8151E002403B9270003A67D /* timezone.json */; };
+		C8151E032403B9340003A67D /* ActiveSupport_to_iOS_timezones.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8151E022403B9330003A67D /* ActiveSupport_to_iOS_timezones.plist */; };
+		C8151E08240499010003A67D /* YuviTimeAddMemberPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E05240499010003A67D /* YuviTimeAddMemberPopUpView.m */; };
+		C8151E09240499010003A67D /* YuviTimeAddMemberPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8151E07240499010003A67D /* YuviTimeAddMemberPopUpView.xib */; };
+		C8151E152404ED6B0003A67D /* YuviTimeRecentCallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E142404ED6B0003A67D /* YuviTimeRecentCallCell.m */; };
+		C8151E392406D1450003A67D /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E182406D1450003A67D /* IQTextView.m */; };
+		C8151E3A2406D1450003A67D /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E1C2406D1450003A67D /* IQToolbar.m */; };
+		C8151E3B2406D1450003A67D /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E1E2406D1450003A67D /* IQTitleBarButtonItem.m */; };
+		C8151E3C2406D1450003A67D /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E1F2406D1450003A67D /* IQBarButtonItem.m */; };
+		C8151E3D2406D1450003A67D /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E202406D1450003A67D /* IQUIView+IQKeyboardToolbar.m */; };
+		C8151E3E2406D1450003A67D /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E212406D1450003A67D /* IQPreviousNextView.m */; };
+		C8151E3F2406D1450003A67D /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8151E292406D1450003A67D /* IQKeyboardManager.bundle */; };
+		C8151E402406D1450003A67D /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E2C2406D1450003A67D /* IQKeyboardManager.m */; };
+		C8151E412406D1450003A67D /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E2E2406D1450003A67D /* IQNSArray+Sort.m */; };
+		C8151E422406D1450003A67D /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E302406D1450003A67D /* IQUITextFieldView+Additions.m */; };
+		C8151E432406D1450003A67D /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E312406D1450003A67D /* IQUIScrollView+Additions.m */; };
+		C8151E442406D1450003A67D /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E322406D1450003A67D /* IQUIView+Hierarchy.m */; };
+		C8151E452406D1450003A67D /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E362406D1450003A67D /* IQUIViewController+Additions.m */; };
+		C8151E462406D1450003A67D /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E382406D1450003A67D /* IQKeyboardReturnKeyHandler.m */; };
+		C82EEBCF24C9C9150034C65D /* YuWeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */; };
+		C82EEBD024C9C9150034C65D /* YuWeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C83C5BE524C9AD5A00F4EF1F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; };
+		C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C83C5BE924C9AD5A00F4EF1F /* OWT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83C5BE824C9AD5A00F4EF1F /* OWT.framework */; };
+		C85E39B6242BB68E00741D74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */; };
+		C86DA5D72452DCB700087122 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B7477C243CB1E3003BD3DD /* PushKit.framework */; };
+		C8B74775243CAD89003BD3DD /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B74774243CAD89003BD3DD /* CallKit.framework */; };
+		C8B74777243CB1CB003BD3DD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B74776243CB1CA003BD3DD /* CFNetwork.framework */; };
+		C8B74779243CB1D4003BD3DD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B74778243CB1D4003BD3DD /* AVKit.framework */; };
+		C8B7477B243CB1DC003BD3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B7477A243CB1DC003BD3DD /* AVFoundation.framework */; };
+		C8B7477D243CB1E3003BD3DD /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B7477C243CB1E3003BD3DD /* PushKit.framework */; };
+		C8B7477F243CB207003BD3DD /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B7477E243CB207003BD3DD /* CoreAudio.framework */; };
+		C8C9BAA62403077B00A50098 /* YuviTimeScheduledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C9BAA22403077A00A50098 /* YuviTimeScheduledCell.m */; };
+		C8DD69BC23FC0ED600387B32 /* YuviTimeAddressFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DD69BA23FC0ED600387B32 /* YuviTimeAddressFieldCell.m */; };
+		C8DD69C123FCE2BD00387B32 /* YuviTimeStartCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8DD69BE23FCE2BD00387B32 /* YuviTimeStartCallView.xib */; };
+		C8DD69C223FCE2BD00387B32 /* YuviTimeStartCallView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DD69BF23FCE2BD00387B32 /* YuviTimeStartCallView.m */; };
+		C8EF141024290B9000524468 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF140F24290B9000524468 /* KLCPopup.m */; };
+		C8EF141524290BBB00524468 /* ZFTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF141224290BBB00524468 /* ZFTokenField.m */; };
+		C8EF141624290BBB00524468 /* TokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8EF141424290BBB00524468 /* TokenView.xib */; };
+		C8EF141E24290C3300524468 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF141824290C3300524468 /* MBProgressHUD.m */; };
+		C8EF141F24290C3300524468 /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EF141A24290C3300524468 /* btnCheck.png */; };
+		C8EF142024290C3300524468 /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EF141B24290C3300524468 /* btnCheck@2x.png */; };
+		C8EF142124290C3300524468 /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF141D24290C3300524468 /* HUD.m */; };
+		C8EF144424290C9400524468 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142324290C9300524468 /* UIImage+WebP.m */; };
+		C8EF144524290C9400524468 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142424290C9300524468 /* MKAnnotationView+WebCache.m */; };
+		C8EF144624290C9400524468 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142724290C9300524468 /* SDWebImageManager.m */; };
+		C8EF144724290C9400524468 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142824290C9300524468 /* SDWebImageDecoder.m */; };
+		C8EF144824290C9400524468 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142A24290C9400524468 /* UIImageView+HighlightedWebCache.m */; };
+		C8EF144924290C9400524468 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142C24290C9400524468 /* SDWebImageDownloader.m */; };
+		C8EF144A24290C9400524468 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142D24290C9400524468 /* UIImage+GIF.m */; };
+		C8EF144B24290C9400524468 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF142F24290C9400524468 /* UIImage+MultiFormat.m */; };
+		C8EF144C24290C9400524468 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143024290C9400524468 /* SDWebImageCompat.m */; };
+		C8EF144D24290C9400524468 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143124290C9400524468 /* SDWebImagePrefetcher.m */; };
+		C8EF144E24290C9400524468 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143524290C9400524468 /* SDImageCache.m */; };
+		C8EF144F24290C9400524468 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143724290C9400524468 /* SDWebImageDownloaderOperation.m */; };
+		C8EF145024290C9400524468 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143A24290C9400524468 /* NSData+ImageContentType.m */; };
+		C8EF145124290C9400524468 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143B24290C9400524468 /* UIImageView+WebCache.m */; };
+		C8EF145224290C9400524468 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF143E24290C9400524468 /* UIView+WebCacheOperation.m */; };
+		C8EF145324290C9400524468 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF144224290C9400524468 /* UIButton+WebCache.m */; };
+		C8EF145C2429185500524468 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF145B2429185500524468 /* NotificationService.m */; };
+		C8EF14602429185500524468 /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C8EF14582429185500524468 /* notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8EF145E2429185500524468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7170D10D213E84B600C2268B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8EF14572429185500524468;
+			remoteInfo = notification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C83C5BE724C9AD5A00F4EF1F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */,
+				C82EEBD024C9C9150034C65D /* YuWeeSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8DD6A1023FD586700387B32 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C8EF14602429185500524468 /* notification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08227F080C80929EE86D353F /* Pods-YuWee SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuWee SDK.debug.xcconfig"; path = "Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK.debug.xcconfig"; sourceTree = "<group>"; };
+		356C2AD3D195BC9DC4B35BB8 /* Pods-notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification.release.xcconfig"; path = "Target Support Files/Pods-notification/Pods-notification.release.xcconfig"; sourceTree = "<group>"; };
+		656ECF072D12299B6228CC28 /* Pods_YuWee_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuWee_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71102B56213FAE46003A189C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7170D115213E84B600C2268B /* YuWee SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YuWee SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7170D11F213E84B600C2268B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7170D121213E84BE00C2268B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7170D1A7213EC1BE00C2268B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7170D1A9213EC1CD00C2268B /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		7170D1AB213EC1DA00C2268B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7170D1AD213EC1E700C2268B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7170D1AF213EC1F500C2268B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7170D1B1213EC22300C2268B /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		7170D1B3213EC24300C2268B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		717FE38F213FB50300066857 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "YuWee SDK/Info.plist"; sourceTree = SOURCE_ROOT; };
+		71895F6D213FACE300C0723E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71895F6E213FACE300C0723E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		71895F71213FACEF00C0723E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		71895F72213FACEF00C0723E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		71AD9811214BF8DA003B9AD8 /* CallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallController.h; sourceTree = "<group>"; };
+		71AD9812214BF8DA003B9AD8 /* CallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallController.m; sourceTree = "<group>"; };
+		71C74B2C214F842A00EAF950 /* YuWee SDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YuWee SDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YuWee SDK.entitlements"; sourceTree = "<group>"; };
+		7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuWee SDK.release.xcconfig"; path = "Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK.release.xcconfig"; sourceTree = "<group>"; };
+		A612CE4523D82346005156A6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A612CE4623D8236D005156A6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A612CE4823D82B56005156A6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A612CE4923D83566005156A6 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		A61908B523E2C2F300E8EDE6 /* CustomMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMessageCell.h; sourceTree = "<group>"; };
+		A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMessageCell.m; sourceTree = "<group>"; };
+		A61908B923E2F22F00E8EDE6 /* MessageDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetails.h; sourceTree = "<group>"; };
+		A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetails.m; sourceTree = "<group>"; };
+		A64F439623FBCF310040D160 /* ScheduleCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleCallViewController.h; sourceTree = "<group>"; };
+		A64F439723FBCF310040D160 /* ScheduleCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleCallViewController.m; sourceTree = "<group>"; };
+		A64F439A23FBCF550040D160 /* RecentCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecentCallViewController.h; sourceTree = "<group>"; };
+		A64F439B23FBCF550040D160 /* RecentCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecentCallViewController.m; sourceTree = "<group>"; };
+		A64F439D23FBD5680040D160 /* AddScheduleCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddScheduleCallViewController.h; sourceTree = "<group>"; };
+		A64F439E23FBD5680040D160 /* AddScheduleCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddScheduleCallViewController.m; sourceTree = "<group>"; };
+		A67FC52F23E1CBF90036DA14 /* ChatDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatDetailsViewController.h; sourceTree = "<group>"; };
+		A67FC53023E1CC110036DA14 /* ChatDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatDetailsViewController.m; sourceTree = "<group>"; };
+		A6959E2923FC37FA00308F8E /* AddContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		A6959E2A23FC37FA00308F8E /* AddContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		A6E426EB23E99281009E1719 /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		A6E426EC23E99281009E1719 /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		A6FEB58D23E0466D00E2C6A5 /* DashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		A6FEB58E23E06DF600E2C6A5 /* ChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		A6FEB58F23E06E3200E2C6A5 /* ChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
+		A6FEB59123E080DE00E2C6A5 /* CallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		A6FEB59323E080EE00E2C6A5 /* CallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		A6FFC05323FA793C007A3DB4 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		C802A817246C1A4D00A09729 /* YuviTimeRecentCallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YuviTimeRecentCallCell.xib; sourceTree = "<group>"; };
+		C8151DFB2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuViTimeSelectTimeZoneView.m; sourceTree = "<group>"; };
+		C8151DFC2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuViTimeSelectTimeZoneView.h; sourceTree = "<group>"; };
+		C8151DFD2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuViTimeSelectTimeZoneView.xib; sourceTree = "<group>"; };
+		C8151E002403B9270003A67D /* timezone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timezone.json; sourceTree = "<group>"; };
+		C8151E022403B9330003A67D /* ActiveSupport_to_iOS_timezones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActiveSupport_to_iOS_timezones.plist; sourceTree = "<group>"; };
+		C8151E05240499010003A67D /* YuviTimeAddMemberPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuviTimeAddMemberPopUpView.m; sourceTree = "<group>"; };
+		C8151E06240499010003A67D /* YuviTimeAddMemberPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuviTimeAddMemberPopUpView.h; sourceTree = "<group>"; };
+		C8151E07240499010003A67D /* YuviTimeAddMemberPopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuviTimeAddMemberPopUpView.xib; sourceTree = "<group>"; };
+		C8151E132404ED6B0003A67D /* YuviTimeRecentCallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuviTimeRecentCallCell.h; sourceTree = "<group>"; };
+		C8151E142404ED6B0003A67D /* YuviTimeRecentCallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuviTimeRecentCallCell.m; sourceTree = "<group>"; };
+		C8151E182406D1450003A67D /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
+		C8151E192406D1450003A67D /* IQTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
+		C8151E1B2406D1450003A67D /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		C8151E1C2406D1450003A67D /* IQToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
+		C8151E1D2406D1450003A67D /* IQPreviousNextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQPreviousNextView.h; sourceTree = "<group>"; };
+		C8151E1E2406D1450003A67D /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		C8151E1F2406D1450003A67D /* IQBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
+		C8151E202406D1450003A67D /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		C8151E212406D1450003A67D /* IQPreviousNextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQPreviousNextView.m; sourceTree = "<group>"; };
+		C8151E222406D1450003A67D /* IQToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
+		C8151E232406D1450003A67D /* IQBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
+		C8151E242406D1450003A67D /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		C8151E262406D1450003A67D /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		C8151E272406D1450003A67D /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		C8151E292406D1450003A67D /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		C8151E2A2406D1450003A67D /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		C8151E2B2406D1450003A67D /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		C8151E2C2406D1450003A67D /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		C8151E2E2406D1450003A67D /* IQNSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		C8151E2F2406D1450003A67D /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		C8151E302406D1450003A67D /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		C8151E312406D1450003A67D /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		C8151E322406D1450003A67D /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		C8151E332406D1450003A67D /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		C8151E342406D1450003A67D /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		C8151E352406D1450003A67D /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		C8151E362406D1450003A67D /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		C8151E372406D1450003A67D /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		C8151E382406D1450003A67D /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		C83C5BE824C9AD5A00F4EF1F /* OWT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OWT.framework; sourceTree = "<group>"; };
+		C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YuWeeSDK.framework; sourceTree = "<group>"; };
+		C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8B74774243CAD89003BD3DD /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		C8B74776243CB1CA003BD3DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C8B74778243CB1D4003BD3DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		C8B7477A243CB1DC003BD3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C8B7477C243CB1E3003BD3DD /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		C8B7477E243CB207003BD3DD /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C8C6CD6D2469F1CC004B929A /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		C8C9BAA12403077A00A50098 /* YuviTimeScheduledCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuviTimeScheduledCell.h; sourceTree = "<group>"; };
+		C8C9BAA22403077A00A50098 /* YuviTimeScheduledCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuviTimeScheduledCell.m; sourceTree = "<group>"; };
+		C8DD69BA23FC0ED600387B32 /* YuviTimeAddressFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuviTimeAddressFieldCell.m; sourceTree = "<group>"; };
+		C8DD69BB23FC0ED600387B32 /* YuviTimeAddressFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuviTimeAddressFieldCell.h; sourceTree = "<group>"; };
+		C8DD69BE23FCE2BD00387B32 /* YuviTimeStartCallView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuviTimeStartCallView.xib; sourceTree = "<group>"; };
+		C8DD69BF23FCE2BD00387B32 /* YuviTimeStartCallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuviTimeStartCallView.m; sourceTree = "<group>"; };
+		C8DD69C023FCE2BD00387B32 /* YuviTimeStartCallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuviTimeStartCallView.h; sourceTree = "<group>"; };
+		C8EF140E24290B9000524468 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		C8EF140F24290B9000524468 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		C8EF141224290BBB00524468 /* ZFTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTokenField.m; sourceTree = "<group>"; };
+		C8EF141324290BBB00524468 /* ZFTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTokenField.h; sourceTree = "<group>"; };
+		C8EF141424290BBB00524468 /* TokenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TokenView.xib; sourceTree = "<group>"; };
+		C8EF141824290C3300524468 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C8EF141924290C3300524468 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		C8EF141A24290C3300524468 /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
+		C8EF141B24290C3300524468 /* btnCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnCheck@2x.png"; sourceTree = "<group>"; };
+		C8EF141C24290C3300524468 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C8EF141D24290C3300524468 /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
+		C8EF142324290C9300524468 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
+		C8EF142424290C9300524468 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
+		C8EF142524290C9300524468 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		C8EF142624290C9300524468 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		C8EF142724290C9300524468 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		C8EF142824290C9300524468 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		C8EF142924290C9300524468 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		C8EF142A24290C9400524468 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		C8EF142B24290C9400524468 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		C8EF142C24290C9400524468 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		C8EF142D24290C9400524468 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		C8EF142E24290C9400524468 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		C8EF142F24290C9400524468 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		C8EF143024290C9400524468 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		C8EF143124290C9400524468 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		C8EF143224290C9400524468 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		C8EF143324290C9400524468 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
+		C8EF143424290C9400524468 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
+		C8EF143524290C9400524468 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		C8EF143624290C9400524468 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		C8EF143724290C9400524468 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		C8EF143824290C9400524468 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		C8EF143924290C9400524468 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		C8EF143A24290C9400524468 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		C8EF143B24290C9400524468 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		C8EF143C24290C9400524468 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		C8EF143D24290C9400524468 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		C8EF143E24290C9400524468 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		C8EF143F24290C9400524468 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		C8EF144024290C9400524468 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		C8EF144124290C9400524468 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		C8EF144224290C9400524468 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		C8EF144324290C9400524468 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		C8EF14582429185500524468 /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8EF145A2429185500524468 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		C8EF145B2429185500524468 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		C8EF145D2429185500524468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8EF146F242937DA00524468 /* notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notification.entitlements; sourceTree = "<group>"; };
+		CC865E868E5A028355EA40FA /* Pods_notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46FCEF7D58922EDF197F152 /* Pods-notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification.debug.xcconfig"; path = "Target Support Files/Pods-notification/Pods-notification.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7170D112213E84B600C2268B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B7477F243CB207003BD3DD /* CoreAudio.framework in Frameworks */,
+				C8B7477D243CB1E3003BD3DD /* PushKit.framework in Frameworks */,
+				7170D1B4213EC24300C2268B /* GLKit.framework in Frameworks */,
+				7170D1B0213EC1F500C2268B /* CoreVideo.framework in Frameworks */,
+				C8B74777243CB1CB003BD3DD /* CFNetwork.framework in Frameworks */,
+				C8B74775243CAD89003BD3DD /* CallKit.framework in Frameworks */,
+				C83C5BE524C9AD5A00F4EF1F /* WebRTC.framework in Frameworks */,
+				C8B7477B243CB1DC003BD3DD /* AVFoundation.framework in Frameworks */,
+				C8B74779243CB1D4003BD3DD /* AVKit.framework in Frameworks */,
+				49B66625171F2BEE66FD0C27 /* Pods_YuWee_SDK.framework in Frameworks */,
+				C83C5BE924C9AD5A00F4EF1F /* OWT.framework in Frameworks */,
+				C82EEBCF24C9C9150034C65D /* YuWeeSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8EF14552429185500524468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA3D3D3A493FDD8CA461523 /* Pods_notification.framework in Frameworks */,
+				C86DA5D72452DCB700087122 /* PushKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71102B52213FAE46003A189C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E022403B9330003A67D /* ActiveSupport_to_iOS_timezones.plist */,
+				C8151E002403B9270003A67D /* timezone.json */,
+				C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */,
+				717FE38F213FB50300066857 /* Info.plist */,
+				7170D11E213E84B600C2268B /* Main.storyboard */,
+				7170D121213E84BE00C2268B /* Assets.xcassets */,
+				71102B56213FAE46003A189C /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7170D10C213E84B600C2268B = {
+			isa = PBXGroup;
+			children = (
+				7170D117213E84B600C2268B /* YuWee SDK */,
+				C8EF14592429185500524468 /* notification */,
+				7170D116213E84B600C2268B /* Products */,
+				A8D3D3AA8802803AA741C3B7 /* Frameworks */,
+				922C97719B0213DB5747E5ED /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		7170D116213E84B600C2268B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7170D115213E84B600C2268B /* YuWee SDK.app */,
+				C8EF14582429185500524468 /* notification.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7170D117213E84B600C2268B /* YuWee SDK */ = {
+			isa = PBXGroup;
+			children = (
+				71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */,
+				71C74B2C214F842A00EAF950 /* YuWee SDK-Bridging-Header.h */,
+				A61908B823E2F1EA00E8EDE6 /* model */,
+				C8151E0A2404EB7E0003A67D /* Custom Classes */,
+				71895F6C213FACE300C0723E /* Appdelegate */,
+				71895F70213FACEF00C0723E /* ViewControllers */,
+				71102B52213FAE46003A189C /* Supporting Files */,
+			);
+			path = "YuWee SDK";
+			sourceTree = "<group>";
+		};
+		71895F6C213FACE300C0723E /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				71895F6D213FACE300C0723E /* AppDelegate.h */,
+				71895F6E213FACE300C0723E /* AppDelegate.m */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		71895F70213FACEF00C0723E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				71895F71213FACEF00C0723E /* ViewController.h */,
+				71895F72213FACEF00C0723E /* ViewController.m */,
+				A6864FC323F31A5100D7DAA2 /* login */,
+				A6864FC423F31A6800D7DAA2 /* register */,
+				A6864FC523F31A7E00D7DAA2 /* dashboard */,
+				A6864FC623F31A8F00D7DAA2 /* chatList */,
+				A6864FC723F31A9E00D7DAA2 /* chatDetails */,
+				A6864FC823F31AB200D7DAA2 /* contact */,
+				A64F439923FBCF3B0040D160 /* recentCall */,
+				A64F439523FBCEDB0040D160 /* scheduleCall */,
+				71AD9810214BF8DA003B9AD8 /* P2PCallController */,
+				C8DD69AB23FAB48300387B32 /* GroupCallController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71AD9810214BF8DA003B9AD8 /* P2PCallController */ = {
+			isa = PBXGroup;
+			children = (
+				71AD9811214BF8DA003B9AD8 /* CallController.h */,
+				71AD9812214BF8DA003B9AD8 /* CallController.m */,
+			);
+			path = P2PCallController;
+			sourceTree = "<group>";
+		};
+		922C97719B0213DB5747E5ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08227F080C80929EE86D353F /* Pods-YuWee SDK.debug.xcconfig */,
+				7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */,
+				F46FCEF7D58922EDF197F152 /* Pods-notification.debug.xcconfig */,
+				356C2AD3D195BC9DC4B35BB8 /* Pods-notification.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A61908B423E2C27800E8EDE6 /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				A61908B523E2C2F300E8EDE6 /* CustomMessageCell.h */,
+				A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */,
+			);
+			path = CustomTableCell;
+			sourceTree = "<group>";
+		};
+		A61908B823E2F1EA00E8EDE6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E162406D1450003A67D /* IQKeyboardManager */,
+				A61908B923E2F22F00E8EDE6 /* MessageDetails.h */,
+				A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A64F439523FBCEDB0040D160 /* scheduleCall */ = {
+			isa = PBXGroup;
+			children = (
+				A64F439623FBCF310040D160 /* ScheduleCallViewController.h */,
+				A64F439723FBCF310040D160 /* ScheduleCallViewController.m */,
+				A64F439D23FBD5680040D160 /* AddScheduleCallViewController.h */,
+				A64F439E23FBD5680040D160 /* AddScheduleCallViewController.m */,
+			);
+			path = scheduleCall;
+			sourceTree = "<group>";
+		};
+		A64F439923FBCF3B0040D160 /* recentCall */ = {
+			isa = PBXGroup;
+			children = (
+				A64F439A23FBCF550040D160 /* RecentCallViewController.h */,
+				A64F439B23FBCF550040D160 /* RecentCallViewController.m */,
+			);
+			path = recentCall;
+			sourceTree = "<group>";
+		};
+		A6864FC323F31A5100D7DAA2 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				A612CE4523D82346005156A6 /* LoginViewController.h */,
+				A612CE4623D8236D005156A6 /* LoginViewController.m */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		A6864FC423F31A6800D7DAA2 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				A612CE4823D82B56005156A6 /* RegisterViewController.h */,
+				A612CE4923D83566005156A6 /* RegisterViewController.m */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		A6864FC523F31A7E00D7DAA2 /* dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEB58D23E0466D00E2C6A5 /* DashboardViewController.h */,
+				A6FFC05323FA793C007A3DB4 /* DashboardViewController.m */,
+			);
+			path = dashboard;
+			sourceTree = "<group>";
+		};
+		A6864FC623F31A8F00D7DAA2 /* chatList */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEB58E23E06DF600E2C6A5 /* ChatListViewController.h */,
+				A6FEB58F23E06E3200E2C6A5 /* ChatListViewController.m */,
+			);
+			path = chatList;
+			sourceTree = "<group>";
+		};
+		A6864FC723F31A9E00D7DAA2 /* chatDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A67FC52F23E1CBF90036DA14 /* ChatDetailsViewController.h */,
+				A67FC53023E1CC110036DA14 /* ChatDetailsViewController.m */,
+			);
+			path = chatDetails;
+			sourceTree = "<group>";
+		};
+		A6864FC823F31AB200D7DAA2 /* contact */ = {
+			isa = PBXGroup;
+			children = (
+				A6E426EB23E99281009E1719 /* ContactViewController.h */,
+				A6E426EC23E99281009E1719 /* ContactViewController.m */,
+				A6959E2923FC37FA00308F8E /* AddContactViewController.h */,
+				A6959E2A23FC37FA00308F8E /* AddContactViewController.m */,
+			);
+			path = contact;
+			sourceTree = "<group>";
+		};
+		A8D3D3AA8802803AA741C3B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C83C5BE824C9AD5A00F4EF1F /* OWT.framework */,
+				C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */,
+				C8C6CD6D2469F1CC004B929A /* WebRTC.framework */,
+				C8B7477E243CB207003BD3DD /* CoreAudio.framework */,
+				C8B7477C243CB1E3003BD3DD /* PushKit.framework */,
+				C8B7477A243CB1DC003BD3DD /* AVFoundation.framework */,
+				C8B74778243CB1D4003BD3DD /* AVKit.framework */,
+				C8B74776243CB1CA003BD3DD /* CFNetwork.framework */,
+				C8B74774243CAD89003BD3DD /* CallKit.framework */,
+				7170D1B3213EC24300C2268B /* GLKit.framework */,
+				7170D1B1213EC22300C2268B /* VideoToolbox.framework */,
+				7170D1AF213EC1F500C2268B /* CoreVideo.framework */,
+				7170D1AD213EC1E700C2268B /* libsqlite3.tbd */,
+				7170D1AB213EC1DA00C2268B /* libicucore.tbd */,
+				7170D1A9213EC1CD00C2268B /* libstdc++.tbd */,
+				7170D1A7213EC1BE00C2268B /* libc++.tbd */,
+				656ECF072D12299B6228CC28 /* Pods_YuWee_SDK.framework */,
+				CC865E868E5A028355EA40FA /* Pods_notification.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8151DFA2403ADFC0003A67D /* YuViTimeSelectTimeZoneView */ = {
+			isa = PBXGroup;
+			children = (
+				C8151DFB2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m */,
+				C8151DFC2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.h */,
+				C8151DFD2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.xib */,
+			);
+			path = YuViTimeSelectTimeZoneView;
+			sourceTree = "<group>";
+		};
+		C8151E04240499010003A67D /* YuviTimeAddMemberPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E06240499010003A67D /* YuviTimeAddMemberPopUpView.h */,
+				C8151E05240499010003A67D /* YuviTimeAddMemberPopUpView.m */,
+				C8151E07240499010003A67D /* YuviTimeAddMemberPopUpView.xib */,
+			);
+			path = YuviTimeAddMemberPopUpView;
+			sourceTree = "<group>";
+		};
+		C8151E0A2404EB7E0003A67D /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF141724290C3300524468 /* HUD */,
+				C8EF141124290BBB00524468 /* ZFTokenField */,
+				C8EF140D24290B9000524468 /* KLCPopup */,
+				C8EF142224290C9300524468 /* SDWebImage */,
+				C8151E122404ED6B0003A67D /* YuviTimeRecentCallCell */,
+				C8151E04240499010003A67D /* YuviTimeAddMemberPopUpView */,
+				C8DD69BD23FCE2BD00387B32 /* YuviTimeStartCallView */,
+				C8DD69B923FC0ED600387B32 /* YuviTimeAddressFieldCall */,
+				C8151DFA2403ADFC0003A67D /* YuViTimeSelectTimeZoneView */,
+				A61908B423E2C27800E8EDE6 /* CustomTableCell */,
+				C8151E0B2404EB990003A67D /* YuviTimeRecentCallCell */,
+				C8C9BAA02403077A00A50098 /* YuviTimeScheduledCell */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		C8151E0B2404EB990003A67D /* YuviTimeRecentCallCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YuviTimeRecentCallCell;
+			sourceTree = "<group>";
+		};
+		C8151E122404ED6B0003A67D /* YuviTimeRecentCallCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E132404ED6B0003A67D /* YuviTimeRecentCallCell.h */,
+				C8151E142404ED6B0003A67D /* YuviTimeRecentCallCell.m */,
+				C802A817246C1A4D00A09729 /* YuviTimeRecentCallCell.xib */,
+			);
+			path = YuviTimeRecentCallCell;
+			sourceTree = "<group>";
+		};
+		C8151E162406D1450003A67D /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E172406D1450003A67D /* IQTextView */,
+				C8151E1A2406D1450003A67D /* IQToolbar */,
+				C8151E252406D1450003A67D /* Constants */,
+				C8151E282406D1450003A67D /* Resources */,
+				C8151E2A2406D1450003A67D /* IQKeyboardReturnKeyHandler.h */,
+				C8151E2B2406D1450003A67D /* IQKeyboardManager.h */,
+				C8151E2C2406D1450003A67D /* IQKeyboardManager.m */,
+				C8151E2D2406D1450003A67D /* Categories */,
+				C8151E382406D1450003A67D /* IQKeyboardReturnKeyHandler.m */,
+			);
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		C8151E172406D1450003A67D /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E182406D1450003A67D /* IQTextView.m */,
+				C8151E192406D1450003A67D /* IQTextView.h */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		C8151E1A2406D1450003A67D /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E1B2406D1450003A67D /* IQUIView+IQKeyboardToolbar.h */,
+				C8151E1C2406D1450003A67D /* IQToolbar.m */,
+				C8151E1D2406D1450003A67D /* IQPreviousNextView.h */,
+				C8151E1E2406D1450003A67D /* IQTitleBarButtonItem.m */,
+				C8151E1F2406D1450003A67D /* IQBarButtonItem.m */,
+				C8151E202406D1450003A67D /* IQUIView+IQKeyboardToolbar.m */,
+				C8151E212406D1450003A67D /* IQPreviousNextView.m */,
+				C8151E222406D1450003A67D /* IQToolbar.h */,
+				C8151E232406D1450003A67D /* IQBarButtonItem.h */,
+				C8151E242406D1450003A67D /* IQTitleBarButtonItem.h */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		C8151E252406D1450003A67D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E262406D1450003A67D /* IQKeyboardManagerConstantsInternal.h */,
+				C8151E272406D1450003A67D /* IQKeyboardManagerConstants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C8151E282406D1450003A67D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E292406D1450003A67D /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C8151E2D2406D1450003A67D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C8151E2E2406D1450003A67D /* IQNSArray+Sort.m */,
+				C8151E2F2406D1450003A67D /* IQUIViewController+Additions.h */,
+				C8151E302406D1450003A67D /* IQUITextFieldView+Additions.m */,
+				C8151E312406D1450003A67D /* IQUIScrollView+Additions.m */,
+				C8151E322406D1450003A67D /* IQUIView+Hierarchy.m */,
+				C8151E332406D1450003A67D /* IQNSArray+Sort.h */,
+				C8151E342406D1450003A67D /* IQUIScrollView+Additions.h */,
+				C8151E352406D1450003A67D /* IQUITextFieldView+Additions.h */,
+				C8151E362406D1450003A67D /* IQUIViewController+Additions.m */,
+				C8151E372406D1450003A67D /* IQUIView+Hierarchy.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C8C9BAA02403077A00A50098 /* YuviTimeScheduledCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8C9BAA12403077A00A50098 /* YuviTimeScheduledCell.h */,
+				C8C9BAA22403077A00A50098 /* YuviTimeScheduledCell.m */,
+			);
+			path = YuviTimeScheduledCell;
+			sourceTree = "<group>";
+		};
+		C8DD69AB23FAB48300387B32 /* GroupCallController */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEB59323E080EE00E2C6A5 /* CallViewController.h */,
+				A6FEB59123E080DE00E2C6A5 /* CallViewController.m */,
+			);
+			path = GroupCallController;
+			sourceTree = "<group>";
+		};
+		C8DD69B923FC0ED600387B32 /* YuviTimeAddressFieldCall */ = {
+			isa = PBXGroup;
+			children = (
+				C8DD69BB23FC0ED600387B32 /* YuviTimeAddressFieldCell.h */,
+				C8DD69BA23FC0ED600387B32 /* YuviTimeAddressFieldCell.m */,
+			);
+			path = YuviTimeAddressFieldCall;
+			sourceTree = "<group>";
+		};
+		C8DD69BD23FCE2BD00387B32 /* YuviTimeStartCallView */ = {
+			isa = PBXGroup;
+			children = (
+				C8DD69C023FCE2BD00387B32 /* YuviTimeStartCallView.h */,
+				C8DD69BF23FCE2BD00387B32 /* YuviTimeStartCallView.m */,
+				C8DD69BE23FCE2BD00387B32 /* YuviTimeStartCallView.xib */,
+			);
+			path = YuviTimeStartCallView;
+			sourceTree = "<group>";
+		};
+		C8EF140D24290B9000524468 /* KLCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF140E24290B9000524468 /* KLCPopup.h */,
+				C8EF140F24290B9000524468 /* KLCPopup.m */,
+			);
+			path = KLCPopup;
+			sourceTree = "<group>";
+		};
+		C8EF141124290BBB00524468 /* ZFTokenField */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF141224290BBB00524468 /* ZFTokenField.m */,
+				C8EF141324290BBB00524468 /* ZFTokenField.h */,
+				C8EF141424290BBB00524468 /* TokenView.xib */,
+			);
+			path = ZFTokenField;
+			sourceTree = "<group>";
+		};
+		C8EF141724290C3300524468 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF141824290C3300524468 /* MBProgressHUD.m */,
+				C8EF141924290C3300524468 /* HUD.h */,
+				C8EF141A24290C3300524468 /* btnCheck.png */,
+				C8EF141B24290C3300524468 /* btnCheck@2x.png */,
+				C8EF141C24290C3300524468 /* MBProgressHUD.h */,
+				C8EF141D24290C3300524468 /* HUD.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		C8EF142224290C9300524468 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF142324290C9300524468 /* UIImage+WebP.m */,
+				C8EF142424290C9300524468 /* MKAnnotationView+WebCache.m */,
+				C8EF142524290C9300524468 /* UIImageView+WebCache.h */,
+				C8EF142624290C9300524468 /* NSData+ImageContentType.h */,
+				C8EF142724290C9300524468 /* SDWebImageManager.m */,
+				C8EF142824290C9300524468 /* SDWebImageDecoder.m */,
+				C8EF142924290C9300524468 /* SDWebImageDownloaderOperation.h */,
+				C8EF142A24290C9400524468 /* UIImageView+HighlightedWebCache.m */,
+				C8EF142B24290C9400524468 /* SDImageCache.h */,
+				C8EF142C24290C9400524468 /* SDWebImageDownloader.m */,
+				C8EF142D24290C9400524468 /* UIImage+GIF.m */,
+				C8EF142E24290C9400524468 /* UIButton+WebCache.h */,
+				C8EF142F24290C9400524468 /* UIImage+MultiFormat.m */,
+				C8EF143024290C9400524468 /* SDWebImageCompat.m */,
+				C8EF143124290C9400524468 /* SDWebImagePrefetcher.m */,
+				C8EF143224290C9400524468 /* UIView+WebCacheOperation.h */,
+				C8EF143324290C9400524468 /* MKAnnotationView+WebCache.h */,
+				C8EF143424290C9400524468 /* UIImage+WebP.h */,
+				C8EF143524290C9400524468 /* SDImageCache.m */,
+				C8EF143624290C9400524468 /* UIImageView+HighlightedWebCache.h */,
+				C8EF143724290C9400524468 /* SDWebImageDownloaderOperation.m */,
+				C8EF143824290C9400524468 /* SDWebImageDecoder.h */,
+				C8EF143924290C9400524468 /* SDWebImageManager.h */,
+				C8EF143A24290C9400524468 /* NSData+ImageContentType.m */,
+				C8EF143B24290C9400524468 /* UIImageView+WebCache.m */,
+				C8EF143C24290C9400524468 /* SDWebImageOperation.h */,
+				C8EF143D24290C9400524468 /* SDWebImageDownloader.h */,
+				C8EF143E24290C9400524468 /* UIView+WebCacheOperation.m */,
+				C8EF143F24290C9400524468 /* SDWebImagePrefetcher.h */,
+				C8EF144024290C9400524468 /* SDWebImageCompat.h */,
+				C8EF144124290C9400524468 /* UIImage+MultiFormat.h */,
+				C8EF144224290C9400524468 /* UIButton+WebCache.m */,
+				C8EF144324290C9400524468 /* UIImage+GIF.h */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		C8EF14592429185500524468 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF146F242937DA00524468 /* notification.entitlements */,
+				C8EF145A2429185500524468 /* NotificationService.h */,
+				C8EF145B2429185500524468 /* NotificationService.m */,
+				C8EF145D2429185500524468 /* Info.plist */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7170D114213E84B600C2268B /* YuWee SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7170D12B213E84BE00C2268B /* Build configuration list for PBXNativeTarget "YuWee SDK" */;
+			buildPhases = (
+				28F624B2E8A8DE3F99B90FF4 /* [CP] Check Pods Manifest.lock */,
+				7170D111213E84B600C2268B /* Sources */,
+				7170D112213E84B600C2268B /* Frameworks */,
+				7170D113213E84B600C2268B /* Resources */,
+				C8DD6A1023FD586700387B32 /* Embed App Extensions */,
+				3C2DF8C9ECAF50C7097B33AE /* [CP] Embed Pods Frameworks */,
+				C85E39B7242BED8900741D74 /* ShellScript */,
+				C83C5BE724C9AD5A00F4EF1F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8EF145F2429185500524468 /* PBXTargetDependency */,
+			);
+			name = "YuWee SDK";
+			productName = "YuWee SDK";
+			productReference = 7170D115213E84B600C2268B /* YuWee SDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C8EF14572429185500524468 /* notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8EF14632429185500524468 /* Build configuration list for PBXNativeTarget "notification" */;
+			buildPhases = (
+				146E7F322A210EED966DE9AE /* [CP] Check Pods Manifest.lock */,
+				C8EF14542429185500524468 /* Sources */,
+				C8EF14552429185500524468 /* Frameworks */,
+				C8EF14562429185500524468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = notification;
+			productName = notification;
+			productReference = C8EF14582429185500524468 /* notification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7170D10D213E84B600C2268B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Prasanna Gupta";
+				TargetAttributes = {
+					7170D114213E84B600C2268B = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					C8EF14572429185500524468 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 7170D110213E84B600C2268B /* Build configuration list for PBXProject "YuWee SDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7170D10C213E84B600C2268B;
+			productRefGroup = 7170D116213E84B600C2268B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7170D114213E84B600C2268B /* YuWee SDK */,
+				C8EF14572429185500524468 /* notification */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7170D113213E84B600C2268B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8151E012403B9280003A67D /* timezone.json in Resources */,
+				C8EF141F24290C3300524468 /* btnCheck.png in Resources */,
+				7170D122213E84BE00C2268B /* Assets.xcassets in Resources */,
+				C8151E032403B9340003A67D /* ActiveSupport_to_iOS_timezones.plist in Resources */,
+				C8EF142024290C3300524468 /* btnCheck@2x.png in Resources */,
+				C85E39B6242BB68E00741D74 /* GoogleService-Info.plist in Resources */,
+				C8151DFF2403ADFD0003A67D /* YuViTimeSelectTimeZoneView.xib in Resources */,
+				C8DD69C123FCE2BD00387B32 /* YuviTimeStartCallView.xib in Resources */,
+				7170D120213E84B600C2268B /* Main.storyboard in Resources */,
+				C8EF141624290BBB00524468 /* TokenView.xib in Resources */,
+				C8151E09240499010003A67D /* YuviTimeAddMemberPopUpView.xib in Resources */,
+				C8151E3F2406D1450003A67D /* IQKeyboardManager.bundle in Resources */,
+				C802A818246C1A4D00A09729 /* YuviTimeRecentCallCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8EF14562429185500524468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		146E7F322A210EED966DE9AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-notification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28F624B2E8A8DE3F99B90FF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YuWee SDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C2DF8C9ECAF50C7097B33AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C85E39B7242BED8900741D74 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7170D111213E84B600C2268B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8EF144924290C9400524468 /* SDWebImageDownloader.m in Sources */,
+				C8C9BAA62403077B00A50098 /* YuviTimeScheduledCell.m in Sources */,
+				C8EF144F24290C9400524468 /* SDWebImageDownloaderOperation.m in Sources */,
+				C8151E442406D1450003A67D /* IQUIView+Hierarchy.m in Sources */,
+				A612CE4A23D83566005156A6 /* RegisterViewController.m in Sources */,
+				A67FC53123E1CC110036DA14 /* ChatDetailsViewController.m in Sources */,
+				C8EF144C24290C9400524468 /* SDWebImageCompat.m in Sources */,
+				71895F73213FACF000C0723E /* ViewController.m in Sources */,
+				C8151E422406D1450003A67D /* IQUITextFieldView+Additions.m in Sources */,
+				A64F439F23FBD5680040D160 /* AddScheduleCallViewController.m in Sources */,
+				C8DD69C223FCE2BD00387B32 /* YuviTimeStartCallView.m in Sources */,
+				A64F439C23FBCF550040D160 /* RecentCallViewController.m in Sources */,
+				C8EF144624290C9400524468 /* SDWebImageManager.m in Sources */,
+				C8EF145024290C9400524468 /* NSData+ImageContentType.m in Sources */,
+				C8151E3B2406D1450003A67D /* IQTitleBarButtonItem.m in Sources */,
+				C8151E3C2406D1450003A67D /* IQBarButtonItem.m in Sources */,
+				C8EF144524290C9400524468 /* MKAnnotationView+WebCache.m in Sources */,
+				A61908BB23E2F22F00E8EDE6 /* MessageDetails.m in Sources */,
+				A6FFC05423FA793C007A3DB4 /* DashboardViewController.m in Sources */,
+				C8EF144B24290C9400524468 /* UIImage+MultiFormat.m in Sources */,
+				71895F6F213FACE300C0723E /* AppDelegate.m in Sources */,
+				C8EF145324290C9400524468 /* UIButton+WebCache.m in Sources */,
+				C8EF144724290C9400524468 /* SDWebImageDecoder.m in Sources */,
+				C8151E412406D1450003A67D /* IQNSArray+Sort.m in Sources */,
+				C8EF144A24290C9400524468 /* UIImage+GIF.m in Sources */,
+				C8EF144824290C9400524468 /* UIImageView+HighlightedWebCache.m in Sources */,
+				A6959E2B23FC37FA00308F8E /* AddContactViewController.m in Sources */,
+				C8151E462406D1450003A67D /* IQKeyboardReturnKeyHandler.m in Sources */,
+				A6FEB59223E080DE00E2C6A5 /* CallViewController.m in Sources */,
+				C8EF141524290BBB00524468 /* ZFTokenField.m in Sources */,
+				C8151E3A2406D1450003A67D /* IQToolbar.m in Sources */,
+				C8151E402406D1450003A67D /* IQKeyboardManager.m in Sources */,
+				C8151E3E2406D1450003A67D /* IQPreviousNextView.m in Sources */,
+				C8EF141E24290C3300524468 /* MBProgressHUD.m in Sources */,
+				C8151E08240499010003A67D /* YuviTimeAddMemberPopUpView.m in Sources */,
+				71102B59213FAE47003A189C /* main.m in Sources */,
+				C8EF142124290C3300524468 /* HUD.m in Sources */,
+				C8151E3D2406D1450003A67D /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				C8EF145224290C9400524468 /* UIView+WebCacheOperation.m in Sources */,
+				C8151E392406D1450003A67D /* IQTextView.m in Sources */,
+				A6FEB59023E06E3200E2C6A5 /* ChatListViewController.m in Sources */,
+				C8151E432406D1450003A67D /* IQUIScrollView+Additions.m in Sources */,
+				C8151E452406D1450003A67D /* IQUIViewController+Additions.m in Sources */,
+				A64F439823FBCF310040D160 /* ScheduleCallViewController.m in Sources */,
+				C8DD69BC23FC0ED600387B32 /* YuviTimeAddressFieldCell.m in Sources */,
+				C8EF144D24290C9400524468 /* SDWebImagePrefetcher.m in Sources */,
+				C8EF144424290C9400524468 /* UIImage+WebP.m in Sources */,
+				71AD9817214BF8DA003B9AD8 /* CallController.m in Sources */,
+				A61908B723E2C2F300E8EDE6 /* CustomMessageCell.m in Sources */,
+				C8EF141024290B9000524468 /* KLCPopup.m in Sources */,
+				C8EF144E24290C9400524468 /* SDImageCache.m in Sources */,
+				A6E426ED23E99281009E1719 /* ContactViewController.m in Sources */,
+				C8EF145124290C9400524468 /* UIImageView+WebCache.m in Sources */,
+				C8151E152404ED6B0003A67D /* YuviTimeRecentCallCell.m in Sources */,
+				C8151DFE2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m in Sources */,
+				A612CE4723D8236D005156A6 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8EF14542429185500524468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8EF145C2429185500524468 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8EF145F2429185500524468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8EF14572429185500524468 /* notification */;
+			targetProxy = C8EF145E2429185500524468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7170D11E213E84B600C2268B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7170D11F213E84B600C2268B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7170D129213E84BE00C2268B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LIBRARY_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		7170D12A213E84BE00C2268B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LIBRARY_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7170D12C213E84BE00C2268B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08227F080C80929EE86D353F /* Pods-YuWee SDK.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDK.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift\"",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers\"",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "YuWee SDK/Info.plist";
+				INSTALL_PATH = "@executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@loader_path/Frameworks",
+					"$(BUILD_PRODUCTS_DIR)/YuWeeSDK",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SocketIO\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK dev";
+				SWIFT_OBJC_BRIDGING_HEADER = "YuWee SDK/YuWee SDK-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/BuildHeaders\"",
+					../include,
+				);
+			};
+			name = Debug;
+		};
+		7170D12D213E84BE00C2268B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDK.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift\"",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers\"",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "YuWee SDK/Info.plist";
+				INSTALL_PATH = "@executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+					"@loader_path/Frameworks",
+					"$(BUILD_PRODUCTS_DIR)/YuWeeSDK",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SocketIO\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Dist";
+				SWIFT_OBJC_BRIDGING_HEADER = "YuWee SDK/YuWee SDK-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/BuildHeaders\"",
+					../include,
+				);
+			};
+			name = Release;
+		};
+		C8EF14612429185500524468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F46FCEF7D58922EDF197F152 /* Pods-notification.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers\"",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(BUILD_PRODUCTS_DIR)/YuWeeSDK",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SocketIO\"",
+					"-framework",
+					"\"Starscream\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Notif Dev";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/BuildHeaders\"",
+				);
+			};
+			name = Debug;
+		};
+		C8EF14622429185500524468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 356C2AD3D195BC9DC4B35BB8 /* Pods-notification.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers\"",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(BUILD_PRODUCTS_DIR)/YuWeeSDK",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SocketIO\"",
+					"-framework",
+					"\"Starscream\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Notif Dist";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/BuildHeaders\"",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7170D110213E84B600C2268B /* Build configuration list for PBXProject "YuWee SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7170D129213E84BE00C2268B /* Debug */,
+				7170D12A213E84BE00C2268B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7170D12B213E84BE00C2268B /* Build configuration list for PBXNativeTarget "YuWee SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7170D12C213E84BE00C2268B /* Debug */,
+				7170D12D213E84BE00C2268B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8EF14632429185500524468 /* Build configuration list for PBXNativeTarget "notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8EF14612429185500524468 /* Debug */,
+				C8EF14622429185500524468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7170D10D213E84B600C2268B /* Project object */;
+}
