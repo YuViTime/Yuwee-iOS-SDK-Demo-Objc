@@ -6,10 +6,9 @@
 //  Copyright © 2020 Yuwee. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-//#import <YuWeeSDK/Yuwee.h>
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
-#import <YuWeeSDK/YuWeeSDK.h>
+#import <YuWeeSDK/Yuwee.h>
 
 @interface NotificationService : UNNotificationServiceExtension
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <YuWeeSDK/Yuwee.h>
+#import <YuWeeSDK/YuWeeSDK.h>
 #import "YuviTimeAddressFieldCell.h"
 
 @interface ViewController : UIViewController <YuWeeCallManagerDelegate,UITableViewDelegate,UITableViewDataSource>

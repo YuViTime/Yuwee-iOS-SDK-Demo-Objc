@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
   CGRect screenSize;
 }
 
-@property(nonatomic,readonly) YuweeLocalVideoView *localVideoView;
-@property(nonatomic,readonly) YuweeRemoteVideoView *remoteVideoView;
+@property(nonatomic,strong) YuweeLocalVideoView *localVideoView;
+@property(nonatomic,strong) YuweeRemoteVideoView *remoteVideoView;
 
 - (void)initialize;
 - (instancetype)initWithFrame:(CGRect)frame;

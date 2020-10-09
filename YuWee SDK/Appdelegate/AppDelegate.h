@@ -18,16 +18,16 @@
 #import "ViewController.h"
 
 
-///CONNECT  ******///
-#define kAppId @"5mNTkN7o5Z6uyRrg1XoUVDXP3JhYBxHe"
-#define kAppSecretId @"fQagO1AGo5kb9Gl0IJVXRYlCM4KuTJ5qH2ztE1b0ilZv8v3MR2U0aB19bH1eaUYS"
-#define kClientIdKey @"5ece403cedf5d71348e8969f"
+/////CONNECT  ******///
+//#define kAppId @"5mNTkN7o5Z6uyRrg1XoUVDXP3JhYBxHe"
+//#define kAppSecretId @"fQagO1AGo5kb9Gl0IJVXRYlCM4KuTJ5qH2ztE1b0ilZv8v3MR2U0aB19bH1eaUYS"
+//#define kClientIdKey @"5f367584e732241ff4ba71b3"
 
-/////DEV  ******///
-//#define kAppId @"3ulLlGDM5feppT22jof1YUXg5btMxrHj"
-//#define kAppSecretId @"LPdKFRLKsGe4f1yyj2B2K0okzbnbfSESVgrpb07U4ciwixMeFBiT7Eh6u9YHjF5g"
-//#define kMasterAccountId @"5b4d1ba96fa40c21f079a8e2"
-//#define kClientIdKey @"5f5b5e249acf3b2f74caa645"
+
+///DEV  ******///
+#define kAppId @"kAILMWL8qzGBetS77fUSIRSiMz6hyjIK"
+#define kAppSecretId @"WVDaXh5akOGvQflXcMb1I8QTRxozwygCBvy3w5SJfdj3BYvUVp47ta6ffsznhbU4"
+#define kClientIdKey @"5f367584e732241ff4ba71b3"
 
 #define kRequest_Type @"requestType"
 #define KDefaultCallType @"VIDEO"
@@ -108,6 +108,7 @@ typedef void(^TokenCompletionBlock)(NSDictionary *dictTokens);
 @property(nonatomic,strong) NSDictionary *dictResponceForCurrentCall;
 
 + (AppDelegate*)sharedInstance;
+- (void)showToast:(NSString *)message;
 - (UIViewController *)topViewController;
 - (void)pushRegistrationAndGetToken:(TokenCompletionBlock)block;
 - (void)openGroupCallWithDetails:(NSDictionary *)dict;

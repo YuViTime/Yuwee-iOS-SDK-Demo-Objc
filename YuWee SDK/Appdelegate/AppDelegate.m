@@ -932,7 +932,7 @@ static id app;
     }
 }
 
-- (void) showToast: (NSString *) message {
+- (void)showToast:(NSString *)message {
     if ([self topViewController]!=nil) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
         hud.userInteractionEnabled = false;
@@ -942,10 +942,9 @@ static id app;
         hud.margin = 10.f;
         hud.yOffset = 70.f;
         hud.removeFromSuperViewOnHide = YES;
-        [hud hide:YES afterDelay:5];
+        [hud hide:YES afterDelay:3];
     }
 }
-
 
 - (UIViewController *)topViewController{
   return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];

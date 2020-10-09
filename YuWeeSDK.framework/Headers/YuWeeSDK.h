@@ -16,6 +16,4 @@ FOUNDATION_EXPORT const unsigned char YuWeeSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YuWeeSDK/PublicHeader.h>
 
-//#import <YuweeSDK/Yuwee.h>
-
 #import <YuWeeSDK/Yuwee.h>

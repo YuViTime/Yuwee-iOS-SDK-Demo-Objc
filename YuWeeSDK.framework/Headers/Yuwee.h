@@ -16,10 +16,11 @@
 #import "CallManager.h"
 #import "CallParams.h"
 #import "YuWeeProtocol.h"
-#import "YuweeControl.h"
 #import "YuweeVideoView.h"
 #import "YuweeLocalVideoView.h"
 #import "YuweeRemoteVideoView.h"
+#import "MeetingManagerObjc.h"
+//#import "YuWee_SDK-Swift.h"
 
 //@class UserManager;
 //@class NotificationManager;
@@ -41,13 +42,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)dismissAppConnection;
 
+- (void)setMode:(BOOL)isLogEnabled with:(BOOL)isDev;
+
 - (UserManager *)getUserManager;
 - (ChatManager *)getChatManager;
+- (ConnectionManager *)getConnectionManager;
 - (StatusManager *)getStatusManager;
 - (ContactManager *)getContactManager;
-- (ConnectionManager *)getConnectionManager;
 - (NotificationManager *)getNotificationManager;
 - (CallManager *)getCallManager;
+- (MeetingManagerObjc *)getMeetingManager;
 
 @end
 

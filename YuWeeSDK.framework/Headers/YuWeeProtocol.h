@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "CallParams.h"
 #import "YuweeRemoteVideoView.h"
+#import <OWT/OWT.h>
 
 #pragma mark- Call Operation events
 
@@ -91,6 +92,38 @@
 @end
 
 
+#pragma mark- Hosted Meeting Management events
+@protocol OnHostedMeetingDelegate  <NSObject>
+
+- (void)onStreamAdded:(OWTRemoteStream *)remoteStream;
+
+- (void)onStreamRemoved:(OWTRemoteStream *)remoteStream;
+
+- (void)onCallPresentersUpdated:(NSDictionary *)dict;
+
+- (void)onCallAdminsUpdated:(NSDictionary *)dict;
+
+- (void)onCallParticipantMuted:(NSDictionary *)dict;
+
+- (void)onCallParticipantDropped:(NSDictionary *)dict;
+
+- (void)onCallParticipantJoined:(NSDictionary *)dict;
+
+- (void)onCallParticipantLeft:(NSDictionary *)dict;
+
+- (void)onCallParticipantStatusUpdated:(NSDictionary *)dict;
+
+- (void)onCallHandRaised:(NSDictionary *)dict;
+
+- (void)onMeetingEnded:(NSDictionary *)dict;
+
+- (void)onCallActiveSpeaker:(NSDictionary *)dict;
+
+- (void)onError:(NSString *)error;
+
+@end
+
+
 #pragma mark- Push Management events
 @protocol YuWeePushManagerDelegate <NSObject>
 
@@ -101,6 +134,13 @@
 - (void)onScheduleMeetingJoinFromPush:(NSDictionary *)dictResponse;
 
 - (void)onChatMessageReceivedFromPush:(NSDictionary *)dictResponse;
+
+@end
+
+#pragma mark- Subscribe Remote Stream Management events
+@protocol YuWeeRemoteStreamSubscriptionDelegate <NSObject>
+
+- (void)onSubscribeRemoteStreamResult:(OWTConferenceSubscription *)subsription withStream:(OWTRemoteStream *)remoteStream withMessage:(NSString *)message withStatus:(BOOL)success;
 
 @end
 

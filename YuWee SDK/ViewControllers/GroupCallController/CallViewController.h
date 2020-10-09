@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "YuviTimeAddMemberPopUpView.h"
 #import <YuWeeSDK/Yuwee.h>
+#import <YuWeeSDK/YuweeControl.h>
 #import "KLCPopup.h"
 #import "AppDelegate.h"
 

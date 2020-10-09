@@ -4,8 +4,3 @@ framework module YuWeeSDK {
   export *
   module * { export * }
 }
-
-module YuWeeSDK.Swift {
-    header "YuWeeSDK-Swift.h"
-    requires objc
-}

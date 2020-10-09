@@ -52,11 +52,26 @@
 		C8151E442406D1450003A67D /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E322406D1450003A67D /* IQUIView+Hierarchy.m */; };
 		C8151E452406D1450003A67D /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E362406D1450003A67D /* IQUIViewController+Additions.m */; };
 		C8151E462406D1450003A67D /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C8151E382406D1450003A67D /* IQKeyboardReturnKeyHandler.m */; };
-		C82EEBCF24C9C9150034C65D /* YuWeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */; };
-		C82EEBD024C9C9150034C65D /* YuWeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C816AFF125220700005486E3 /* PresenterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816AFE1252206FF005486E3 /* PresenterCollectionCell.xib */; };
+		C816AFF225220700005486E3 /* PresenterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFE2252206FF005486E3 /* PresenterCollectionCell.swift */; };
+		C816AFF325220700005486E3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFE3252206FF005486E3 /* Protocols.swift */; };
+		C816AFF425220700005486E3 /* SideMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816AFE5252206FF005486E3 /* SideMenuTableViewController.xib */; };
+		C816AFF525220700005486E3 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFE6252206FF005486E3 /* SideMenuTableViewController.swift */; };
+		C816AFF625220700005486E3 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816AFE8252206FF005486E3 /* SideMenuCell.xib */; };
+		C816AFF725220700005486E3 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFE9252206FF005486E3 /* SideMenuCell.swift */; };
+		C816AFF825220700005486E3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEA252206FF005486E3 /* ContainerViewController.swift */; };
+		C816AFF925220700005486E3 /* ConferenceCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEB252206FF005486E3 /* ConferenceCallViewController.swift */; };
+		C816AFFA25220700005486E3 /* ListMeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFED252206FF005486E3 /* ListMeetingsViewController.swift */; };
+		C816AFFB25220700005486E3 /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEE252206FF005486E3 /* MeetingViewController.swift */; };
+		C816AFFC25220700005486E3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEF252206FF005486E3 /* ListTableViewCell.swift */; };
+		C816AFFD25220700005486E3 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816AFF0252206FF005486E3 /* ListTableViewCell.xib */; };
+		C816B00025220A0B005486E3 /* YuWeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; };
+		C816B00125220A0B005486E3 /* YuWeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C816B009252216C8005486E3 /* YuweeControlNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B008252216C8005486E3 /* YuweeControlNew.swift */; };
+		C816B00B25222072005486E3 /* YuweeControlNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816B00A25222071005486E3 /* YuweeControlNew.xib */; };
+		C816B00D25235A15005486E3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B00C25235A14005486E3 /* ImageLoader.swift */; };
 		C83C5BE524C9AD5A00F4EF1F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; };
 		C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C83C5BE924C9AD5A00F4EF1F /* OWT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83C5BE824C9AD5A00F4EF1F /* OWT.framework */; };
 		C85E39B6242BB68E00741D74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */; };
 		C86DA5D72452DCB700087122 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B7477C243CB1E3003BD3DD /* PushKit.framework */; };
 		C8B74775243CAD89003BD3DD /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B74774243CAD89003BD3DD /* CallKit.framework */; };
@@ -114,7 +129,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */,
-				C82EEBD024C9C9150034C65D /* YuWeeSDK.framework in Embed Frameworks */,
+				C816B00125220A0B005486E3 /* YuWeeSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,7 +169,6 @@
 		71895F72213FACEF00C0723E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		71AD9811214BF8DA003B9AD8 /* CallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallController.h; sourceTree = "<group>"; };
 		71AD9812214BF8DA003B9AD8 /* CallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallController.m; sourceTree = "<group>"; };
-		71C74B2C214F842A00EAF950 /* YuWee SDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YuWee SDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YuWee SDK.entitlements"; sourceTree = "<group>"; };
 		7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuWee SDK.release.xcconfig"; path = "Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK.release.xcconfig"; sourceTree = "<group>"; };
 		A612CE4523D82346005156A6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -223,8 +237,24 @@
 		C8151E362406D1450003A67D /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
 		C8151E372406D1450003A67D /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		C8151E382406D1450003A67D /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
-		C83C5BE824C9AD5A00F4EF1F /* OWT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OWT.framework; sourceTree = "<group>"; };
-		C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YuWeeSDK.framework; sourceTree = "<group>"; };
+		C816AFE1252206FF005486E3 /* PresenterCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresenterCollectionCell.xib; sourceTree = "<group>"; };
+		C816AFE2252206FF005486E3 /* PresenterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterCollectionCell.swift; sourceTree = "<group>"; };
+		C816AFE3252206FF005486E3 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C816AFE5252206FF005486E3 /* SideMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewController.xib; sourceTree = "<group>"; };
+		C816AFE6252206FF005486E3 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		C816AFE8252206FF005486E3 /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
+		C816AFE9252206FF005486E3 /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		C816AFEA252206FF005486E3 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		C816AFEB252206FF005486E3 /* ConferenceCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceCallViewController.swift; sourceTree = "<group>"; };
+		C816AFED252206FF005486E3 /* ListMeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMeetingsViewController.swift; sourceTree = "<group>"; };
+		C816AFEE252206FF005486E3 /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
+		C816AFEF252206FF005486E3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		C816AFF0252206FF005486E3 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		C816AFFE2522076D005486E3 /* YuWee SDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YuWee SDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YuWeeSDK.framework; sourceTree = "<group>"; };
+		C816B008252216C8005486E3 /* YuweeControlNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YuweeControlNew.swift; sourceTree = "<group>"; };
+		C816B00A25222071005486E3 /* YuweeControlNew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuweeControlNew.xib; sourceTree = "<group>"; };
+		C816B00C25235A14005486E3 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8B74774243CAD89003BD3DD /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		C8B74776243CB1CA003BD3DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -308,8 +338,7 @@
 				C8B7477B243CB1DC003BD3DD /* AVFoundation.framework in Frameworks */,
 				C8B74779243CB1D4003BD3DD /* AVKit.framework in Frameworks */,
 				49B66625171F2BEE66FD0C27 /* Pods_YuWee_SDK.framework in Frameworks */,
-				C83C5BE924C9AD5A00F4EF1F /* OWT.framework in Frameworks */,
-				C82EEBCF24C9C9150034C65D /* YuWeeSDK.framework in Frameworks */,
+				C816B00025220A0B005486E3 /* YuWeeSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +371,7 @@
 		7170D10C213E84B600C2268B = {
 			isa = PBXGroup;
 			children = (
+				C816AFFE2522076D005486E3 /* YuWee SDK-Bridging-Header.h */,
 				7170D117213E84B600C2268B /* YuWee SDK */,
 				C8EF14592429185500524468 /* notification */,
 				7170D116213E84B600C2268B /* Products */,
@@ -363,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */,
-				71C74B2C214F842A00EAF950 /* YuWee SDK-Bridging-Header.h */,
 				A61908B823E2F1EA00E8EDE6 /* model */,
 				C8151E0A2404EB7E0003A67D /* Custom Classes */,
 				71895F6C213FACE300C0723E /* Appdelegate */,
@@ -397,6 +426,8 @@
 				A64F439523FBCEDB0040D160 /* scheduleCall */,
 				71AD9810214BF8DA003B9AD8 /* P2PCallController */,
 				C8DD69AB23FAB48300387B32 /* GroupCallController */,
+				C816AFEC252206FF005486E3 /* MeetingViewController */,
+				C816AFDF252206FF005486E3 /* ConferenceCallViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -433,6 +464,8 @@
 		A61908B823E2F1EA00E8EDE6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C816B00C25235A14005486E3 /* ImageLoader.swift */,
+				C816B007252216C8005486E3 /* YuweeControlNew */,
 				C8151E162406D1450003A67D /* IQKeyboardManager */,
 				A61908B923E2F22F00E8EDE6 /* MessageDetails.h */,
 				A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */,
@@ -519,8 +552,7 @@
 		A8D3D3AA8802803AA741C3B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C83C5BE824C9AD5A00F4EF1F /* OWT.framework */,
-				C84C713624C5B90D00E72E86 /* YuWeeSDK.framework */,
+				C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */,
 				C8C6CD6D2469F1CC004B929A /* WebRTC.framework */,
 				C8B7477E243CB207003BD3DD /* CoreAudio.framework */,
 				C8B7477C243CB1E3003BD3DD /* PushKit.framework */,
@@ -672,6 +704,67 @@
 			);
 			path = Categories;
 			sourceTree = "<group>";
+		};
+		C816AFDF252206FF005486E3 /* ConferenceCallViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C816AFE0252206FF005486E3 /* PresenterCollectionCell */,
+				C816AFE4252206FF005486E3 /* SideMenuTableViewController */,
+				C816AFE3252206FF005486E3 /* Protocols.swift */,
+				C816AFEA252206FF005486E3 /* ContainerViewController.swift */,
+				C816AFEB252206FF005486E3 /* ConferenceCallViewController.swift */,
+			);
+			path = ConferenceCallViewController;
+			sourceTree = "<group>";
+		};
+		C816AFE0252206FF005486E3 /* PresenterCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C816AFE1252206FF005486E3 /* PresenterCollectionCell.xib */,
+				C816AFE2252206FF005486E3 /* PresenterCollectionCell.swift */,
+			);
+			path = PresenterCollectionCell;
+			sourceTree = "<group>";
+		};
+		C816AFE4252206FF005486E3 /* SideMenuTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C816AFE6252206FF005486E3 /* SideMenuTableViewController.swift */,
+				C816AFE5252206FF005486E3 /* SideMenuTableViewController.xib */,
+				C816AFE7252206FF005486E3 /* SideMenuCell */,
+			);
+			path = SideMenuTableViewController;
+			sourceTree = "<group>";
+		};
+		C816AFE7252206FF005486E3 /* SideMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				C816AFE8252206FF005486E3 /* SideMenuCell.xib */,
+				C816AFE9252206FF005486E3 /* SideMenuCell.swift */,
+			);
+			path = SideMenuCell;
+			sourceTree = "<group>";
+		};
+		C816AFEC252206FF005486E3 /* MeetingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C816AFED252206FF005486E3 /* ListMeetingsViewController.swift */,
+				C816AFEE252206FF005486E3 /* MeetingViewController.swift */,
+				C816AFEF252206FF005486E3 /* ListTableViewCell.swift */,
+				C816AFF0252206FF005486E3 /* ListTableViewCell.xib */,
+			);
+			path = MeetingViewController;
+			sourceTree = "<group>";
+		};
+		C816B007252216C8005486E3 /* YuweeControlNew */ = {
+			isa = PBXGroup;
+			children = (
+				C816B008252216C8005486E3 /* YuweeControlNew.swift */,
+				C816B00A25222071005486E3 /* YuweeControlNew.xib */,
+			);
+			name = YuweeControlNew;
+			path = "YuWee SDK/YuweeControlNew";
+			sourceTree = SOURCE_ROOT;
 		};
 		C8C9BAA02403077A00A50098 /* YuviTimeScheduledCell */ = {
 			isa = PBXGroup;
@@ -844,7 +937,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Prasanna Gupta";
 				TargetAttributes = {
 					7170D114213E84B600C2268B = {
@@ -888,13 +981,18 @@
 				C8151E012403B9280003A67D /* timezone.json in Resources */,
 				C8EF141F24290C3300524468 /* btnCheck.png in Resources */,
 				7170D122213E84BE00C2268B /* Assets.xcassets in Resources */,
+				C816AFFD25220700005486E3 /* ListTableViewCell.xib in Resources */,
 				C8151E032403B9340003A67D /* ActiveSupport_to_iOS_timezones.plist in Resources */,
 				C8EF142024290C3300524468 /* btnCheck@2x.png in Resources */,
+				C816B00B25222072005486E3 /* YuweeControlNew.xib in Resources */,
 				C85E39B6242BB68E00741D74 /* GoogleService-Info.plist in Resources */,
 				C8151DFF2403ADFD0003A67D /* YuViTimeSelectTimeZoneView.xib in Resources */,
+				C816AFF425220700005486E3 /* SideMenuTableViewController.xib in Resources */,
 				C8DD69C123FCE2BD00387B32 /* YuviTimeStartCallView.xib in Resources */,
 				7170D120213E84B600C2268B /* Main.storyboard in Resources */,
 				C8EF141624290BBB00524468 /* TokenView.xib in Resources */,
+				C816AFF625220700005486E3 /* SideMenuCell.xib in Resources */,
+				C816AFF125220700005486E3 /* PresenterCollectionCell.xib in Resources */,
 				C8151E09240499010003A67D /* YuviTimeAddMemberPopUpView.xib in Resources */,
 				C8151E3F2406D1450003A67D /* IQKeyboardManager.bundle in Resources */,
 				C802A818246C1A4D00A09729 /* YuviTimeRecentCallCell.xib in Resources */,
@@ -1007,8 +1105,11 @@
 				C8151E422406D1450003A67D /* IQUITextFieldView+Additions.m in Sources */,
 				A64F439F23FBD5680040D160 /* AddScheduleCallViewController.m in Sources */,
 				C8DD69C223FCE2BD00387B32 /* YuviTimeStartCallView.m in Sources */,
+				C816AFF725220700005486E3 /* SideMenuCell.swift in Sources */,
 				A64F439C23FBCF550040D160 /* RecentCallViewController.m in Sources */,
 				C8EF144624290C9400524468 /* SDWebImageManager.m in Sources */,
+				C816B00D25235A15005486E3 /* ImageLoader.swift in Sources */,
+				C816AFFA25220700005486E3 /* ListMeetingsViewController.swift in Sources */,
 				C8EF145024290C9400524468 /* NSData+ImageContentType.m in Sources */,
 				C8151E3B2406D1450003A67D /* IQTitleBarButtonItem.m in Sources */,
 				C8151E3C2406D1450003A67D /* IQBarButtonItem.m in Sources */,
@@ -1017,6 +1118,8 @@
 				A6FFC05423FA793C007A3DB4 /* DashboardViewController.m in Sources */,
 				C8EF144B24290C9400524468 /* UIImage+MultiFormat.m in Sources */,
 				71895F6F213FACE300C0723E /* AppDelegate.m in Sources */,
+				C816AFF925220700005486E3 /* ConferenceCallViewController.swift in Sources */,
+				C816AFFC25220700005486E3 /* ListTableViewCell.swift in Sources */,
 				C8EF145324290C9400524468 /* UIButton+WebCache.m in Sources */,
 				C8EF144724290C9400524468 /* SDWebImageDecoder.m in Sources */,
 				C8151E412406D1450003A67D /* IQNSArray+Sort.m in Sources */,
@@ -1026,7 +1129,9 @@
 				C8151E462406D1450003A67D /* IQKeyboardReturnKeyHandler.m in Sources */,
 				A6FEB59223E080DE00E2C6A5 /* CallViewController.m in Sources */,
 				C8EF141524290BBB00524468 /* ZFTokenField.m in Sources */,
+				C816B009252216C8005486E3 /* YuweeControlNew.swift in Sources */,
 				C8151E3A2406D1450003A67D /* IQToolbar.m in Sources */,
+				C816AFF525220700005486E3 /* SideMenuTableViewController.swift in Sources */,
 				C8151E402406D1450003A67D /* IQKeyboardManager.m in Sources */,
 				C8151E3E2406D1450003A67D /* IQPreviousNextView.m in Sources */,
 				C8EF141E24290C3300524468 /* MBProgressHUD.m in Sources */,
@@ -1034,6 +1139,7 @@
 				71102B59213FAE47003A189C /* main.m in Sources */,
 				C8EF142124290C3300524468 /* HUD.m in Sources */,
 				C8151E3D2406D1450003A67D /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				C816AFF825220700005486E3 /* ContainerViewController.swift in Sources */,
 				C8EF145224290C9400524468 /* UIView+WebCacheOperation.m in Sources */,
 				C8151E392406D1450003A67D /* IQTextView.m in Sources */,
 				A6FEB59023E06E3200E2C6A5 /* ChatListViewController.m in Sources */,
@@ -1048,9 +1154,12 @@
 				C8EF141024290B9000524468 /* KLCPopup.m in Sources */,
 				C8EF144E24290C9400524468 /* SDImageCache.m in Sources */,
 				A6E426ED23E99281009E1719 /* ContactViewController.m in Sources */,
+				C816AFF225220700005486E3 /* PresenterCollectionCell.swift in Sources */,
+				C816AFF325220700005486E3 /* Protocols.swift in Sources */,
 				C8EF145124290C9400524468 /* UIImageView+WebCache.m in Sources */,
 				C8151E152404ED6B0003A67D /* YuviTimeRecentCallCell.m in Sources */,
 				C8151DFE2403ADFC0003A67D /* YuViTimeSelectTimeZoneView.m in Sources */,
+				C816AFFB25220700005486E3 /* MeetingViewController.swift in Sources */,
 				A612CE4723D8236D005156A6 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1199,6 +1308,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				VALIDATE_PRODUCT = YES;
@@ -1218,6 +1328,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 359D4SWRZC;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -1259,14 +1370,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "SDK dev";
-				SWIFT_OBJC_BRIDGING_HEADER = "YuWee SDK/YuWee SDK-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/YuWee SDK-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/BuildHeaders\"",
 					../include,
+					"\"$(SRCROOT)/YuWeeSDK.framework\"",
 				);
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};
@@ -1283,6 +1398,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 359D4SWRZC;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -1324,13 +1440,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "SDK Dist";
-				SWIFT_OBJC_BRIDGING_HEADER = "YuWee SDK/YuWee SDK-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/YuWee SDK-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/BuildHeaders\"",
 					../include,
+					"\"$(SRCROOT)/YuWeeSDK.framework\"",
 				);
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};
