@@ -65,11 +65,11 @@
 		C816AFFB25220700005486E3 /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEE252206FF005486E3 /* MeetingViewController.swift */; };
 		C816AFFC25220700005486E3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816AFEF252206FF005486E3 /* ListTableViewCell.swift */; };
 		C816AFFD25220700005486E3 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816AFF0252206FF005486E3 /* ListTableViewCell.xib */; };
-		C816B00025220A0B005486E3 /* YuWeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; };
-		C816B00125220A0B005486E3 /* YuWeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C816B009252216C8005486E3 /* YuweeControlNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B008252216C8005486E3 /* YuweeControlNew.swift */; };
 		C816B00B25222072005486E3 /* YuweeControlNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = C816B00A25222071005486E3 /* YuweeControlNew.xib */; };
 		C816B00D25235A15005486E3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B00C25235A14005486E3 /* ImageLoader.swift */; };
+		C8384DE2253435B000A4A7D7 /* YuWeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; };
+		C8384DE3253435B000A4A7D7 /* YuWeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C83C5BE524C9AD5A00F4EF1F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; };
 		C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C85E39B6242BB68E00741D74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C85E39B5242BB68E00741D74 /* GoogleService-Info.plist */; };
@@ -129,7 +129,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */,
-				C816B00125220A0B005486E3 /* YuWeeSDK.framework in Embed Frameworks */,
+				C8384DE3253435B000A4A7D7 /* YuWeeSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +338,7 @@
 				C8B7477B243CB1DC003BD3DD /* AVFoundation.framework in Frameworks */,
 				C8B74779243CB1D4003BD3DD /* AVKit.framework in Frameworks */,
 				49B66625171F2BEE66FD0C27 /* Pods_YuWee_SDK.framework in Frameworks */,
-				C816B00025220A0B005486E3 /* YuWeeSDK.framework in Frameworks */,
+				C8384DE2253435B000A4A7D7 /* YuWeeSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

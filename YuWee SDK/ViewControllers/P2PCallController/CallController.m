@@ -86,6 +86,15 @@
     NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 
+- (void)onCallDisconnected {
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    [[CallManager sharedInstance] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate sharedInstance].window.rootViewController dismissViewControllerAnimated:true completion:nil];
+        });
+    }];
+}
+
 - (void)onCallAccept{
     NSLog(@"%s",__PRETTY_FUNCTION__);
 }

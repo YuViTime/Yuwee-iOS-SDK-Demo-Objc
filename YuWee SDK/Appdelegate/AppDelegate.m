@@ -52,6 +52,8 @@ static id app;
                                 AppSecret:kAppSecretId
                                  ClientId:kClientIdKey];
     
+    [[Yuwee sharedInstance] setMode:true with:true];
+    
    /* InitParam *param = [[InitParam alloc] init];
     
     param.userInfo = (NSDictionary *)[[NSUserDefaults standardUserDefaults] objectForKey:kUser];
