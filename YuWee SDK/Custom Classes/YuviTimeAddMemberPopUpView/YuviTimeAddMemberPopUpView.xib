@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmpleSoft.otf">
+            <string>AmpleSoft</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <view contentMode="scaleToFill" id="Feb-mt-HOf" customClass="YuviTimeAddMemberPopUpView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="263"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <userGuides>
+                <userLayoutGuide location="282" affinity="minX"/>
+            </userGuides>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Participants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn5-fv-jbf">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cm8-2l-6sU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AmpleSoft" family="AmpleSoft" pointSize="18"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V1-C8-W92">
+                    <rect key="frame" x="0.0" y="40" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Gfz-pk-D1Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" tag="400" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter name / email address" minimumFontSize="17" background="TextBoxBG" translatesAutoresizingMaskIntoConstraints="NO" id="oxS-Kd-nWl" customClass="PKTextField">
+                    <rect key="frame" x="16" y="51" width="268" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="nqa-eY-CV4"/>
+                    </constraints>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="AmpleSoft" family="AmpleSoft" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="txtFieldEditingDidChange:" destination="Feb-mt-HOf" eventType="editingChanged" id="b6D-sm-fBo"/>
+                        <outlet property="delegate" destination="Feb-mt-HOf" id="6yO-KS-U9y"/>
+                    </connections>
+                </textField>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-ro-2Pu">
+                    <rect key="frame" x="0.0" y="101" width="300" height="102"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMz-80-dW7" customClass="ZFTokenField">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="21t-kD-x31"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="Feb-mt-HOf" id="wlD-zd-ijj"/>
+                                <outlet property="delegate" destination="Feb-mt-HOf" id="n9c-YP-422"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="IMz-80-dW7" secondAttribute="bottom" constant="2" id="Icf-uL-JAQ"/>
+                        <constraint firstItem="IMz-80-dW7" firstAttribute="leading" secondItem="gvI-ro-2Pu" secondAttribute="leading" id="cxG-RB-VKp"/>
+                        <constraint firstItem="IMz-80-dW7" firstAttribute="top" secondItem="gvI-ro-2Pu" secondAttribute="top" id="eys-fs-bSr"/>
+                        <constraint firstAttribute="trailing" secondItem="IMz-80-dW7" secondAttribute="trailing" id="fig-H8-XW5"/>
+                        <constraint firstItem="IMz-80-dW7" firstAttribute="centerX" secondItem="gvI-ro-2Pu" secondAttribute="centerX" id="qSa-3K-SVJ"/>
+                    </constraints>
+                </scrollView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xP2-r9-wpD">
+                    <rect key="frame" x="0.0" y="89" width="300" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="Feb-mt-HOf" id="Cco-pj-rnB"/>
+                        <outlet property="delegate" destination="Feb-mt-HOf" id="bE9-ce-fYy"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB5-xC-OdK">
+                    <rect key="frame" x="53" y="211" width="216" height="43"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Add" backgroundImage="Button Background">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAdduser:" destination="Feb-mt-HOf" eventType="touchUpInside" id="wP4-Sz-zXR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGa-mv-YM0">
+                    <rect key="frame" x="9" y="224" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3gG-pL-vXk"/>
+                        <constraint firstAttribute="width" constant="30" id="QIc-92-b6z"/>
+                    </constraints>
+                    <state key="normal" image="closequickcall">
+                        <color key="titleColor" red="0.1019607843" green="0.17254901959999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnDismissPopupClicked:" destination="Feb-mt-HOf" eventType="touchUpInside" id="sYn-PQ-fSj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IB5-xC-OdK" firstAttribute="leading" secondItem="vGa-mv-YM0" secondAttribute="trailing" constant="14" id="0Z6-FF-ZXa"/>
+                <constraint firstItem="vGa-mv-YM0" firstAttribute="bottom" secondItem="IB5-xC-OdK" secondAttribute="bottom" id="10o-rP-Jxp"/>
+                <constraint firstItem="gvI-ro-2Pu" firstAttribute="top" secondItem="oxS-Kd-nWl" secondAttribute="bottom" constant="18" id="2yx-Tb-AV2"/>
+                <constraint firstItem="oxS-Kd-nWl" firstAttribute="leading" secondItem="Feb-mt-HOf" secondAttribute="leadingMargin" id="9PX-0W-cVx"/>
+                <constraint firstItem="4V1-C8-W92" firstAttribute="centerX" secondItem="oxS-Kd-nWl" secondAttribute="centerX" id="CA1-jp-CfG"/>
+                <constraint firstItem="gvI-ro-2Pu" firstAttribute="leading" secondItem="xP2-r9-wpD" secondAttribute="leading" id="Hlu-kW-lsD"/>
+                <constraint firstItem="4V1-C8-W92" firstAttribute="top" secondItem="rn5-fv-jbf" secondAttribute="bottom" id="KGd-0u-EOC"/>
+                <constraint firstItem="vGa-mv-YM0" firstAttribute="leading" secondItem="pFB-sH-P2j" secondAttribute="leading" constant="9" id="OJo-0h-uX2"/>
+                <constraint firstItem="pFB-sH-P2j" firstAttribute="bottom" secondItem="vGa-mv-YM0" secondAttribute="bottom" constant="9" id="SEy-SJ-Zek"/>
+                <constraint firstItem="vGa-mv-YM0" firstAttribute="top" secondItem="xP2-r9-wpD" secondAttribute="bottom" constant="35" id="UMv-fq-Im9"/>
+                <constraint firstItem="4V1-C8-W92" firstAttribute="trailing" secondItem="gvI-ro-2Pu" secondAttribute="trailing" id="UNZ-Tm-vi0"/>
+                <constraint firstItem="oxS-Kd-nWl" firstAttribute="top" secondItem="4V1-C8-W92" secondAttribute="bottom" constant="10" id="Vea-sa-JZE"/>
+                <constraint firstItem="rn5-fv-jbf" firstAttribute="trailing" secondItem="4V1-C8-W92" secondAttribute="trailing" id="Wm9-aK-U2v"/>
+                <constraint firstItem="4V1-C8-W92" firstAttribute="leading" secondItem="gvI-ro-2Pu" secondAttribute="leading" id="YfV-qV-90a"/>
+                <constraint firstItem="rn5-fv-jbf" firstAttribute="leading" secondItem="pFB-sH-P2j" secondAttribute="leading" id="acw-Uq-vFG"/>
+                <constraint firstItem="rn5-fv-jbf" firstAttribute="top" secondItem="pFB-sH-P2j" secondAttribute="top" id="btQ-4F-0BW"/>
+                <constraint firstItem="rn5-fv-jbf" firstAttribute="leading" secondItem="4V1-C8-W92" secondAttribute="leading" id="k0N-2z-3cc"/>
+                <constraint firstItem="xP2-r9-wpD" firstAttribute="top" secondItem="oxS-Kd-nWl" secondAttribute="bottom" constant="6" id="nTe-NO-GSB"/>
+                <constraint firstItem="IB5-xC-OdK" firstAttribute="top" secondItem="xP2-r9-wpD" secondAttribute="bottom" constant="22" id="oQo-dS-LKw"/>
+                <constraint firstItem="oxS-Kd-nWl" firstAttribute="trailing" secondItem="Feb-mt-HOf" secondAttribute="trailingMargin" id="tjU-d4-4Gz"/>
+                <constraint firstItem="gvI-ro-2Pu" firstAttribute="trailing" secondItem="xP2-r9-wpD" secondAttribute="trailing" id="xMS-A7-CA3"/>
+                <constraint firstItem="IB5-xC-OdK" firstAttribute="top" secondItem="gvI-ro-2Pu" secondAttribute="bottom" constant="8" id="yb5-6p-m7E"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="pFB-sH-P2j"/>
+            <connections>
+                <outlet property="addedParticipantsListView" destination="IMz-80-dW7" id="BMF-fe-9Fc"/>
+                <outlet property="contactsTableView" destination="xP2-r9-wpD" id="aRM-v4-OjC"/>
+                <outlet property="lblTopPlaceHolderBorder" destination="4V1-C8-W92" id="eke-fQ-8oc"/>
+                <outlet property="txtSearchContact" destination="oxS-Kd-nWl" id="uMw-KT-cHo"/>
+            </connections>
+            <point key="canvasLocation" x="137" y="116"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="63" id="5pT-iC-hc0" customClass="YuviTimeAddressFieldCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5pT-iC-hc0" id="Agt-Es-SH3">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNR-Ds-xox">
+                        <rect key="frame" x="63" y="5" width="222" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Re0-oh-nCb">
+                        <rect key="frame" x="15" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="er6-aM-Xq5"/>
+                            <constraint firstAttribute="height" constant="40" id="mIA-hW-O5g"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="rNR-Ds-xox" firstAttribute="top" secondItem="Agt-Es-SH3" secondAttribute="top" constant="5" id="EpK-bL-AI1"/>
+                    <constraint firstAttribute="bottom" secondItem="rNR-Ds-xox" secondAttribute="bottom" constant="5" id="cxZ-QL-Eup"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rNR-Ds-xox" secondAttribute="trailing" id="gJs-zG-g05"/>
+                    <constraint firstItem="Re0-oh-nCb" firstAttribute="centerY" secondItem="Agt-Es-SH3" secondAttribute="centerY" id="pEb-MU-gox"/>
+                    <constraint firstItem="rNR-Ds-xox" firstAttribute="leading" secondItem="Re0-oh-nCb" secondAttribute="trailing" constant="8" id="rlZ-e2-XfK"/>
+                    <constraint firstItem="Re0-oh-nCb" firstAttribute="leading" secondItem="Agt-Es-SH3" secondAttribute="leadingMargin" id="ucP-ZS-Yvp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="constraintForImageWidth" destination="er6-aM-Xq5" id="XU7-xB-m79"/>
+                <outlet property="imgUser" destination="Re0-oh-nCb" id="lbF-Iq-Gwr"/>
+                <outlet property="lblEmail" destination="rNR-Ds-xox" id="UIo-uE-9ne"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="-133"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Button Background" width="216" height="66.5"/>
+        <image name="TextBoxBG" width="333.5" height="34.5"/>
+        <image name="closequickcall" width="67" height="67"/>
+    </resources>
+</document>
