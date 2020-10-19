@@ -57,6 +57,12 @@ class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITable
                 AppDelegate.sharedInstance()?.showToast(message)
             }
         }
+        
+//        Yuwee.sharedInstance().getMeetingManager().deleteMeeting("meetingTokenId") { (dictResponse, isSuccess) in
+//            if (isSuccess) {
+//                print("\(dictResponse)")
+//            }
+//        }
     }
     
     @IBAction func btnHost(_ sender: UIButton) {
