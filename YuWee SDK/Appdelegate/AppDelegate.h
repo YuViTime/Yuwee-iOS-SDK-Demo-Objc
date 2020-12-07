@@ -17,17 +17,20 @@
 #import "CallController.h"
 #import "ViewController.h"
 
+//static String appId = "CMOZm27a5KxXagVen6vyxeiddpX2lkHJ";
+//    static String appSecret = "HERjEYJP1LmMOK0t5Q1sUyv0vRsNzIH50lyt8NyNkRb7QgDxSiomq1EJtVFzmRft";
+//    static String clientId = "5fa3e8108cb9b56d05ef9b4b";
 
 /////CONNECT  ******///
-//#define kAppId @"5mNTkN7o5Z6uyRrg1XoUVDXP3JhYBxHe"
-//#define kAppSecretId @"fQagO1AGo5kb9Gl0IJVXRYlCM4KuTJ5qH2ztE1b0ilZv8v3MR2U0aB19bH1eaUYS"
-//#define kClientIdKey @"5f367584e732241ff4ba71b3"
+#define kAppId @"CMOZm27a5KxXagVen6vyxeiddpX2lkHJ"
+#define kAppSecretId @"HERjEYJP1LmMOK0t5Q1sUyv0vRsNzIH50lyt8NyNkRb7QgDxSiomq1EJtVFzmRft"
+#define kClientIdKey @"5fa3e8108cb9b56d05ef9b4b"
 
 
 ///DEV  ******///
-#define kAppId @"kAILMWL8qzGBetS77fUSIRSiMz6hyjIK"
-#define kAppSecretId @"WVDaXh5akOGvQflXcMb1I8QTRxozwygCBvy3w5SJfdj3BYvUVp47ta6ffsznhbU4"
-#define kClientIdKey @"5f367584e732241ff4ba71b3"
+//#define kAppId @"kAILMWL8qzGBetS77fUSIRSiMz6hyjIK"
+//#define kAppSecretId @"WVDaXh5akOGvQflXcMb1I8QTRxozwygCBvy3w5SJfdj3BYvUVp47ta6ffsznhbU4"
+//#define kClientIdKey @"5f367584e732241ff4ba71b3"
 
 #define kRequest_Type @"requestType"
 #define KDefaultCallType @"VIDEO"

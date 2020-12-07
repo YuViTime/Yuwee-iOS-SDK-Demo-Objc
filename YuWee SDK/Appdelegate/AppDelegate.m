@@ -52,7 +52,7 @@ static id app;
                                 AppSecret:kAppSecretId
                                  ClientId:kClientIdKey];
     
-    [[Yuwee sharedInstance] setMode:true with:true];
+    //[[Yuwee sharedInstance] setMode:true with:false];
     
    /* InitParam *param = [[InitParam alloc] init];
     

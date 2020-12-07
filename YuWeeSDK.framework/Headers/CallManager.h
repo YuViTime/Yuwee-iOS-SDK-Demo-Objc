@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)timeOutIncomingCall;
 
+- (void)notifyRinging;
+
 - (void)processAddMemberToInitiateMCUCallWithDictionary:(nonnull NSDictionary*)responseObject;
 
 - (void)setVideoEnabled:(BOOL)isEnabled;

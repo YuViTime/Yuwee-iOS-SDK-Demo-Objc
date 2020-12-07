@@ -24,6 +24,13 @@
     self.navigationController.navigationBarHidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveTestNotification:) name:@"onAddMember" object:nil];
+    
+    long long timestamp = ([[NSDate date] timeIntervalSince1970] * 1000.0);
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithLongLong:timestamp] forKey:@"timestamp"];
+    
+    NSLog(@"Dict: %@", dict);
 }
 
 -(void)viewWillAppear:(BOOL)animated{

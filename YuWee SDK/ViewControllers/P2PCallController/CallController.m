@@ -107,6 +107,10 @@
     NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 
+- (void)onCallRinging{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
 - (void)onError:(CallParams *)callParams withMessage:(NSString *)strMessage {
     NSLog(@"%s",__PRETTY_FUNCTION__);
     NSLog(@"strMessage: %@",strMessage);

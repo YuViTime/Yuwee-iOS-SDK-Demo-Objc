@@ -63,6 +63,8 @@
 
 - (void)onCallReconnected;
 
+- (void)onCallRinging;
+
 - (void)onRemoteCallHangUp:(NSDictionary *)callData;
 
 - (void)onRemoteVideoToggle:(NSDictionary *)callData;
