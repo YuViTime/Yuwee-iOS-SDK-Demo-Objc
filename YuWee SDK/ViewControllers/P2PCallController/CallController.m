@@ -25,6 +25,17 @@
     if(_isIncomingCall) {
        self.navigationItem.rightBarButtonItem.enabled = true;
        [[[Yuwee sharedInstance] getCallManager] initCallWithLocalView:self.localView withRemoteView:self.remoteView];
+        
+//        NSError *error;
+//        NSData *jsonData = [self.dictCall[@"message"] dataUsingEncoding:NSUTF8StringEncoding];
+//        
+//        NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &error];
+//        
+//        if ([json[@"callType"] isEqualToString:@"AUDIO"]) {
+//            NSLog(@"Audio Call");
+//            [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:false];
+//        }
+        
     }else {
         //Local View
         if ([self.strEmailAddress length]>0) //Dial
@@ -84,6 +95,15 @@
 
 - (void)onCallConnected {
     NSLog(@"%s",__PRETTY_FUNCTION__);
+    NSError *error;
+    NSData *jsonData = [self.dictCall[@"message"] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &error];
+    
+    if ([json[@"callType"] isEqualToString:@"AUDIO"]) {
+        NSLog(@"Audio Call");
+        [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:false];
+    }
 }
 
 - (void)onCallDisconnected {
@@ -245,7 +265,7 @@
 }
 
 - (IBAction)btnHideShowVideo:(UIButton *)sender{
-    sender.selected = !sender.selected;
+    //sender.selected = !sender.selected;
     
     [[CallManager sharedInstance] setVideoEnabled:sender.selected];
 }

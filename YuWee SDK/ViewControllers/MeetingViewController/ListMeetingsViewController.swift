@@ -17,6 +17,7 @@ class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Yuwee.sharedInstance().getCallManager().setVideoEnabled(false)
         tableMeetings.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         Yuwee.sharedInstance().getMeetingManager().fetchActiveMeetings { (dictResponse, isSuccess) in
             

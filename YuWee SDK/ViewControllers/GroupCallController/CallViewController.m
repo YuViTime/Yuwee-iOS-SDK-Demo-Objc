@@ -28,6 +28,10 @@
         [self.videoView addSubview:self.videoView.localVideoView];
         [[[Yuwee sharedInstance] getCallManager] setCallManagerDelegate:self];
         [[[Yuwee sharedInstance] getCallManager] initCallWithLocalView:self.videoView.localVideoView withRemoteView:self.videoView.remoteVideoView];
+        
+        if ([self.dictCall[@"callType"] isEqualToString:@"audio"]) {
+            NSLog(@"Audio Call");
+        }
     }else {
         if ([self.arrMembers count]>0) //Dial
           [self startCallWithArrofEmail:self.arrMembers andCallType:@"Video"];

@@ -77,13 +77,15 @@
     NSLog(@"%s dictCallInfo =%@",__PRETTY_FUNCTION__,callData);
     
     [[AppDelegate sharedInstance] showIncomingCallingScreen:callData];
+    
+    
 }
 
 - (void)onIncomingCallAcceptSuccess:(NSDictionary *)callData{
     if ([callData[kisGroup] boolValue]) {
         [self presentGroupCallScreen:true];
     } else {
-        [self presentCallScreen:true];
+        [self presentCallScreen:true withCallDict:callData];
     }
 }
 
@@ -120,10 +122,11 @@
     [self presentViewController:navigationController animated:false completion:nil];
 }
 
-- (void)presentCallScreen:(BOOL)isIncoming{
+- (void)presentCallScreen:(BOOL)isIncoming withCallDict:(NSDictionary*)callDict{
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CallController *calVC = [storyboard instantiateViewControllerWithIdentifier:@"CallController"];
     calVC.isGroupCall = false;
+    calVC.dictCall = callDict;
     calVC.isIncomingCall = isIncoming;
     calVC.modalPresentationStyle = UIModalPresentationFullScreen;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:calVC];

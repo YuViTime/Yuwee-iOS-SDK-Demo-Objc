@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)timeOutIncomingCall;
 
-- (void)notifyRinging;
+- (void)notifyRingingWithCallId:(nonnull NSString*)callId withRoomId:(nonnull NSString*)roomId;
 
 - (void)processAddMemberToInitiateMCUCallWithDictionary:(nonnull NSDictionary*)responseObject;
 
