@@ -145,7 +145,7 @@
 - (IBAction)btnAddMemberToOngoingCallClicked:(UIBarButtonItem *)sender{
     NSLog(@"%s",__PRETTY_FUNCTION__);
     _isAddMemberOnFly = true;
-    [[NSUserDefaults standardUserDefaults] setBool:_isAddMemberOnFly forKey:@"isAddMemberOnFly"];
+    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setBool:_isAddMemberOnFly forKey:@"isAddMemberOnFly"];
     [self setUpMethodForShowingPopUp];
 }
 

@@ -184,7 +184,7 @@
         nameToShow = mDict[@"groupInfo"][@"name"];
     }
     else{
-        NSString* myId = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
+        NSString* myId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"_id"];
         NSArray *memberArray = mDict[@"membersInfo"];
         for (NSDictionary* md in memberArray) {
             if (![md[@"_id"] isEqualToString:myId]) {
@@ -194,16 +194,23 @@
         }
     }
     
-    NSString *messageType = mDict[@"lastMessage"][@"messageType"];
-    if (messageType && [messageType caseInsensitiveCompare:@"call"] == NSOrderedSame) {
-        messageToShow = @"Call";
-    }
-    else if(messageType && [messageType caseInsensitiveCompare:@"file"] == NSOrderedSame){
-        messageToShow = @"File";
+    if (![mDict[@"lastMessage"] isKindOfClass:[NSNull class]]) {
+        NSString *messageType = mDict[@"lastMessage"][@"messageType"];
+        if (messageType && [messageType caseInsensitiveCompare:@"call"] == NSOrderedSame) {
+            messageToShow = @"Call";
+        }
+        else if(messageType && [messageType caseInsensitiveCompare:@"file"] == NSOrderedSame){
+            messageToShow = @"File";
+        }
+        else{
+            messageToShow = mDict[@"lastMessage"][@"message"];
+        }
     }
     else{
-        messageToShow = mDict[@"lastMessage"][@"message"];
+        messageToShow = @"N/A";
     }
+    
+    
     
     cell.textLabel.text = nameToShow;
     cell.detailTextLabel.text = messageToShow;

@@ -78,7 +78,7 @@
         //Get Call VC screen object
         UIViewController *callViewController = nil;
         
-        strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+        strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
         
         if (![self validateUnknownEmail:_txtSearchContact.text onViewController:callViewController]){
             
@@ -346,7 +346,7 @@
 - (void)showAlertWithClassObject:(UINavigationController *)navCallVC scheduleCallVCObj:(UIViewController *)presentedVCObj message:(NSString*)strMessage{
     [self btnDismissPopupClicked:nil];
     
-    strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     
     NSString *strTitle = @"Invalid Email";
     NSString *strMessageSubtitle = [NSString stringWithFormat:@"You can not add yourself! Your email address '%@' is removed from the list.",strLoginUserEmail];

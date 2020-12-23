@@ -70,7 +70,7 @@
 
 - (IBAction)btnAdduser:(id)sender{
     
-    strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     
     _contactsTableView.hidden = true;
     _addedParticipantsListView.hidden = false;
@@ -304,7 +304,7 @@
 - (void)showAlertWithClassObject:(UINavigationController *)navCallVC scheduleCallVCObj:(UIViewController *)presentedVCObj message:(NSString*)strMessage{
     [self btnDismissPopupClicked:nil];
     
-    strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     
     NSString *strTitle = @"Invalid Email";
     NSString *strMessageSubtitle = [NSString stringWithFormat:@"You can not add yourself! Your email address '%@' is removed from the list.",strLoginUserEmail];

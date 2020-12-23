@@ -56,8 +56,8 @@ static id app;
     
    /* InitParam *param = [[InitParam alloc] init];
     
-    param.userInfo = (NSDictionary *)[[NSUserDefaults standardUserDefaults] objectForKey:kUser];
-    param.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:kToken];
+    param.userInfo = (NSDictionary *)[[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kUser];
+    param.accessToken = [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kToken];
     
     [[[Yuwee sharedInstance] getUserManager] createSessionViaToken:param withCompletionBlock:^(BOOL isSuccess, NSString *error) {
         if (isSuccess) {
@@ -96,7 +96,7 @@ static id app;
     
    // isApplicationInBackground = NO;
     
-//    NSString *strEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+//    NSString *strEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
 //
 //    if (strEmail != nil) {
 //
@@ -235,7 +235,7 @@ static id app;
     
     _apnsRegistry_Token = deviceToken;
     
-    if (_voipRegistry_Token && ![[NSUserDefaults standardUserDefaults] objectForKey:@"yuwee_data"]){
+    if (_voipRegistry_Token && ![[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"yuwee_data"]){
         
         NSDictionary *dictTokens = [NSDictionary dictionaryWithObjects:@[[self stringWithDeviceToken:_voipRegistry_Token],[self stringWithDeviceToken:_apnsRegistry_Token]] forKeys:@[@"voip",@"apns"]];
         
@@ -289,7 +289,7 @@ static id app;
     self.voipRegistry_Token = credentials.token;
     NSLog(@"PushCredentials: %@", self.voipRegistry_Token);
     
-    if (_apnsRegistry_Token && ![[NSUserDefaults standardUserDefaults] objectForKey:@"yuwee_data"]){
+    if (_apnsRegistry_Token && ![[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"yuwee_data"]){
         
         NSDictionary *dictTokens = [NSDictionary dictionaryWithObjects:@[[self stringWithDeviceToken:_voipRegistry_Token],[self stringWithDeviceToken:_apnsRegistry_Token]] forKeys:@[@"voip",@"apns"]];
         
@@ -856,7 +856,7 @@ static id app;
     
     [[[Yuwee sharedInstance] getCallManager] acceptIncomingCall:self.dictResponceForCurrentCall];
     
-    NSString *strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    NSString *strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     
     if ([self.dictResponceForCurrentCall[kSender][k_Id] isEqualToString:strLoginUserEmail]) {
         [self showCallScreenWithIsGroup:[self.dictResponceForCurrentCall[kisGroup] boolValue] isIncomingCall:true andResponceDictionary:self.dictResponceForCurrentCall];

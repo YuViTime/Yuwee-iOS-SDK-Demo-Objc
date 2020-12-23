@@ -200,6 +200,20 @@
 
 @end
 
+#pragma mark- Yuwee File Manager
+
+@protocol YuWeeFileUploadDelegate <NSObject>
+
+- (void) onUploadSuccess;
+
+- (void) onUploadStarted;
+
+- (void) onUploadFailed;
+
+- (void) onProgressUpdateWithProgress:(double)progress;
+
+@end
+
 /**********<Event Completion Handlers>*********/
 typedef void(^NotificationManagerCompletionBlock)(NSDictionary *dictNotificationManagerResponse);
 typedef void(^CallHangUpCompletionBlock)(BOOL isCallHangUpSuccess,NSDictionary *dictCallHangUpResponse);
@@ -238,7 +252,8 @@ typedef void(^DeleteContactCompletionBlock) (BOOL isSuccess, NSDictionary *dictD
 typedef void(^UserStatusCompletionBlock) (BOOL isSuccess, NSDictionary *dictResponse);
 typedef void(^OnCreateSessionViaTokenCompletionBlock) (BOOL isSuccess, NSString *error);
 typedef void(^OnRegisterPushTokenCompletionBlock) (BOOL isSuccess, NSString *error);
-
+typedef void(^OnInitFileShareCompletionHandler)(NSString *message, BOOL success);
+typedef void(^OnGetFilePathCompletionHandler)(NSString *fileDownloadUrl, BOOL success);
 
 typedef NS_ENUM(NSInteger, DeleteType) {
     DELETE_FOR_ME = 1,

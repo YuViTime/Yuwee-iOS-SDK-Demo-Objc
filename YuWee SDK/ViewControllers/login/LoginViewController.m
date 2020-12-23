@@ -72,14 +72,14 @@
     else {
         
     #if !TARGET_IPHONE_SIMULATOR
-        NSDictionary *dictTokens = [[NSUserDefaults standardUserDefaults] objectForKey:@"dictTokens"];
+        NSDictionary *dictTokens = [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"dictTokens"];
         if (dictTokens != nil) {
             [[[Yuwee sharedInstance] getUserManager] createSessionViaCredentialsWithEmail:self.emailTextField.text Password:self.passwordTextField.text ExpiryTime:@"200000" withCompletionBlock:^(BOOL isSessionCreateSuccess, NSDictionary *dictSessionCreateResponse) {
                 if(isSessionCreateSuccess){
-                    [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
-                    [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
-                    [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
-                    [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[@"access_token"] forKey:kToken];
+                    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
+                    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
+                    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
+                    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[@"access_token"] forKey:kToken];
                     NSMutableDictionary *dictUser = [dictSessionCreateResponse[kResult][kUser] mutableCopy];
                     
                     //Removing null values from available keys
@@ -92,7 +92,7 @@
                         }
                     }
                     
-                    [[NSUserDefaults standardUserDefaults] setObject:dictUser forKey:kUser];
+                    [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictUser forKey:kUser];
                     
                     InitParam *initParam = [[InitParam alloc] init];
                     
@@ -110,13 +110,13 @@
             }];
         } else {
             [[AppDelegate sharedInstance] pushRegistrationAndGetToken:^(NSDictionary *dictTokens) {
-                [[NSUserDefaults standardUserDefaults] setObject:dictTokens forKey:@"dictTokens"];
+                [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictTokens forKey:@"dictTokens"];
                 [[[Yuwee sharedInstance] getUserManager] createSessionViaCredentialsWithEmail:self.emailTextField.text Password:self.passwordTextField.text ExpiryTime:@"200000" withCompletionBlock:^(BOOL isSessionCreateSuccess, NSDictionary *dictSessionCreateResponse) {
                     if(isSessionCreateSuccess){
-                        [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
-                        [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
-                        [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
-                        [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[@"access_token"] forKey:kToken];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[@"access_token"] forKey:kToken];
                         NSMutableDictionary *dictUser = [dictSessionCreateResponse[kResult][kUser] mutableCopy];
                         
                         //Removing null values from available keys
@@ -129,7 +129,7 @@
                             }
                         }
                         
-                        [[NSUserDefaults standardUserDefaults] setObject:dictUser forKey:kUser];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictUser forKey:kUser];
                         
                         [[[Yuwee sharedInstance] getUserManager] registerPushTokenAPNS:dictTokens[@"apns"] VOIP:dictTokens[@"voip"] withCompletionBlock:^(BOOL isSuccess, NSString *error) {
                             [self openDashboardController];
@@ -144,9 +144,9 @@
             //[self showAlert :[dictSessionCreateResponse valueForKey:@"message"] :isSessionCreateSuccess];
             
             if(isSessionCreateSuccess){
-                [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
-                [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
-                [[NSUserDefaults standardUserDefaults] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
+                [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:k_Id];
+                [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
+                [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
                 
                 [self openDashboardController];
             }

@@ -11,7 +11,7 @@
 #import "MessageDetails.h"
 //#import <YuWeeSDK/ChatController.h>
 
-@interface ChatDetailsViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, YuWeeNewMessageReceivedDelegate, YuWeeTypingEventDelegate, YuWeeMessageDeletedDelegate, YuWeeMessageDeliveredDelegate>{
+@interface ChatDetailsViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, YuWeeNewMessageReceivedDelegate, YuWeeTypingEventDelegate, YuWeeMessageDeletedDelegate, YuWeeMessageDeliveredDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, YuWeeFileUploadDelegate>{
     NSString *roomId;
     NSMutableArray *array;
 }
@@ -45,33 +45,67 @@
     [[self myTableView] reloadData];
 
 }
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSLog(@"imagePickerController: %@", info);
+    NSString *imageUrl = info[@"UIImagePickerControllerImageURL"];
+    //NSURL *url = [[NSURL alloc] initWithString:imageUrl];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:imageUrl];
+   
+    [[[[Yuwee sharedInstance] getChatManager] getFileManager] sendFileWithRoomId:roomId withUniqueIdentifier:[self getCurrentTimeStamp] withFileData:data withFileName:@"test_file_name" withFileExtension:@"jpg" withFileSize:0 withDelegate:self];
+    
+    [picker dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void) onUploadSuccess{
+    NSLog(@"onUploadSuccess");
+}
+
+- (void) onUploadStarted{
+    NSLog(@"onUploadStarted");
+}
+
+- (void) onUploadFailed{
+    NSLog(@"onUploadFailed");
+}
+
+- (void) onProgressUpdateWithProgress:(double)progress{
+    NSLog(@"onProgressUpdateWithProgress %f", progress);
+}
+
 - (IBAction)onSendFilePressed:(id)sender {
+    
+    UIImagePickerController *myImagePicker = [[UIImagePickerController alloc] init];
+    myImagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    myImagePicker.delegate = self;
+    [self presentViewController:myImagePicker animated:YES completion:nil];
     
     //jsonObject.put("fileName", fileName);
     //jsonObject.put("fileExtension", "png");
     //jsonObject.put("fileSize", "200");
     //jsonObject.put("downloadUrl", fileUrl);
     
-    MessageDetails *messageDetails = [[MessageDetails alloc] init];
-    messageDetails.browserMessageId = [self getCurrentTimeStamp];
-    messageDetails.message = @"FILE SENT";
-    messageDetails.messageType = @"file";
-    messageDetails.senderName = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
-    messageDetails.senderId = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
-    messageDetails.senderEmail = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
-    
-    [array addObject:messageDetails];
-    
-    NSString *fileUrl = @"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
-    
-    NSDictionary *fileDict = @{@"fileName":@"google",
-                               @"fileExtension":@"png",
-                               @"fileSize":@"200",
-                               @"downloadUrl":fileUrl};
-    
-    [[[Yuwee sharedInstance] getChatManager] shareFile:roomId messageIdentifier:messageDetails.browserMessageId fileDictionary:fileDict quotedMessageId:nil];
-    
-    [[self myTableView] reloadData];
+//    MessageDetails *messageDetails = [[MessageDetails alloc] init];
+//    messageDetails.browserMessageId = [self getCurrentTimeStamp];
+//    messageDetails.message = @"FILE SENT";
+//    messageDetails.messageType = @"file";
+//    messageDetails.senderName = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"name"];
+//    messageDetails.senderId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"id"];
+//    messageDetails.senderEmail = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"email"];
+//
+//    [array addObject:messageDetails];
+//
+//    NSString *fileUrl = @"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+//
+//    NSDictionary *fileDict = @{@"fileName":@"google",
+//                               @"fileExtension":@"png",
+//                               @"fileSize":@"200",
+//                               @"downloadUrl":fileUrl};
+//
+//    [[[Yuwee sharedInstance] getChatManager] shareFile:roomId messageIdentifier:messageDetails.browserMessageId fileDictionary:fileDict quotedMessageId:nil];
+//
+//    [[self myTableView] reloadData];
 }
 
 - (IBAction)onClearPressed:(id)sender {
@@ -88,9 +122,9 @@
     messageDetails.browserMessageId = [self getCurrentTimeStamp];
     messageDetails.message = self.mTextField.text;
     messageDetails.messageType = @"text";
-    messageDetails.senderName = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
-    messageDetails.senderId = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
-    messageDetails.senderEmail = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
+    messageDetails.senderName = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"name"];
+    messageDetails.senderId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"id"];
+    messageDetails.senderEmail = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"email"];
     
     [array addObject:messageDetails];
     
@@ -118,7 +152,7 @@
         [self removeMemberInGroup];
     }
     else{
-        NSString* myId = (NSString*) [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
+        NSString* myId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"_id"];
         NSArray *memberArray = [self nsDict][@"membersInfo"];
         for (NSDictionary* md in memberArray) {
             if (![md[@"_id"] isEqualToString:myId]) {
@@ -139,6 +173,14 @@
     [[[Yuwee sharedInstance] getChatManager] setOnMessageDeleteDelegate:self];
     [[[Yuwee sharedInstance] getChatManager] setOnMessageDeliveredDelegate:self];
     //[self forwardMessage];
+    
+    [[[[Yuwee sharedInstance] getChatManager] getFileManager] initFileShareWithRoomId:roomId withCompletionBlock:^(NSString *message, BOOL success) {
+        NSLog(@"File sharing: %d %@", success, message);
+    }];
+    
+    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getFileUrlWithFileId:@"5fe3040c2eb4513ceeb049f7" withFileKey:@"media/5fa3df498cb9b56d05ef9b33/5fbfb6d332033213ab687a9f/test_file_name" withCompletionBlock:^(NSString *message, BOOL success) {
+            NSLog(@"URL: %@", message);
+    }];
 }
 
 

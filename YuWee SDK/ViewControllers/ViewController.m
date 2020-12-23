@@ -48,7 +48,7 @@
     
    // [arrUsers addObject:[YuweeSocketManager sharedInstance].strLoginUserEmail];
     
-    strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     
     NSString *strEmail = strLoginUserEmail;
     
@@ -95,7 +95,7 @@
 
 -(IBAction)onLoginPressed:(id)sender {
     NSLog(@"On Login Pressed");
-    strLoginUserEmail =  [[NSUserDefaults standardUserDefaults] objectForKey:kEmail];
+    strLoginUserEmail =  [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:kEmail];
     if (strLoginUserEmail != nil) {
         [self showToast:@"Your are logged in"];
     } else {
@@ -280,7 +280,7 @@
 
 - (IBAction)btnStartCallClicked:(UIButton *)sender{
     
-   // NSDictionary* mResponse = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"yuwee_data"];
+   // NSDictionary* mResponse = [[[NSUserDefaults alloc] initWithSuiteName:@"123"] dictionaryForKey:@"yuwee_data"];
   //  NSString* authToken = mResponse[kToken];
     
     NSMutableDictionary *dictReceiver = [[NSMutableDictionary alloc] init];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YuWeeProtocol.h"
+#import "FileManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,7 +49,7 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 
 - (void)setOnNewMessageReceivedDelegate:(id <YuWeeNewMessageReceivedDelegate>) listenerObject; // Tanay Tested
 
-- (void)shareFile:(NSString*)roomId messageIdentifier:(NSString*)messageIdentifier fileDictionary:(NSDictionary*)fileDictionary quotedMessageId:(nullable NSString*)quotedMessageId; // Tanay Tested
+//- (void)shareFile:(NSString*)roomId messageIdentifier:(NSString*)messageIdentifier fileDictionary:(NSDictionary*)fileDictionary quotedMessageId:(nullable NSString*)quotedMessageId; // Tanay Tested
 
 - (void)setOnTypingEventDelegate:(id <YuWeeTypingEventDelegate>) listenerObject;
 
@@ -56,7 +57,7 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 
 - (void) forwardMessage:(NSString*)message withRoomId:(NSString*)roomId withMessageIdentifier:(NSString*)messageIdentifier;
 
-- (void) forwardFile:(NSDictionary*)fileDictionary withRoomId:(NSString*) roomId withMessageIdentifier:(NSString*)messageIdentifier;
+//- (void) forwardFile:(NSDictionary*)fileDictionary withRoomId:(NSString*) roomId withMessageIdentifier:(NSString*)messageIdentifier;
 
 - (void) addMembersInGroupByEmail:(NSString*)roomId withArrayOfEmails:(NSArray*)emailArray withCompletionBlock:(AddMembersInGroupCompletionBlock)completionBlock;
 
@@ -67,6 +68,8 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 - (void) removeMembersFromGroupByEmail:(NSString*)roomId withArrayOfEmails:(NSArray*)emailArray withCompletionBlock:(AddMembersInGroupCompletionBlock)completionBlock;
 
 - (void) setOnMessageDeleteDelegate:(id <YuWeeMessageDeletedDelegate>) listenerObject;
+
+- (FileManager*) getFileManager;
 
 @end
 
