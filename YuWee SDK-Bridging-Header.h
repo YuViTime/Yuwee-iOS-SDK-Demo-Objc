@@ -15,5 +15,6 @@
 #import <WebRTC/WebRTC.h>
 #import <OWT/OWT.h>
 #import <YuWeeSDK/YuWeeSDK.h>
+#import <YuWeeScreenShare/YuWeeScreenShare.h>
 
 #endif /* YuWee_SDK_Bridging_Header_h */

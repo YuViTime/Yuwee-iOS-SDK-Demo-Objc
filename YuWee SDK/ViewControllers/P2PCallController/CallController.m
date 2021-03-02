@@ -95,24 +95,24 @@
 
 - (void)onCallConnected {
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    NSError *error;
-    NSData *jsonData = [self.dictCall[@"message"] dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &error];
-    
-    if ([json[@"callType"] isEqualToString:@"AUDIO"]) {
-        NSLog(@"Audio Call");
-        [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:false];
-    }
+//    NSError *error;
+//    NSData *jsonData = [self.dictCall[@"message"] dataUsingEncoding:NSUTF8StringEncoding];
+//    
+//    NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &error];
+//    
+//    if ([json[@"callType"] isEqualToString:@"AUDIO"]) {
+//        NSLog(@"Audio Call");
+//        [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:false];
+//    }
 }
 
 - (void)onCallDisconnected {
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    [[CallManager sharedInstance] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[AppDelegate sharedInstance].window.rootViewController dismissViewControllerAnimated:true completion:nil];
-        });
-    }];
+//    [[CallManager sharedInstance] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[AppDelegate sharedInstance].window.rootViewController dismissViewControllerAnimated:true completion:nil];
+//        });
+//    }];
 }
 
 - (void)onCallAccept{
@@ -135,6 +135,19 @@
     NSLog(@"%s",__PRETTY_FUNCTION__);
     NSLog(@"strMessage: %@",strMessage);
 }
+
+- (void)onCallReconnecting{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)onCallReconnected{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)onCallConnectionFailed{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
 
 - (void)setUpAditionalViewsOnRemoteVideoView:(YuweeRemoteVideoView *)remoteView withSize:(CGSize)size{
     NSLog(@"%s",__PRETTY_FUNCTION__);

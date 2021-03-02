@@ -11,6 +11,7 @@
 #import "CallController.h"
 #import "CallViewController.h"
 #import "YuviTimeScheduledCell.h"
+#import "AddScheduleCallViewController.h"
 
 @interface ScheduleCallViewController () <UITableViewDataSource, UITableViewDelegate, YuWeeScheduleCallManagerDelegate,ScheduleCallHistoryCellButtonCallBackEvent> {
     NSMutableArray* array;
@@ -26,10 +27,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationItem setTitle:@"Schedule Call"];
     self->array = [[NSMutableArray alloc] init];
     [self getScheduleCall];
     [[ScheduleManager sharedInstance] setOnScheduleCallEventsDelegate:self];
+    
+    UIBarButtonItem *item= [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(didClickAddButton)];
+    [self.navigationItem setRightBarButtonItem:item animated:TRUE];
+
 }
+
+-(void)didClickAddButton{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *objVC = [storyboard instantiateViewControllerWithIdentifier:@"AddScheduleCallVC"];
+    [self.navigationController pushViewController:objVC animated:true];
+    
+//    AddScheduleCallViewController *vc = [[AddScheduleCallViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:TRUE];
+}
+    
 - (IBAction)onBackPressed:(id)sender {
     [self.navigationController popViewControllerAnimated:true];
 }

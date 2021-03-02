@@ -11,6 +11,7 @@
 #import "CallController.h"
 #import "CallViewController.h"
 
+
 @interface ViewController (){
     BOOL isGroupCallEnabled;
     NSString *strLoginUserEmail;
@@ -36,7 +37,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBarHidden = YES;
+    [self.navigationItem setTitle:@"Call"];
     
     isGroupCallEnabled = false;
     _groupCall.on = false;

@@ -1,0 +1,6 @@
+framework module YuWeeScreenShare {
+  umbrella header "YuWeeScreenShare.h"
+
+  export *
+  module * { export * }
+}

@@ -121,6 +121,8 @@
 
 - (void)onCallActiveSpeaker:(NSDictionary *)dict;
 
+- (void)onCallRecordingStatusChanged:(NSDictionary *)dict;
+
 - (void)onError:(NSString *)error;
 
 @end
@@ -180,6 +182,14 @@
 @protocol YuWeeMessageDeletedDelegate <NSObject>
 
 - (void)onMessageDeleted:(NSDictionary *)dictParameter;
+
+@end
+
+#pragma mark- Message Deleted Handler
+@protocol YuWeeBroadcastMessageDelegate <NSObject>
+
+- (void)onMessageBroadcastSuccess:(NSString*)uniqueMessageId;
+- (void)onMessageBroadcastError:(NSString*)error;
 
 @end
 
@@ -254,6 +264,7 @@ typedef void(^OnCreateSessionViaTokenCompletionBlock) (BOOL isSuccess, NSString 
 typedef void(^OnRegisterPushTokenCompletionBlock) (BOOL isSuccess, NSString *error);
 typedef void(^OnInitFileShareCompletionHandler)(NSString *message, BOOL success);
 typedef void(^OnGetFilePathCompletionHandler)(NSString *fileDownloadUrl, BOOL success);
+typedef void(^OnGetAwsCredHandler)(NSDictionary *dictResponse, BOOL success);
 
 typedef NS_ENUM(NSInteger, DeleteType) {
     DELETE_FOR_ME = 1,

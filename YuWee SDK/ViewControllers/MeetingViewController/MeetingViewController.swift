@@ -10,8 +10,9 @@ import UIKit
 
 class MeetingViewController: UIViewController {
     
-    var nickName = UserDefaults.standard.object(forKey: kName) as! String
-    var guestId = UserDefaults.standard.object(forKey: kEmail) as! String
+    
+    var nickName = UserDefaults.init(suiteName: "123")?.object(forKey: kName) as! String
+    var guestId = UserDefaults.init(suiteName: "123")?.object(forKey: kEmail) as! String
     var passcode = ""
     var meetingTokenId = ""
     var dictMeeting: [String : Any] = [:]
@@ -28,6 +29,7 @@ class MeetingViewController: UIViewController {
         txtEmail.text = guestId
         txtTokenId.text = meetingTokenId
         txtPasscode.text = passcode
+        
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
@@ -44,6 +46,14 @@ class MeetingViewController: UIViewController {
         meetingbody.joinMedia = join
         meetingbody.meetingTokenId = self.txtTokenId.text!
         meetingbody.passcode = self.txtPasscode.text!
+        
+        //                    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:@"ss_user_id"];
+        //[[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[kResult][kUser][kName] forKey:@"ss_nick_name"];
+        
+        let ud = UserDefaults(suiteName: "group.com.yuwee.sdkdemo.new")
+        ud?.setValue(self.txtTokenId.text!, forKey: "ss_meeting_id")
+        ud?.setValue(self.txtPasscode.text!, forKey: "ss_pass_code")
+        ud?.synchronize()
         
         Yuwee.sharedInstance().getMeetingManager().register(inMeeting: meetingbody) { (dictResponse, isSuccess) in
             
@@ -68,7 +78,7 @@ class MeetingViewController: UIViewController {
                 vc.callTokenInfo = (result["callTokenInfo"] as? [String : Any])!
                 vc.dictRecievedCallStatusData = callData
                 vc.strMeetingName = (result["meetingName"] as? String)!
-                vc.meetingTokenId = self.meetingTokenId
+                vc.meetingTokenId = self.txtTokenId.text!
                 vc.isTraining = isTraining!
                 vc.isPresenter = isPresenter!
                 vc.isSubPresenter = isSubPresenter

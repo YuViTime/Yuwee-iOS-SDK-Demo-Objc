@@ -20,7 +20,9 @@
 
 - (void)viewDidLoad{
     
-   self.navigationController.navigationBarHidden = YES;
+   //self.navigationController.navigationBarHidden = YES;
+    
+    self.navigationItem.title = @"Register";
     
    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
    [self.view addGestureRecognizer:gestureRecognizer];

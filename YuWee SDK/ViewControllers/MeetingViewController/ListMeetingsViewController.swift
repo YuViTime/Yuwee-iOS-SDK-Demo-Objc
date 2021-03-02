@@ -10,13 +10,14 @@ import UIKit
 
 class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var userEmail = UserDefaults.standard.object(forKey: kEmail) as! String
+    var userEmail = UserDefaults.init(suiteName: "123")?.object(forKey: kEmail) as! String
     var arrMeetings: [[String : Any]] = []
     
     @IBOutlet var tableMeetings: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Meeting"
         Yuwee.sharedInstance().getCallManager().setVideoEnabled(false)
         tableMeetings.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         Yuwee.sharedInstance().getMeetingManager().fetchActiveMeetings { (dictResponse, isSuccess) in
@@ -64,6 +65,18 @@ class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITable
 //                print("\(dictResponse)")
 //            }
 //        }
+        
+        
+        let imageOption = UIBarButtonItem(title: "Join", style: .done, target: self, action: #selector(joinMeetingOptions))
+            navigationItem.setRightBarButton(imageOption, animated: true)
+        
+    }
+    
+    @objc func joinMeetingOptions(){
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MeetingViewController") as? MeetingViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
     @IBAction func btnHost(_ sender: UIButton) {

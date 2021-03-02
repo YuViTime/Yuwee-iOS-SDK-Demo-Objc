@@ -17,9 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 - (instancetype)init NS_UNAVAILABLE;
 
-- (void)fetchChatRoomByUserIds:(NSArray*)arrUserIds withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;//Tanay Tested
+- (void)fetchChatRoomByUserIds:(NSArray*)arrUserIds
+          withAllowReuseOfRoom:(BOOL)allowReuseOfRoom
+               withIsBroadcast:(BOOL)isBroadcast
+                 withGroupName:(NSString*)groupName
+           withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;//Tanay Tested
 
-- (void)fetchChatRoomByEmails:(NSArray*)arrEmails withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;//Tanay Tested
+- (void)fetchChatRoomByEmails:(NSArray*)arrEmails
+         withAllowReuseOfRoom:(BOOL)allowReuseOfRoom
+              withIsBroadcast:(BOOL)isBroadcast
+                withGroupName:(NSString*)groupName
+          withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;//Tanay Tested
 
 - (void)fetchChatListWithCompletionBlock:(ChatOperationCompletionBlock)completionBlock; //Tanay Tested
 
@@ -47,13 +55,13 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 - (void)getUserLastSeen:(NSString *)userId
     withCompletionBlock:(UserLastSeenCompletionBlock)completionBlock;
 
-- (void)setOnNewMessageReceivedDelegate:(id <YuWeeNewMessageReceivedDelegate>) listenerObject; // Tanay Tested
+- (void)setNewMessageReceivedDelegate:(id <YuWeeNewMessageReceivedDelegate>) listenerObject; // Tanay Tested
 
 //- (void)shareFile:(NSString*)roomId messageIdentifier:(NSString*)messageIdentifier fileDictionary:(NSDictionary*)fileDictionary quotedMessageId:(nullable NSString*)quotedMessageId; // Tanay Tested
 
-- (void)setOnTypingEventDelegate:(id <YuWeeTypingEventDelegate>) listenerObject;
+- (void)setTypingEventDelegate:(id <YuWeeTypingEventDelegate>) listenerObject;
 
-- (void)setOnMessageDeliveredDelegate:(id <YuWeeMessageDeliveredDelegate>) listenerObject;
+- (void)setMessageDeliveredDelegate:(id <YuWeeMessageDeliveredDelegate>) listenerObject;
 
 - (void) forwardMessage:(NSString*)message withRoomId:(NSString*)roomId withMessageIdentifier:(NSString*)messageIdentifier;
 
@@ -67,9 +75,17 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 
 - (void) removeMembersFromGroupByEmail:(NSString*)roomId withArrayOfEmails:(NSArray*)emailArray withCompletionBlock:(AddMembersInGroupCompletionBlock)completionBlock;
 
-- (void) setOnMessageDeleteDelegate:(id <YuWeeMessageDeletedDelegate>) listenerObject;
+- (void) setMessageDeleteDelegate:(id <YuWeeMessageDeletedDelegate>) listenerObject;
 
 - (FileManager*) getFileManager;
+
+- (void) getRoomDetailsWithRoomId:(NSString*)roomId
+              withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;
+
+- (void) broadcastMessageWithRoomId:(NSString*)roomId
+                        withMessage:(NSString*)message
+                withUniqueMessageId:(NSString*)uniqueMessageId
+                       withDelegate:(id <YuWeeBroadcastMessageDelegate>)delegate;
 
 @end
 

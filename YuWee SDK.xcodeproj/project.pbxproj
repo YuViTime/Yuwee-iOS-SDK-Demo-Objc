@@ -21,10 +21,20 @@
 		A612CE4A23D83566005156A6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A612CE4923D83566005156A6 /* RegisterViewController.m */; };
 		A61908B723E2C2F300E8EDE6 /* CustomMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */; };
 		A61908BB23E2F22F00E8EDE6 /* MessageDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */; };
+		A631E0B725E5187C0022A3FE /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0B625E5187C0022A3FE /* ReplayKit.framework */; };
+		A631E0BA25E5187C0022A3FE /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631E0B925E5187C0022A3FE /* SampleHandler.swift */; };
+		A631E0BE25E5187C0022A3FE /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A631E0B525E5187C0022A3FE /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A631E0C725E5189E0022A3FE /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = A631E0C625E5189E0022A3FE /* Test.m */; };
+		A631E0CD25E518DC0022A3FE /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; };
+		A631E0CE25E518DC0022A3FE /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6CD6D2469F1CC004B929A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A631E0E725E523B40022A3FE /* YuWeeScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */; };
+		A631E0E825E523B40022A3FE /* YuWeeScreenShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A644EF3025DA80930081A0CB /* NewDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A644EF2F25DA80930081A0CB /* NewDashboardViewController.m */; };
 		A64F439823FBCF310040D160 /* ScheduleCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439723FBCF310040D160 /* ScheduleCallViewController.m */; };
 		A64F439C23FBCF550040D160 /* RecentCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439B23FBCF550040D160 /* RecentCallViewController.m */; };
 		A64F439F23FBD5680040D160 /* AddScheduleCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64F439E23FBD5680040D160 /* AddScheduleCallViewController.m */; };
 		A67FC53123E1CC110036DA14 /* ChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67FC53023E1CC110036DA14 /* ChatDetailsViewController.m */; };
+		A6924A1425DBB7D800FA5008 /* NewChatDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6924A1325DBB7D800FA5008 /* NewChatDetailsViewController.swift */; };
 		A6959E2B23FC37FA00308F8E /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6959E2A23FC37FA00308F8E /* AddContactViewController.m */; };
 		A6E426ED23E99281009E1719 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E426EC23E99281009E1719 /* ContactViewController.m */; };
 		A6FEB59023E06E3200E2C6A5 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEB58F23E06E3200E2C6A5 /* ChatListViewController.m */; };
@@ -109,9 +119,17 @@
 		C8EF145324290C9400524468 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF144224290C9400524468 /* UIButton+WebCache.m */; };
 		C8EF145C2429185500524468 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF145B2429185500524468 /* NotificationService.m */; };
 		C8EF14602429185500524468 /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C8EF14582429185500524468 /* notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D339330D1104D620E6B4D5F8 /* Pods_ScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5B988F6110D3AF495E67F3 /* Pods_ScreenShare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A631E0BC25E5187C0022A3FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7170D10D213E84B600C2268B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A631E0B425E5187C0022A3FE;
+			remoteInfo = ScreenShare;
+		};
 		C8EF145E2429185500524468 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7170D10D213E84B600C2268B /* Project object */;
@@ -122,6 +140,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A631E0CC25E518CD0022A3FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A631E0E825E523B40022A3FE /* YuWeeScreenShare.framework in Embed Frameworks */,
+				A631E0CE25E518DC0022A3FE /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C83C5BE724C9AD5A00F4EF1F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +170,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A631E0BE25E5187C0022A3FE /* ScreenShare.appex in Embed App Extensions */,
 				C8EF14602429185500524468 /* notification.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -149,7 +180,9 @@
 
 /* Begin PBXFileReference section */
 		08227F080C80929EE86D353F /* Pods-YuWee SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuWee SDK.debug.xcconfig"; path = "Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK.debug.xcconfig"; sourceTree = "<group>"; };
+		100A3D0EF1DECB016437DD1F /* Pods-ScreenShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenShare.release.xcconfig"; path = "Target Support Files/Pods-ScreenShare/Pods-ScreenShare.release.xcconfig"; sourceTree = "<group>"; };
 		356C2AD3D195BC9DC4B35BB8 /* Pods-notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification.release.xcconfig"; path = "Target Support Files/Pods-notification/Pods-notification.release.xcconfig"; sourceTree = "<group>"; };
+		5A5B988F6110D3AF495E67F3 /* Pods_ScreenShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		656ECF072D12299B6228CC28 /* Pods_YuWee_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuWee_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71102B56213FAE46003A189C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7170D115213E84B600C2268B /* YuWee SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YuWee SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +204,7 @@
 		71AD9812214BF8DA003B9AD8 /* CallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallController.m; sourceTree = "<group>"; };
 		71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YuWee SDK.entitlements"; sourceTree = "<group>"; };
 		7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuWee SDK.release.xcconfig"; path = "Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK.release.xcconfig"; sourceTree = "<group>"; };
+		7FE9E835AF31C1B43DAEAD83 /* Pods-ScreenShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenShare.debug.xcconfig"; path = "Target Support Files/Pods-ScreenShare/Pods-ScreenShare.debug.xcconfig"; sourceTree = "<group>"; };
 		A612CE4523D82346005156A6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A612CE4623D8236D005156A6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A612CE4823D82B56005156A6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -179,6 +213,21 @@
 		A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMessageCell.m; sourceTree = "<group>"; };
 		A61908B923E2F22F00E8EDE6 /* MessageDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetails.h; sourceTree = "<group>"; };
 		A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetails.m; sourceTree = "<group>"; };
+		A631E09125E514000022A3FE /* YuWeeScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YuWeeScreenShare.framework; path = "../../../Desktop/untitled folder/YuWeeScreenShare.framework"; sourceTree = "<group>"; };
+		A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YuWeeScreenShare.framework; sourceTree = "<group>"; };
+		A631E0B525E5187C0022A3FE /* ScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A631E0B625E5187C0022A3FE /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		A631E0B925E5187C0022A3FE /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		A631E0BB25E5187C0022A3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A631E0C425E5189E0022A3FE /* ScreenShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenShare-Bridging-Header.h"; sourceTree = "<group>"; };
+		A631E0C525E5189E0022A3FE /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		A631E0C625E5189E0022A3FE /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		A631E0CF25E518E90022A3FE /* OWT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OWT.framework; sourceTree = "<group>"; };
+		A631E0EA25E5248E0022A3FE /* ScreenShareRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenShareRelease.entitlements; sourceTree = "<group>"; };
+		A631E0EC25E5251B0022A3FE /* YuWee SDKRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YuWee SDKRelease.entitlements"; sourceTree = "<group>"; };
+		A631E0F025E52E0A0022A3FE /* notificationRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notificationRelease.entitlements; sourceTree = "<group>"; };
+		A644EF2E25DA80930081A0CB /* NewDashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDashboardViewController.h; sourceTree = "<group>"; };
+		A644EF2F25DA80930081A0CB /* NewDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewDashboardViewController.m; sourceTree = "<group>"; };
 		A64F439623FBCF310040D160 /* ScheduleCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleCallViewController.h; sourceTree = "<group>"; };
 		A64F439723FBCF310040D160 /* ScheduleCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleCallViewController.m; sourceTree = "<group>"; };
 		A64F439A23FBCF550040D160 /* RecentCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecentCallViewController.h; sourceTree = "<group>"; };
@@ -187,8 +236,10 @@
 		A64F439E23FBD5680040D160 /* AddScheduleCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddScheduleCallViewController.m; sourceTree = "<group>"; };
 		A67FC52F23E1CBF90036DA14 /* ChatDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatDetailsViewController.h; sourceTree = "<group>"; };
 		A67FC53023E1CC110036DA14 /* ChatDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatDetailsViewController.m; sourceTree = "<group>"; };
+		A6924A1325DBB7D800FA5008 /* NewChatDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatDetailsViewController.swift; sourceTree = "<group>"; };
 		A6959E2923FC37FA00308F8E /* AddContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		A6959E2A23FC37FA00308F8E /* AddContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		A6AD32BE25E7750200F946D2 /* ScreenShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenShare.entitlements; sourceTree = "<group>"; };
 		A6E426EB23E99281009E1719 /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		A6E426EC23E99281009E1719 /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		A6FEB58D23E0466D00E2C6A5 /* DashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
@@ -342,6 +393,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A631E0B225E5187C0022A3FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A631E0E725E523B40022A3FE /* YuWeeScreenShare.framework in Frameworks */,
+				A631E0B725E5187C0022A3FE /* ReplayKit.framework in Frameworks */,
+				A631E0CD25E518DC0022A3FE /* WebRTC.framework in Frameworks */,
+				D339330D1104D620E6B4D5F8 /* Pods_ScreenShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8EF14552429185500524468 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +436,7 @@
 				C816AFFE2522076D005486E3 /* YuWee SDK-Bridging-Header.h */,
 				7170D117213E84B600C2268B /* YuWee SDK */,
 				C8EF14592429185500524468 /* notification */,
+				A631E0B825E5187C0022A3FE /* ScreenShare */,
 				7170D116213E84B600C2268B /* Products */,
 				A8D3D3AA8802803AA741C3B7 /* Frameworks */,
 				922C97719B0213DB5747E5ED /* Pods */,
@@ -385,6 +448,7 @@
 			children = (
 				7170D115213E84B600C2268B /* YuWee SDK.app */,
 				C8EF14582429185500524468 /* notification.appex */,
+				A631E0B525E5187C0022A3FE /* ScreenShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,6 +456,7 @@
 		7170D117213E84B600C2268B /* YuWee SDK */ = {
 			isa = PBXGroup;
 			children = (
+				A631E0EC25E5251B0022A3FE /* YuWee SDKRelease.entitlements */,
 				71D41548216C931D001ECDA1 /* YuWee SDK.entitlements */,
 				A61908B823E2F1EA00E8EDE6 /* model */,
 				C8151E0A2404EB7E0003A67D /* Custom Classes */,
@@ -414,6 +479,8 @@
 		71895F70213FACEF00C0723E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A69249C925DBAD5900FA5008 /* newChatDetails */,
+				A644EF2D25DA806C0081A0CB /* newDashboard */,
 				71895F71213FACEF00C0723E /* ViewController.h */,
 				71895F72213FACEF00C0723E /* ViewController.m */,
 				A6864FC323F31A5100D7DAA2 /* login */,
@@ -448,6 +515,8 @@
 				7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */,
 				F46FCEF7D58922EDF197F152 /* Pods-notification.debug.xcconfig */,
 				356C2AD3D195BC9DC4B35BB8 /* Pods-notification.release.xcconfig */,
+				7FE9E835AF31C1B43DAEAD83 /* Pods-ScreenShare.debug.xcconfig */,
+				100A3D0EF1DECB016437DD1F /* Pods-ScreenShare.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -471,6 +540,29 @@
 				A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		A631E0B825E5187C0022A3FE /* ScreenShare */ = {
+			isa = PBXGroup;
+			children = (
+				A6AD32BE25E7750200F946D2 /* ScreenShare.entitlements */,
+				A631E0EA25E5248E0022A3FE /* ScreenShareRelease.entitlements */,
+				A631E0B925E5187C0022A3FE /* SampleHandler.swift */,
+				A631E0BB25E5187C0022A3FE /* Info.plist */,
+				A631E0C525E5189E0022A3FE /* Test.h */,
+				A631E0C625E5189E0022A3FE /* Test.m */,
+				A631E0C425E5189E0022A3FE /* ScreenShare-Bridging-Header.h */,
+			);
+			path = ScreenShare;
+			sourceTree = "<group>";
+		};
+		A644EF2D25DA806C0081A0CB /* newDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A644EF2E25DA80930081A0CB /* NewDashboardViewController.h */,
+				A644EF2F25DA80930081A0CB /* NewDashboardViewController.m */,
+			);
+			path = newDashboard;
 			sourceTree = "<group>";
 		};
 		A64F439523FBCEDB0040D160 /* scheduleCall */ = {
@@ -549,9 +641,20 @@
 			path = contact;
 			sourceTree = "<group>";
 		};
+		A69249C925DBAD5900FA5008 /* newChatDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A6924A1325DBB7D800FA5008 /* NewChatDetailsViewController.swift */,
+			);
+			path = newChatDetails;
+			sourceTree = "<group>";
+		};
 		A8D3D3AA8802803AA741C3B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A631E0CF25E518E90022A3FE /* OWT.framework */,
+				A631E09125E514000022A3FE /* YuWeeScreenShare.framework */,
+				A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */,
 				C816AFFF25220A0B005486E3 /* YuWeeSDK.framework */,
 				C8C6CD6D2469F1CC004B929A /* WebRTC.framework */,
 				C8B7477E243CB207003BD3DD /* CoreAudio.framework */,
@@ -569,6 +672,8 @@
 				7170D1A7213EC1BE00C2268B /* libc++.tbd */,
 				656ECF072D12299B6228CC28 /* Pods_YuWee_SDK.framework */,
 				CC865E868E5A028355EA40FA /* Pods_notification.framework */,
+				A631E0B625E5187C0022A3FE /* ReplayKit.framework */,
+				5A5B988F6110D3AF495E67F3 /* Pods_ScreenShare.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -878,6 +983,7 @@
 		C8EF14592429185500524468 /* notification */ = {
 			isa = PBXGroup;
 			children = (
+				A631E0F025E52E0A0022A3FE /* notificationRelease.entitlements */,
 				C8EF146F242937DA00524468 /* notification.entitlements */,
 				C8EF145A2429185500524468 /* NotificationService.h */,
 				C8EF145B2429185500524468 /* NotificationService.m */,
@@ -899,18 +1005,38 @@
 				7170D113213E84B600C2268B /* Resources */,
 				C8DD6A1023FD586700387B32 /* Embed App Extensions */,
 				3C2DF8C9ECAF50C7097B33AE /* [CP] Embed Pods Frameworks */,
-				C85E39B7242BED8900741D74 /* ShellScript */,
+				C85E39B7242BED8900741D74 /* Run Script */,
 				C83C5BE724C9AD5A00F4EF1F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C8EF145F2429185500524468 /* PBXTargetDependency */,
+				A631E0BD25E5187C0022A3FE /* PBXTargetDependency */,
 			);
 			name = "YuWee SDK";
 			productName = "YuWee SDK";
 			productReference = 7170D115213E84B600C2268B /* YuWee SDK.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A631E0B425E5187C0022A3FE /* ScreenShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A631E0BF25E5187D0022A3FE /* Build configuration list for PBXNativeTarget "ScreenShare" */;
+			buildPhases = (
+				37E365C5012130CA99A7893C /* [CP] Check Pods Manifest.lock */,
+				A631E0B125E5187C0022A3FE /* Sources */,
+				A631E0B225E5187C0022A3FE /* Frameworks */,
+				A631E0B325E5187C0022A3FE /* Resources */,
+				A631E0CC25E518CD0022A3FE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenShare;
+			productName = ScreenShare;
+			productReference = A631E0B525E5187C0022A3FE /* ScreenShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		C8EF14572429185500524468 /* notification */ = {
 			isa = PBXNativeTarget;
@@ -937,6 +1063,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Prasanna Gupta";
 				TargetAttributes = {
@@ -948,6 +1075,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					A631E0B425E5187C0022A3FE = {
+						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					C8EF14572429185500524468 = {
 						CreatedOnToolsVersion = 11.3;
@@ -969,6 +1100,7 @@
 			targets = (
 				7170D114213E84B600C2268B /* YuWee SDK */,
 				C8EF14572429185500524468 /* notification */,
+				A631E0B425E5187C0022A3FE /* ScreenShare */,
 			);
 		};
 /* End PBXProject section */
@@ -996,6 +1128,13 @@
 				C8151E09240499010003A67D /* YuviTimeAddMemberPopUpView.xib in Resources */,
 				C8151E3F2406D1450003A67D /* IQKeyboardManager.bundle in Resources */,
 				C802A818246C1A4D00A09729 /* YuviTimeRecentCallCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A631E0B325E5187C0022A3FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,6 +1192,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		37E365C5012130CA99A7893C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScreenShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3C2DF8C9ECAF50C7097B33AE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1070,7 +1231,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YuWee SDK/Pods-YuWee SDK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C85E39B7242BED8900741D74 /* ShellScript */ = {
+		C85E39B7242BED8900741D74 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1079,13 +1240,15 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1094,6 +1257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A644EF3025DA80930081A0CB /* NewDashboardViewController.m in Sources */,
 				C8EF144924290C9400524468 /* SDWebImageDownloader.m in Sources */,
 				C8C9BAA62403077B00A50098 /* YuviTimeScheduledCell.m in Sources */,
 				C8EF144F24290C9400524468 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1128,6 +1292,7 @@
 				A6959E2B23FC37FA00308F8E /* AddContactViewController.m in Sources */,
 				C8151E462406D1450003A67D /* IQKeyboardReturnKeyHandler.m in Sources */,
 				A6FEB59223E080DE00E2C6A5 /* CallViewController.m in Sources */,
+				A6924A1425DBB7D800FA5008 /* NewChatDetailsViewController.swift in Sources */,
 				C8EF141524290BBB00524468 /* ZFTokenField.m in Sources */,
 				C816B009252216C8005486E3 /* YuweeControlNew.swift in Sources */,
 				C8151E3A2406D1450003A67D /* IQToolbar.m in Sources */,
@@ -1164,6 +1329,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A631E0B125E5187C0022A3FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A631E0BA25E5187C0022A3FE /* SampleHandler.swift in Sources */,
+				A631E0C725E5189E0022A3FE /* Test.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8EF14542429185500524468 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1175,6 +1349,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A631E0BD25E5187C0022A3FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A631E0B425E5187C0022A3FE /* ScreenShare */;
+			targetProxy = A631E0BC25E5187C0022A3FE /* PBXContainerItemProxy */;
+		};
 		C8EF145F2429185500524468 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C8EF14572429185500524468 /* notification */;
@@ -1321,6 +1500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08227F080C80929EE86D353F /* Pods-YuWee SDK.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -1391,11 +1571,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7422CD6CAF422C2C797C9D76 /* Pods-YuWee SDK.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDK.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDKRelease.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
@@ -1453,6 +1634,74 @@
 					"\"$(SRCROOT)/YuWeeSDK.framework\"",
 				);
 				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		A631E0C025E5187D0022A3FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE9E835AF31C1B43DAEAD83 /* Pods-ScreenShare.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.ScreenShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScreenShare/ScreenShare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A631E0C125E5187D0022A3FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 100A3D0EF1DECB016437DD1F /* Pods-ScreenShare.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShareRelease.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 359D4SWRZC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.screensharedemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Demo Screen Share";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScreenShare/ScreenShare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1523,7 +1772,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
+				CODE_SIGN_ENTITLEMENTS = notification/notificationRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
@@ -1594,6 +1843,15 @@
 			buildConfigurations = (
 				7170D12C213E84BE00C2268B /* Debug */,
 				7170D12D213E84BE00C2268B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A631E0BF25E5187D0022A3FE /* Build configuration list for PBXNativeTarget "ScreenShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A631E0C025E5187D0022A3FE /* Debug */,
+				A631E0C125E5187D0022A3FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

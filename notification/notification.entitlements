@@ -6,8 +6,7 @@
 	<string>development</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.yuwee.iosapp.sdk</string>
-		<string>group.com.yuwee.iosapp.sdkNotification</string>
+		<string>group.com.yuwee.sdkdemo.new</string>
 	</array>
 </dict>
 </plist>

@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import WebRTC
+import SwiftyJSON
 
 protocol ConferenceCallViewDelegate {
     func removePresenter(details: [String : Any])
@@ -35,6 +36,8 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     static let kMuteAudio = "MuteAudio"
     static let kSwitchSpeaker = "SwitchSpeaker"
     
+    var isRecordingStarted = false
+    var recordingId = ""
     var isAudioEnabled = true
     var isVideoEnabled = true
     var isHost = false
@@ -490,7 +493,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         name: NSNotification.Name(rawValue: "updateData"),
         object: nil)
         
-        let strLoginid: String = (UserDefaults.standard.object(forKey: kUser) as? [String : Any])![kEmail] as! String
+        let strLoginid: String = (UserDefaults(suiteName: "123")?.object(forKey: kUser) as? [String : Any])![kEmail] as! String
         
         let arrAdmins: [String] = (dictRecievedCallStatusData!["callAdmins"] as? [String])!
         if (arrAdmins.contains(strLoginid)) {
@@ -522,6 +525,14 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
             
             if (isSuccess) {
                 print("\(dictResponse)")
+                
+                let json = JSON(dictResponse)
+                let result = json["result"]
+                let isRecording = result["isRecording"].bool
+                if isRecording! {
+                    self.startRecording()
+                }
+                
                 self.arrStreams = Yuwee.sharedInstance().getMeetingManager().getAllRemoteStream() as! [OWTRemoteStream]
                 if (self.meetingParam.meetingType == MeetingType.CONFERENCE) {
                     for item in self.arrStreams {
@@ -685,9 +696,12 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
             } else {
                 print("error")
                 
-                let message = dictResponse["message"] as! String
+                DispatchQueue.main.async {
+                    let message = dictResponse["message"] as! String
+                    AppDelegate.sharedInstance()?.showToast(message)
+                }
                 
-                AppDelegate.sharedInstance()?.showToast(message)
+
             }
         }
     }
@@ -909,7 +923,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         
         for item in arrParticipants {
             let isCallAdmin = (item["isCallAdmin"] as! NSNumber).boolValue
-            if (((item[kEmail] as! String) == UserDefaults.standard.object(forKey: k_Id) as! String) && isCallAdmin) {
+            if (((item[kEmail] as! String) == UserDefaults(suiteName: "123")?.object(forKey: k_Id) as! String) && isCallAdmin) {
                 let alertController = UIAlertController(title: "Hand raised", message: "Hand raised by \(handraiseName)", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "DOWN", style: .default, handler: { action in
                     
@@ -957,6 +971,55 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         
         print("\(String(describing: error))")
     }
+    
+    func onCallRecordingStatusChanged(_ dict: [AnyHashable : Any]!) {
+        // when admin started recording, all other user will receive the socket, and have to call startRecording
+        // but when admin stops recording, we don't have to do anything
+        let json = JSON(dict)
+        print(json)
+        if (json["status"].string == "started") {
+            startRecording()
+        }
+        else{
+            self.isRecordingStarted = false
+        }
+    }
+    
+    
+    func startRecording(){
+        
+        if isRecordingStarted {
+            return
+        }
+        
+        var roleType = RoleType.subPresenter
+        if isPresenter {
+            roleType = RoleType.presenter
+        }
+        else if isSubPresenter{
+            roleType = RoleType.subPresenter
+        }
+        else{
+            return
+        }
+        
+        Yuwee.sharedInstance().getMeetingManager().startCallRecording(with: roleType) { (recordingId, isSuccess) in
+            if isSuccess{
+                self.recordingId = recordingId
+                self.isRecordingStarted = true
+            }
+        }
+    }
+    
+    func stopRecording(){
+        Yuwee.sharedInstance().getMeetingManager().stopCallRecording(withRecordingId: recordingId) { (data, isSuccess) in
+            if isSuccess{
+                self.isRecordingStarted = false
+            }
+        }
+    }
+    
+    
     
     
     // MARK:- Call Controls Action Events
@@ -1011,7 +1074,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         let objHandRaise = HandRaiseBody()
         
         objHandRaise.raiseHand = isSelected
-        objHandRaise.userId = UserDefaults.standard.object(forKey: k_Id) as! String
+        objHandRaise.userId = UserDefaults(suiteName: "123")?.object(forKey: k_Id) as! String
         
         Yuwee.sharedInstance().getMeetingManager().toggleHandRaise(objHandRaise) { (dictResponse, isSuccess) in
            if (isSuccess) {

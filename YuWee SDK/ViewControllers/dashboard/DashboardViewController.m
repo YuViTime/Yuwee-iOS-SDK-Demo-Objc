@@ -11,6 +11,7 @@
 #import "CallController.h"
 #import "CallViewController.h"
 #import "ViewController.h"
+#import <MMWormhole/MMWormhole.h>
 
 @interface DashboardViewController (){
     
@@ -21,7 +22,8 @@
 @implementation DashboardViewController
 
 - (void)viewDidLoad{
-    self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBarHidden = YES;
+    [self.navigationItem setTitle:@"iOS SDK Demo"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveTestNotification:) name:@"onAddMember" object:nil];
     
@@ -31,6 +33,17 @@
     [dict setObject:[NSNumber numberWithLongLong:timestamp] forKey:@"timestamp"];
     
     NSLog(@"Dict: %@", dict);
+    
+    UIBarButtonItem *item= [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(didClickLogoutButton)];
+    [self.navigationItem setRightBarButtonItem:item animated:TRUE];
+    
+//    let languagesSpinner = UIBarButtonItem(title: "Image", style: .done, target: self, action: #selector(didClickLanguagesButton))
+//        navigationItem.setRightBarButton(languagesSpinner, animated: true)
+}
+
+-(void)didClickLogoutButton{
+    [[[Yuwee sharedInstance] getUserManager] logout];
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

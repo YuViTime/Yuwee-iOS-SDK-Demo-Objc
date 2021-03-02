@@ -9,9 +9,11 @@
 #import "ChatListViewController.h"
 //#import <YuWeeSDK/ChatController.h>
 #import "ChatDetailsViewController.h"
+#import "YuWee_SDK-Swift.h"
 
 @interface ChatListViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>{
     NSMutableArray* array;
+    NSMutableArray* enteredEmailsArray;
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,7 +25,65 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Chat List";
+    
+    UIBarButtonItem *item= [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(didClickNewButton)];
+    [self.navigationItem setRightBarButtonItem:item animated:TRUE];
+    [self getAwsCred];
 }
+
+-(void)getAwsCred{
+    
+    NSDictionary *credDict = [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"chatAwsExpTime"];
+    if (credDict != nil) {
+        NSString *expTime = credDict[@"Expiration"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+        NSDate *expDate = [dateFormatter dateFromString:expTime];
+        float expTimeFloat = expDate.timeIntervalSince1970;
+        float today = [[NSDate date] timeIntervalSince1970];
+        
+        if (expTimeFloat > today) {
+            NSString *accessKeyId = credDict[@"AccessKeyId"];
+            NSString *secretAccessKey = credDict[@"SecretAccessKey"];
+            NSString *sessionToken = credDict[@"SessionToken"];
+            
+            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
+            
+            return;
+        }
+    }
+    
+    
+    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getAwsCredentialsWithCompletionBlock:^(NSDictionary *dictResponse, BOOL success) {
+        if (success) {
+            //NSLog(@"AWS CRED: %@", dictResponse);
+            NSDictionary *credDict = dictResponse[@"result"][@"credentials"];
+           
+            NSString *accessKeyId = credDict[@"AccessKeyId"];
+            NSString *secretAccessKey = credDict[@"SecretAccessKey"];
+            NSString *sessionToken = credDict[@"SessionToken"];
+
+            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
+
+            [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:credDict forKey:@"chatAwsExpTime"];
+        }
+    }];
+}
+
+
+-(void)didClickNewButton{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Create New Chat"
+                                                     message:@"Enter members seperated by commas!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"Create", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert setTag:0];
+    [alert show];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -37,6 +97,7 @@
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"OK", nil];
+    [alert setTag:1];
     [alert show];
 }
 
@@ -60,12 +121,7 @@
             if ([self isStringIsValidEmail: email]) {
                 [validEmail addObject:email];
             } else {
-                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                 message:@"Please enter email to create chat."
-                                                                delegate:nil
-                                                       cancelButtonTitle:nil
-                                                       otherButtonTitles:@"OK", nil];
-                [alert show];
+                [self showErrorAlertWithMessage:@"Email id is not valid."];
                 return;
             }
         } else {
@@ -74,36 +130,74 @@
                 if ([self isStringIsValidEmail: email]) {
                     [validEmail addObject:email];
                 } else {
+                    [self showErrorAlertWithMessage:@"One of the Email entered is not valid."];
                     return;
                 }
             }
         }
         
         if ([validEmail count]>0) {
-            [self fetchRoomWithEmails:validEmail];
+            if ([validEmail count] == 1) {
+                [self fetchRoomWithEmails:validEmail withGroupName:@"" withIsBroadcast:FALSE];
+            }
+            else if ([validEmail count] > 1){
+                enteredEmailsArray = [[NSMutableArray alloc] initWithArray:validEmail];
+                
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Create New Chat"
+                                                                 message:@"Choose group type"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Create Broadcast Room"
+                                                       otherButtonTitles:@"Create Group Chat", nil];
+                alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+                [alert setTag:100];
+                [alert show];
+            }
+            
         }
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                         message:@"Please enter email to create chat."
-                                                        delegate:nil
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:@"OK", nil];
-        [alert show];
+        [self showErrorAlertWithMessage:@"Please enter email to create chat."];
     }
 }
 
-- (void)fetchRoomWithEmails:(NSArray *) array{
-    [[[Yuwee sharedInstance] getChatManager] fetchChatRoomByEmails:array withCompletionBlock:^(BOOL isSuccess, NSDictionary *dictChatResponse) {
-        if (isSuccess) {
-            NSLog(@"%@", dictChatResponse);
-            
-            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ChatDetailsViewController *chatVC = [storyboard instantiateViewControllerWithIdentifier:@"ChatDetailsViewController"];
-            
-            chatVC.nsDict = dictChatResponse[kResult][kRoom];
-            
-            [self.navigationController pushViewController:chatVC animated:false];
-        }
+- (void)showErrorAlertWithMessage:(NSString*)message{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                     message:message
+                                                    delegate:nil
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+    [alert show];
+}
+
+- (void)fetchRoomWithEmails:(NSArray *)array withGroupName:(NSString*)groupName withIsBroadcast:(BOOL)isBroadcast{
+    [[[Yuwee sharedInstance] getChatManager] fetchChatRoomByEmails:array withAllowReuseOfRoom:TRUE withIsBroadcast:isBroadcast withGroupName:groupName withCompletionBlock:^(BOOL isSuccess, NSDictionary *dictChatResponse) {
+            if (isSuccess) {
+                NSLog(@"%@", dictChatResponse);
+                
+                NSDictionary *mDict = dictChatResponse[@"result"][@"room"];
+                NSString *nameToShow;
+                
+                if ([mDict[@"isGroupChat"] boolValue]) {
+                    nameToShow = mDict[@"groupInfo"][@"name"];
+                }
+                else{
+                    NSString* myId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"_id"];
+                    NSArray *memberArray = mDict[@"membersInfo"];
+                    for (NSDictionary* md in memberArray) {
+                        if (![md[@"_id"] isEqualToString:myId]) {
+                            nameToShow = md[@"name"];
+                            break;
+                        }
+                    }
+                }
+                
+                NSString *roomId = mDict[@"_id"];
+                
+                NewChatDetailsViewController *vc = [[NewChatDetailsViewController alloc] init];
+                vc.name = nameToShow;
+                vc.roomId = roomId;
+                
+                [self.navigationController pushViewController:vc animated:true];
+            }
     }];
 }
 
@@ -114,6 +208,17 @@
             NSLog(@"Entered Emails: %@",[[alertView textFieldAtIndex:0] text]);
             NSString *enteredEmails = [[alertView textFieldAtIndex:0] text];
             [self processCreateChat:enteredEmails];
+        }
+    }
+    else if (alertView.tag == 100){
+        NSString *enteredName = [[alertView textFieldAtIndex:0] text];
+        if (buttonIndex == 0) {
+            // create broadcast room
+            [self fetchRoomWithEmails:enteredEmailsArray withGroupName:enteredName withIsBroadcast:TRUE];
+        }
+        else if (buttonIndex == 1){
+            // create group chat
+            [self fetchRoomWithEmails:enteredEmailsArray withGroupName:enteredName withIsBroadcast:FALSE];
         }
     }
     else{
@@ -141,6 +246,7 @@
 - (void) getChatList{
     [[[Yuwee sharedInstance] getChatManager] fetchChatListWithCompletionBlock:^(BOOL isSuccess,NSDictionary *dictChatResponse){
         if (isSuccess) {
+            NSLog(@"%@", dictChatResponse);
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSMutableArray* mArray = dictChatResponse[@"result"][@"results"];
                 self->array = mArray;
@@ -218,14 +324,6 @@
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"chatDetailsSegue"]) {
-        ChatDetailsViewController *destViewController = (ChatDetailsViewController*) segue.destinationViewController;
-        //NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        destViewController.nsDict = [array objectAtIndex:self.selectedIndexPath.row];
-    }
-}
-
 - (void)cellTapped:(UITapGestureRecognizer*)sender{
     CGPoint p = [sender locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
@@ -236,7 +334,32 @@
     
     //[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     
-    [self performSegueWithIdentifier:@"chatDetailsSegue" sender:self];
+    //[self performSegueWithIdentifier:@"chatDetailsSegue" sender:self];
+    
+    NSDictionary *mDict = [array objectAtIndex:indexPath.row];
+    NSString *nameToShow;
+    if ([mDict[@"isGroupChat"] boolValue]) {
+        nameToShow = mDict[@"groupInfo"][@"name"];
+    }
+    else{
+        NSString* myId = (NSString*) [[[NSUserDefaults alloc] initWithSuiteName:@"123"] objectForKey:@"_id"];
+        NSArray *memberArray = mDict[@"membersInfo"];
+        for (NSDictionary* md in memberArray) {
+            if (![md[@"_id"] isEqualToString:myId]) {
+                nameToShow = md[@"name"];
+                break;
+            }
+        }
+    }
+    BOOL isBroadcast = [[mDict valueForKey:@"isBroadcast"] boolValue];
+
+    NewChatDetailsViewController *vc = [[NewChatDetailsViewController alloc] init];
+    vc.title = @"Chat";
+    vc.name = nameToShow;
+    vc.roomId = mDict[@"_id"];
+    vc.isBroadcast = isBroadcast;
+    
+    [self.navigationController pushViewController:vc animated:TRUE];
 }
 
 -(void)handleLongPress:(UILongPressGestureRecognizer *) sender

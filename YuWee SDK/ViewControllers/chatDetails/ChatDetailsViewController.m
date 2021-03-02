@@ -168,10 +168,10 @@
     [self getRoomMessage];
     [self markAllMessagesAsRead];
     
-    [[[Yuwee sharedInstance] getChatManager] setOnNewMessageReceivedDelegate:self];
-    [[[Yuwee sharedInstance] getChatManager] setOnTypingEventDelegate:self];
-    [[[Yuwee sharedInstance] getChatManager] setOnMessageDeleteDelegate:self];
-    [[[Yuwee sharedInstance] getChatManager] setOnMessageDeliveredDelegate:self];
+    [[[Yuwee sharedInstance] getChatManager] setNewMessageReceivedDelegate:self];
+    [[[Yuwee sharedInstance] getChatManager] setTypingEventDelegate:self];
+    [[[Yuwee sharedInstance] getChatManager] setMessageDeleteDelegate:self];
+    [[[Yuwee sharedInstance] getChatManager] setMessageDeliveredDelegate:self];
     //[self forwardMessage];
     
     [[[[Yuwee sharedInstance] getChatManager] getFileManager] initFileShareWithRoomId:roomId withCompletionBlock:^(NSString *message, BOOL success) {
@@ -279,6 +279,10 @@
     
     cell.userMessage.text = msg;
     cell.userName.text = mDetails.senderName;
+    
+    cell.userMessage.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.userMessage.numberOfLines = 0;
+    
     return cell;
 }
 

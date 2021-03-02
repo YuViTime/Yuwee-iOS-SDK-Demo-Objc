@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "HUD.h"
-#import <FirebaseCore/FirebaseCore.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -44,15 +41,15 @@ static id app;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
-    [FIRApp configure];
-    [[Fabric sharedSDK] setDebug:YES];
-    [Fabric with:@[[Crashlytics class]]];
+//    [FIRApp configure];
+//    [[Fabric sharedSDK] setDebug:YES];
+//    [Fabric with:@[[Crashlytics class]]];
     
     [[Yuwee sharedInstance] initWithAppId:kAppId
                                 AppSecret:kAppSecretId
                                  ClientId:kClientIdKey];
     
-    //[[Yuwee sharedInstance] setMode:true with:false];
+    [[Yuwee sharedInstance] setMode:TRUE with:TRUE];
     
    /* InitParam *param = [[InitParam alloc] init];
     

@@ -21,13 +21,25 @@
     [super viewDidLoad];
 
     self.array = [[NSMutableArray alloc]init];
+    self.navigationItem.title = @"Contact";
     
     //[self getContactDetails:@"5e3960c49b80cb27affc43f4"];
     
     //[self deleteContact];
     
     //[self getAllContactStatus];
+    
+    UIBarButtonItem *item= [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(didClickAddButton)];
+    [self.navigationItem setRightBarButtonItem:item animated:TRUE];
 }
+
+-(void)didClickAddButton{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *objVC = [storyboard instantiateViewControllerWithIdentifier:@"AddContactViewController"];
+    [self.navigationController pushViewController:objVC animated:true];
+}
+
+
 
 - (void)getAllContactStatus{
     [[[Yuwee sharedInstance] getStatusManager] fetchAllContactsStatus:^(BOOL isSuccess, NSDictionary *dictResponse) {
