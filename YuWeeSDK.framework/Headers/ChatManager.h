@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "YuWeeProtocol.h"
-#import "FileManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -76,8 +75,6 @@ withQuotedMessageId:(nullable NSString*)quotedMessageId; // Tanay tested but not
 - (void) removeMembersFromGroupByEmail:(NSString*)roomId withArrayOfEmails:(NSArray*)emailArray withCompletionBlock:(AddMembersInGroupCompletionBlock)completionBlock;
 
 - (void) setMessageDeleteDelegate:(id <YuWeeMessageDeletedDelegate>) listenerObject;
-
-- (FileManager*) getFileManager;
 
 - (void) getRoomDetailsWithRoomId:(NSString*)roomId
               withCompletionBlock:(ChatOperationCompletionBlock)completionBlock;
