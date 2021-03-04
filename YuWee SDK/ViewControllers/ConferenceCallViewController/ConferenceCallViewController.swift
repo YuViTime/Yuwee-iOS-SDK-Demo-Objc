@@ -18,7 +18,8 @@ protocol ConferenceCallViewDelegate {
 
 @objcMembers
 
-class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, YuweeControlNewDelegate, YuWeeRemoteStreamSubscriptionDelegate, OnHostedMeetingDelegate, UITableViewDelegate, UITableViewDataSource {
+class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, YuweeControlNewDelegate, YuWeeRemoteStreamSubscriptionDelegate, OnHostedMeetingDelegate, UITableViewDelegate, UITableViewDataSource, YuWeeConnectionDelegate {
+    
     
     static let kLocalVideoTag = 1
     static let kRemoteVideoTag = 2
@@ -334,6 +335,8 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         
         //appDelegate = AppDelegate.sharedInstance()
         
+        Yuwee.sharedInstance().getConnectionManager().setConnectionDelegate(self)
+        
         isViewOpen = false
         
         configureTopBar()
@@ -524,6 +527,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         Yuwee.sharedInstance().getMeetingManager().joinMeeting(meetingParam) { (dictResponse, isSuccess) in
             
             if (isSuccess) {
+                Yuwee.sharedInstance().getConnectionManager().forceReconnect()
                 print("\(dictResponse)")
                 
                 let json = JSON(dictResponse)
@@ -1028,6 +1032,9 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         print("\(#function)")
         
         self.showToast("Chat option is not available in SDK Demo.", withDelay: 2.0)
+        //Yuwee.sharedInstance().getConnectionManager().forceReconnect()
+        
+        Yuwee.sharedInstance().restartAppConnection()
     }
     
     func hideAudioPressed(_ isSelected: Bool) {
@@ -1059,7 +1066,16 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     func recordPressed(_ isSelected: Bool) {
         print("\(#function)")
         
-        self.showToast("Recording option is not available in iOS.", withDelay: 2.0)
+        //self.showToast("Recording option is not available in iOS.", withDelay: 2.0)
+        //print("isConnected: \(Yuwee.sharedInstance().getConnectionManager().isConnected())")
+        
+        if isRecordingStarted {
+            stopRecording()
+        }
+        else{
+            self.startRecording()
+        }
+
     }
 
     func screenSharePressed(_ isSelected: Bool) {
@@ -1370,5 +1386,29 @@ extension ConferenceCallViewController {
 
         // 4. Refresh the collection view display
         presentersCollectionView.setNeedsDisplay()
+    }
+    
+    func onConnected() {
+        print("Socket onConnected")
+    }
+    
+    func onDisconnected() {
+        print("Socket onDisconnected")
+    }
+    
+    func onReconnection() {
+        print("Socket onReconnection")
+    }
+    
+    func onReconnected() {
+        print("Socket onReconnected")
+    }
+    
+    func onReconnectionFailed() {
+        print("Socket onReconnectionFailed")
+    }
+    
+    func onClose() {
+        print("Socket onClose")
     }
 }
