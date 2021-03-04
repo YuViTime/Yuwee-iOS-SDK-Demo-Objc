@@ -10,8 +10,8 @@ def import_pods
     pod 'Socket.IO-Client-Swift', '~> 15.2.0'
     
     # AWS pods
-    pod 'AWSS3', '~> 2.12.0' # For file transfers
-    pod 'AWSMobileClient', '~> 2.12.0'
+#   pod 'AWSS3', '~> 2.12.0' # For file transfers
+#   pod 'AWSMobileClient', '~> 2.12.0'
     
     # MessageKit
     pod 'MessageKit'
