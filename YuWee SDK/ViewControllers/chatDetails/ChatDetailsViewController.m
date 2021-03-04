@@ -53,7 +53,7 @@
     //NSURL *url = [[NSURL alloc] initWithString:imageUrl];
     NSData *data = [[NSData alloc] initWithContentsOfFile:imageUrl];
    
-    [[[[Yuwee sharedInstance] getChatManager] getFileManager] sendFileWithRoomId:roomId withUniqueIdentifier:[self getCurrentTimeStamp] withFileData:data withFileName:@"test_file_name" withFileExtension:@"jpg" withFileSize:0 withDelegate:self];
+//    [[[[Yuwee sharedInstance] getChatManager] getFileManager] sendFileWithRoomId:roomId withUniqueIdentifier:[self getCurrentTimeStamp] withFileData:data withFileName:@"test_file_name" withFileExtension:@"jpg" withFileSize:0 withDelegate:self];
     
     [picker dismissViewControllerAnimated:true completion:nil];
 }
@@ -174,13 +174,13 @@
     [[[Yuwee sharedInstance] getChatManager] setMessageDeliveredDelegate:self];
     //[self forwardMessage];
     
-    [[[[Yuwee sharedInstance] getChatManager] getFileManager] initFileShareWithRoomId:roomId withCompletionBlock:^(NSString *message, BOOL success) {
-        NSLog(@"File sharing: %d %@", success, message);
-    }];
-    
-    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getFileUrlWithFileId:@"5fe3040c2eb4513ceeb049f7" withFileKey:@"media/5fa3df498cb9b56d05ef9b33/5fbfb6d332033213ab687a9f/test_file_name" withCompletionBlock:^(NSString *message, BOOL success) {
-            NSLog(@"URL: %@", message);
-    }];
+//    [[[[Yuwee sharedInstance] getChatManager] getFileManager] initFileShareWithRoomId:roomId withCompletionBlock:^(NSString *message, BOOL success) {
+//        NSLog(@"File sharing: %d %@", success, message);
+//    }];
+//
+//    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getFileUrlWithFileId:@"5fe3040c2eb4513ceeb049f7" withFileKey:@"media/5fa3df498cb9b56d05ef9b33/5fbfb6d332033213ab687a9f/test_file_name" withCompletionBlock:^(NSString *message, BOOL success) {
+//            NSLog(@"URL: %@", message);
+//    }];
 }
 
 

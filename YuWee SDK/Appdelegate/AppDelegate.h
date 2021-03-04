@@ -21,10 +21,15 @@
 //    static String appSecret = "HERjEYJP1LmMOK0t5Q1sUyv0vRsNzIH50lyt8NyNkRb7QgDxSiomq1EJtVFzmRft";
 //    static String clientId = "5fa3e8108cb9b56d05ef9b4b";
 
+// MiBhagya
+//static String appId = "IcdKxf7SHsJ6kc4I6jxC6FD7ZxeRrH3X";
+//    static String appSecret = "jnByLZqTG1pBo4Uv6DBMBbx8gTkFCoXcrCD8OyakvNiuqKd0FCr8jdHktbfiwpYz";
+//    static String clientId = "5f8e92ffc089f30fbf6e0f5b";
+
 /////CONNECT  ******///
-#define kAppId @"CMOZm27a5KxXagVen6vyxeiddpX2lkHJ"
-#define kAppSecretId @"HERjEYJP1LmMOK0t5Q1sUyv0vRsNzIH50lyt8NyNkRb7QgDxSiomq1EJtVFzmRft"
-#define kClientIdKey @"5fa3e8108cb9b56d05ef9b4b"
+#define kAppId @"IcdKxf7SHsJ6kc4I6jxC6FD7ZxeRrH3X"
+#define kAppSecretId @"jnByLZqTG1pBo4Uv6DBMBbx8gTkFCoXcrCD8OyakvNiuqKd0FCr8jdHktbfiwpYz"
+#define kClientIdKey @"5f8e92ffc089f30fbf6e0f5b"
 
 
 ///DEV  ******///

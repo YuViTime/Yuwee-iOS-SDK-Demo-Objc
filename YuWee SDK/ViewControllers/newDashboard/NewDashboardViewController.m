@@ -8,8 +8,11 @@
 
 #import "NewDashboardViewController.h"
 #import <MMWormhole/MMWormhole.h>
+#import "CallController.h"
+#import "CallViewController.h"
+#import "ViewController.h"
 
-@interface NewDashboardViewController ()
+@interface NewDashboardViewController () <YuWeeIncomingCallEventDelegate>
 
 @end
 
@@ -44,6 +47,8 @@
     if (![[Yuwee sharedInstance] getConnectionManager].isConnected) {
         [[[Yuwee sharedInstance] getConnectionManager] forceReconnect];
     }
+    
+    [[[Yuwee sharedInstance] getCallManager] setIncomingCallEventDelegate:self];
 }
 
 -(void)didClickLogoutButton{
@@ -63,5 +68,56 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)onIncomingCall:(NSDictionary *)callData {
+    [[AppDelegate sharedInstance] showIncomingCallingScreen:callData];
+}
+
+- (void)onIncomingCallAcceptSuccess:(NSDictionary *)callData { 
+    if ([callData[kisGroup] boolValue]) {
+        [self presentGroupCallScreen:true];
+    } else {
+        [self presentCallScreen:true withCallDict:callData];
+    }
+}
+
+- (void)onIncomingCallRejectSuccess:(NSDictionary *)callData { 
+    
+}
+
+- (void)presentGroupCallScreen:(BOOL)isIncoming withGroupName:(NSString *)groupName andMembers:(NSArray *)arrMembers{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CallViewController *callControllerVC = [storyboard instantiateViewControllerWithIdentifier:@"CallViewController"];
+    callControllerVC.isGroupCall = true;
+    callControllerVC.strGroupName = groupName;
+    callControllerVC.isIncomingCall = isIncoming;
+    callControllerVC.arrMembers = [arrMembers mutableCopy];
+    callControllerVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callControllerVC];
+    
+    [self presentViewController:navigationController animated:false completion:nil];
+}
+
+- (void)presentCallScreen:(BOOL)isIncoming withCallDict:(NSDictionary*)callDict{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CallController *calVC = [storyboard instantiateViewControllerWithIdentifier:@"CallController"];
+    calVC.isGroupCall = false;
+    calVC.dictCall = callDict;
+    calVC.isIncomingCall = isIncoming;
+    calVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:calVC];
+    [self presentViewController:navigationController animated:true completion:nil];
+}
+
+- (void)presentGroupCallScreen:(BOOL)isIncoming{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CallViewController *callControllerVC = [storyboard instantiateViewControllerWithIdentifier:@"CallViewController"];
+    callControllerVC.isGroupCall = true;
+    callControllerVC.isIncomingCall = isIncoming;
+    callControllerVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callControllerVC];
+    [self presentViewController:navigationController animated:true completion:nil];
+}
 
 @end

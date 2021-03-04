@@ -49,27 +49,27 @@
             NSString *secretAccessKey = credDict[@"SecretAccessKey"];
             NSString *sessionToken = credDict[@"SessionToken"];
             
-            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
+//            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
             
             return;
         }
     }
     
     
-    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getAwsCredentialsWithCompletionBlock:^(NSDictionary *dictResponse, BOOL success) {
-        if (success) {
-            //NSLog(@"AWS CRED: %@", dictResponse);
-            NSDictionary *credDict = dictResponse[@"result"][@"credentials"];
-           
-            NSString *accessKeyId = credDict[@"AccessKeyId"];
-            NSString *secretAccessKey = credDict[@"SecretAccessKey"];
-            NSString *sessionToken = credDict[@"SessionToken"];
-
-            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
-
-            [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:credDict forKey:@"chatAwsExpTime"];
-        }
-    }];
+//    [[[[Yuwee sharedInstance] getChatManager] getFileManager] getAwsCredentialsWithCompletionBlock:^(NSDictionary *dictResponse, BOOL success) {
+//        if (success) {
+//            //NSLog(@"AWS CRED: %@", dictResponse);
+//            NSDictionary *credDict = dictResponse[@"result"][@"credentials"];
+//
+//            NSString *accessKeyId = credDict[@"AccessKeyId"];
+//            NSString *secretAccessKey = credDict[@"SecretAccessKey"];
+//            NSString *sessionToken = credDict[@"SessionToken"];
+//
+//            [[[[Yuwee sharedInstance] getChatManager] getFileManager] setupAwsCredentialWithAccessKey:accessKeyId withSecretAccessKey:secretAccessKey withSessionToken:sessionToken];
+//
+//            [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:credDict forKey:@"chatAwsExpTime"];
+//        }
+//    }];
 }
 
 

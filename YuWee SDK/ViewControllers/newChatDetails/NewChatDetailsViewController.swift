@@ -76,9 +76,9 @@ struct Media:MediaItem {
         Yuwee.sharedInstance().getChatManager().setTypingEventDelegate(self)
         Yuwee.sharedInstance().getChatManager().setMessageDeliveredDelegate(self)
         
-        Yuwee.sharedInstance().getChatManager().getFileManager().initFileShare(withRoomId: roomId) { (data, isSuccess) in
-            print(data!)
-        }
+//        Yuwee.sharedInstance().getChatManager().getFileManager().initFileShare(withRoomId: roomId) { (data, isSuccess) in
+//            print(data!)
+//        }
 
     }
     
@@ -130,7 +130,7 @@ struct Media:MediaItem {
         
         let data = NSData(contentsOfFile: pic.path!)
         
-        Yuwee.sharedInstance().getChatManager().getFileManager().sendFile(withRoomId: roomId, withUniqueIdentifier: UUID.init().uuidString, withFileData: data! as Data, withFileName: UUID().uuidString, withFileExtension: "jpg", withFileSize: 0, with: self)
+//        Yuwee.sharedInstance().getChatManager().getFileManager().sendFile(withRoomId: roomId, withUniqueIdentifier: UUID.init().uuidString, withFileData: data! as Data, withFileName: UUID().uuidString, withFileExtension: "jpg", withFileSize: 0, with: self)
         
         
         let messageId = UUID().uuidString
@@ -473,45 +473,45 @@ struct Media:MediaItem {
     
         //print("Data: \(fileId!) : \(fileKey!)")
         
-        Yuwee.sharedInstance().getChatManager().getFileManager().getFileUrl(withFileId: fileId!, withFileKey: fileKey!) { (url, isSuccess) in
-            print("\(url!)")
-            
-            let messageId = item["messageId"].string
-            let dateOfCreation = item["dateOfCreation"].double
-            
-            let date = Date(timeIntervalSince1970: (dateOfCreation! / 1000.0))
-            
-            var sender: Sender!
-            if(item["sender"]["_id"].exists()){
-                sender = Sender(senderId: item["sender"]["_id"].string!, displayName: item["sender"]["name"].string!)
-            }
-            else{
-                sender = Sender(senderId: item["sender"]["senderId"].string!, displayName: item["sender"]["name"].string!)
-            }
-            
-            
-            
-            let placeholderImage = UIImage(named: "AppIcon")
-            let url = URL(string:url!)
- 
-            let size = CGSize(width: self.WIDTH, height: self.HEIGHT)
-            
-            var image: UIImage?
-            
-            if let data = try? Data(contentsOf: url!){
-                image = UIImage(data: data)
-            }
-            
-            let media = Media(url: url, image: image!, placeholderImage: placeholderImage!, size: size)
-            
-            
-            let msg = Message(sender: sender!, messageId: messageId!, sentDate: date, kind: .photo(media), json: item)
-            
-            self.messagesArray[path!.section] = msg
-            
-            self.messagesCollectionView.reloadSections([path!.section])
-            
-        }
+//        Yuwee.sharedInstance().getChatManager().getFileManager().getFileUrl(withFileId: fileId!, withFileKey: fileKey!) { (url, isSuccess) in
+//            print("\(url!)")
+//
+//            let messageId = item["messageId"].string
+//            let dateOfCreation = item["dateOfCreation"].double
+//
+//            let date = Date(timeIntervalSince1970: (dateOfCreation! / 1000.0))
+//
+//            var sender: Sender!
+//            if(item["sender"]["_id"].exists()){
+//                sender = Sender(senderId: item["sender"]["_id"].string!, displayName: item["sender"]["name"].string!)
+//            }
+//            else{
+//                sender = Sender(senderId: item["sender"]["senderId"].string!, displayName: item["sender"]["name"].string!)
+//            }
+//
+//
+//
+//            let placeholderImage = UIImage(named: "AppIcon")
+//            let url = URL(string:url!)
+//
+//            let size = CGSize(width: self.WIDTH, height: self.HEIGHT)
+//
+//            var image: UIImage?
+//
+//            if let data = try? Data(contentsOf: url!){
+//                image = UIImage(data: data)
+//            }
+//
+//            let media = Media(url: url, image: image!, placeholderImage: placeholderImage!, size: size)
+//
+//
+//            let msg = Message(sender: sender!, messageId: messageId!, sentDate: date, kind: .photo(media), json: item)
+//
+//            self.messagesArray[path!.section] = msg
+//
+//            self.messagesCollectionView.reloadSections([path!.section])
+//
+//        }
     }
     
     func didTapMessage(in cell: MessageCollectionViewCell) {
