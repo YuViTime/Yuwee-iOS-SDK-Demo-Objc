@@ -53,6 +53,7 @@ target 'ScreenShare' do
   use_frameworks!
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   pod 'MMWormhole', '~> 2.0.0'
+  pod 'SwiftyJSON', '~> 4.0'
   # Pods for ScreenShare
 end
 

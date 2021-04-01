@@ -14,7 +14,7 @@ PODS:
   - InputBarAccessoryView (4.3.3):
     - InputBarAccessoryView/Core (= 4.3.3)
   - InputBarAccessoryView/Core (4.3.3)
-  - Kingfisher (6.1.0)
+  - Kingfisher (6.2.1)
   - MessageKit (3.1.0):
     - InputBarAccessoryView (~> 4.3.0)
   - MMWormhole (2.0.0):
@@ -58,13 +58,13 @@ SPEC CHECKSUMS:
   AWSMobileClient: bf1fb0868f9187141ca7b69220383c14878c0a29
   AWSS3: 40d2f99d91e34999789a534d95c80cc7c1135c6d
   InputBarAccessoryView: 8e7fc09e9cba75e0fee5da13450e15c194806f69
-  Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   MMWormhole: 0cd3fd35a9118b2e2d762b499f54eeaace0be791
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 013554191c475d39bac5085494a4e0cc73d10095
+PODFILE CHECKSUM: 8fcb36b99d9460a7c0d45c29fb103032621f74b8
 
 COCOAPODS: 1.8.4

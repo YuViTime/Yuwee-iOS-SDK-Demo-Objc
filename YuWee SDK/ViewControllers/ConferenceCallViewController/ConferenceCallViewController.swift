@@ -10,6 +10,9 @@ import UIKit
 import Foundation
 import WebRTC
 import SwiftyJSON
+import MMWormhole
+import ReplayKit
+import YuWeeScreenShare
 
 protocol ConferenceCallViewDelegate {
     func removePresenter(details: [String : Any])
@@ -37,8 +40,11 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     static let kMuteAudio = "MuteAudio"
     static let kSwitchSpeaker = "SwitchSpeaker"
     
+    var wormhole = MMWormhole(applicationGroupIdentifier: "group.com.yuwee.sdkdemo.new", optionalDirectory: "wormhole")
+    var isCallJoined = false
     var isRecordingStarted = false
     var recordingId = ""
+    var mongoId : String? = nil
     var isAudioEnabled = true
     var isVideoEnabled = true
     var isHost = false
@@ -117,6 +123,9 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     var delegate: HomeControllerDelegate?
     
     var tableMoreOption: UITableView!
+    let screenShare = YWScreenShare.init()
+    let screenRecorder = RPScreenRecorder.shared()
+    var isScreenSharingStarted = false
 
     @IBOutlet var videoView: YuweeVideoView!
     @IBOutlet var screenView: YuweeVideoView!
@@ -478,12 +487,12 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                 self.present(alertController, animated: true)
             }
         })
+        
+        
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private func processJoin(){
         NotificationCenter.default.addObserver(
         self,
         selector: #selector(updateStreamsNotification(_:)),
@@ -532,10 +541,17 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                 
                 let json = JSON(dictResponse)
                 let result = json["result"]
-                let isRecording = result["isRecording"].bool
-                if isRecording! {
-                    self.startRecording()
+                if result["isRecording"].exists() {
+                    let isRecording = result["isRecording"].bool
+                    if isRecording! {
+                        self.mongoId = result["mongoId"].string!
+                        let ud = UserDefaults(suiteName: "group.com.yuwee.sdkdemo.new")
+                        ud?.setValue(self.mongoId, forKey: "ss_mongo_id")
+                        ud?.synchronize()
+                        self.startRecording(senderUserId: "dummy")
+                    }
                 }
+
                 
                 self.arrStreams = Yuwee.sharedInstance().getMeetingManager().getAllRemoteStream() as! [OWTRemoteStream]
                 if (self.meetingParam.meetingType == MeetingType.CONFERENCE) {
@@ -552,6 +568,18 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                         streamNew.remoteStream = element
                         
                         self.streamList.append(streamNew)
+                        
+                        let array = element.capabilities.audio.codecs
+                        //print("SDK Res: \(array.count)")
+                        for item in array {
+                            print("SDK RES: Code: \(item.name.rawValue)")
+                        }
+                        
+                        let arraym = element.capabilities.video.codecs
+                        //print("SDK Res: \(array.count)")
+                        for item in arraym {
+                            print("SDK RES: Video Codec: \(item.name.rawValue)")
+                        }
                         
                         Yuwee.sharedInstance().getMeetingManager().subscribeRemoteStream(element, withlistener: self)
                     }
@@ -597,9 +625,22 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                 
                 let message = dictResponse["message"] as! String
                 
-                AppDelegate.sharedInstance()?.showToast(message)
+                print("Join Error: \(message)")
+                //AppDelegate.sharedInstance()?.showToast(message)
             }
         }
+
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !isCallJoined {
+            processJoin()
+            isCallJoined = true
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -760,6 +801,13 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
             let indexPath = IndexPath(row: (self.streamList.count - 1), section: 0)
             self.presentersCollectionView.insertItems(at: [indexPath])
             
+            // NSArray<OWTAudioCodecParameters*>*
+            let array = remoteStream.capabilities.audio.codecs
+            for item in array {
+                print("SDK Codec Name: \(item.name)")
+            }
+            
+            
             Yuwee.sharedInstance().getMeetingManager().subscribeRemoteStream(remoteStream, withlistener: self)
         }
     }
@@ -882,9 +930,9 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         } else {
             if (self.arrParticipants.count>0) {
                 let index = self.arrParticipants.index(where: {$0["_id"] as! String == dict["userId"] as! String})
-                
-                self.arrParticipants.remove(at: index!)
-                
+                if index != nil {
+                    self.arrParticipants.remove(at: index!)
+                }
                 self.presentersCollectionView.reloadData()
                 
                 delegate?.reloadInputData(arrParticipants: self.arrParticipants)
@@ -982,7 +1030,14 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         let json = JSON(dict)
         print(json)
         if (json["status"].string == "started") {
-            startRecording()
+            mongoId = json["mongoId"].string!
+            startRecording(senderUserId: json["senderUserId"].string!)
+            
+            let ud = UserDefaults(suiteName: "group.com.yuwee.sdkdemo.new")
+            ud?.setValue(json["mongoId"].string!, forKey: "ss_mongo_id")
+            ud?.synchronize()
+            
+            wormhole.passMessageObject("true" as NSCoding, identifier: "recording")
         }
         else{
             self.isRecordingStarted = false
@@ -990,7 +1045,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     
-    func startRecording(){
+    func startRecording(senderUserId: String?){
         
         if isRecordingStarted {
             return
@@ -1007,16 +1062,17 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
             return
         }
         
-        Yuwee.sharedInstance().getMeetingManager().startCallRecording(with: roleType) { (recordingId, isSuccess) in
+        Yuwee.sharedInstance().getMeetingManager().startCallRecording(with: roleType, withSenderUserId: senderUserId!, withMongoId: mongoId!) { (data, isSuccess) in
             if isSuccess{
-                self.recordingId = recordingId
+                self.recordingId = data["recordingId"] as! String
+                self.mongoId = data["mongoId"] as? String
                 self.isRecordingStarted = true
             }
         }
     }
     
     func stopRecording(){
-        Yuwee.sharedInstance().getMeetingManager().stopCallRecording(withRecordingId: recordingId) { (data, isSuccess) in
+        Yuwee.sharedInstance().getMeetingManager().stopCallRecording(withRecordingId: recordingId, withMongoId: mongoId!) { (data, isSuccess) in
             if isSuccess{
                 self.isRecordingStarted = false
             }
@@ -1034,7 +1090,22 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         self.showToast("Chat option is not available in SDK Demo.", withDelay: 2.0)
         //Yuwee.sharedInstance().getConnectionManager().forceReconnect()
         
-        Yuwee.sharedInstance().restartAppConnection()
+        
+        //        NewChatDetailsViewController *vc = [[NewChatDetailsViewController alloc] init];
+        //        vc.title = @"Chat";
+        //        vc.name = nameToShow;
+        //        vc.roomId = mDict[@"_id"];
+        //        vc.isBroadcast = isBroadcast;
+        //
+        //        [self.navigationController pushViewController:vc animated:TRUE];
+        
+        let vc = NewChatDetailsViewController()
+        //vc.title = self.strMeetingName
+        vc.name = self.strMeetingName!
+        vc.roomId = self.meetingParam.roomId
+        vc.isBroadcast = false
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func hideAudioPressed(_ isSelected: Bool) {
@@ -1063,17 +1134,23 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         Yuwee.sharedInstance().getMeetingManager().setSpeakerEnabled(isSelected)
     }
     
+    
+    
     func recordPressed(_ isSelected: Bool) {
         print("\(#function)")
         
         //self.showToast("Recording option is not available in iOS.", withDelay: 2.0)
         //print("isConnected: \(Yuwee.sharedInstance().getConnectionManager().isConnected())")
         
+
+
+        
+        
         if isRecordingStarted {
             stopRecording()
         }
         else{
-            self.startRecording()
+            self.startRecording(senderUserId: nil)
         }
 
     }
@@ -1081,7 +1158,10 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     func screenSharePressed(_ isSelected: Bool) {
         print("\(#function)")
         
-        self.showToast("Screen sharing option is not available in iOS.", withDelay: 2.0)
+
+        wormhole.passMessageObject("true" as NSCoding, identifier: "finishBroadcast")
+        
+        //self.showToast("Screen sharing option is not available in iOS.", withDelay: 2.0)
     }
     
     func handRaisePressed(_ isSelected: Bool) {
@@ -1109,10 +1189,11 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         Yuwee.sharedInstance().getMeetingManager().leaveMeeting { (dictResponse, isSuccess) in
             if (isSuccess) {
                 print("\(dictResponse)")
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                    self.moveAppOrientationMode(withMode: UIDeviceOrientation.portrait.rawValue)
-                }
+            }
+            
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+                self.moveAppOrientationMode(withMode: UIDeviceOrientation.portrait.rawValue)
             }
         }
     }

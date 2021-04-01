@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMWormhole
 
 class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -70,6 +71,8 @@ class ListMeetingsViewController: UIViewController, UITableViewDelegate, UITable
         let imageOption = UIBarButtonItem(title: "Join", style: .done, target: self, action: #selector(joinMeetingOptions))
             navigationItem.setRightBarButton(imageOption, animated: true)
         
+//        let wormhole = MMWormhole(applicationGroupIdentifier: "group.com.yuwee.sdkdemo.new", optionalDirectory: "wormhole")
+//        wormhole.passMessageObject("true" as NSCoding, identifier: "recording")
     }
     
     @objc func joinMeetingOptions(){

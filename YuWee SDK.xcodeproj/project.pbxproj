@@ -21,6 +21,9 @@
 		A612CE4A23D83566005156A6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A612CE4923D83566005156A6 /* RegisterViewController.m */; };
 		A61908B723E2C2F300E8EDE6 /* CustomMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908B623E2C2F300E8EDE6 /* CustomMessageCell.m */; };
 		A61908BB23E2F22F00E8EDE6 /* MessageDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A61908BA23E2F22F00E8EDE6 /* MessageDetails.m */; };
+		A622B3DB25FF833800E6B864 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0B625E5187C0022A3FE /* ReplayKit.framework */; };
+		A622B3DC25FF83FF00E6B864 /* YuWeeScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */; };
+		A622B3DD25FF83FF00E6B864 /* YuWeeScreenShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0A525E514900022A3FE /* YuWeeScreenShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A631E0B725E5187C0022A3FE /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631E0B625E5187C0022A3FE /* ReplayKit.framework */; };
 		A631E0BA25E5187C0022A3FE /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631E0B925E5187C0022A3FE /* SampleHandler.swift */; };
 		A631E0BE25E5187C0022A3FE /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A631E0B525E5187C0022A3FE /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -160,6 +163,7 @@
 			files = (
 				C83C5BE624C9AD5A00F4EF1F /* WebRTC.framework in Embed Frameworks */,
 				C8384DE3253435B000A4A7D7 /* YuWeeSDK.framework in Embed Frameworks */,
+				A622B3DD25FF83FF00E6B864 /* YuWeeScreenShare.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +383,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A622B3DB25FF833800E6B864 /* ReplayKit.framework in Frameworks */,
 				C8B7477F243CB207003BD3DD /* CoreAudio.framework in Frameworks */,
+				A622B3DC25FF83FF00E6B864 /* YuWeeScreenShare.framework in Frameworks */,
 				C8B7477D243CB1E3003BD3DD /* PushKit.framework in Frameworks */,
 				7170D1B4213EC24300C2268B /* GLKit.framework in Frameworks */,
 				7170D1B0213EC1F500C2268B /* CoreVideo.framework in Frameworks */,
@@ -1506,7 +1512,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDK.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1577,7 +1583,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "YuWee SDK/YuWee SDKRelease.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1643,8 +1649,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 359D4SWRZC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1652,7 +1658,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScreenShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1662,7 +1668,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.ScreenShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Screen Share Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "ScreenShare/ScreenShare-Bridging-Header.h";
@@ -1678,7 +1684,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShareRelease.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 359D4SWRZC;
 				ENABLE_BITCODE = NO;
@@ -1687,16 +1693,16 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ScreenShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.screensharedemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuwee.iosapp.sdk.ScreenShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SDK Demo Screen Share";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK Screen Share Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ScreenShare/ScreenShare-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1712,7 +1718,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEVELOPMENT_TEAM = 359D4SWRZC;
@@ -1773,7 +1779,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = notification/notificationRelease.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Sumit Sharma (LB875CQ2UQ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4;
 				DEVELOPMENT_TEAM = 359D4SWRZC;

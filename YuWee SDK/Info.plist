@@ -43,6 +43,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>We will use the access to capture video from camera for video calling feature and use photos from gallery to use them in profiles or chat attachments.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>YuWee SDK Demo need this local network permission for connecting calls.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We will use the access to transfer your voice to others through call.</string>
 	<key>UIBackgroundModes</key>

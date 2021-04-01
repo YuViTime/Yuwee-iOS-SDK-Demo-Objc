@@ -274,13 +274,13 @@
 
 - (IBAction)btnSwipeCameraPressed:(UIBarButtonItem *)sender{
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    [[CallManager sharedInstance] switchCamera];
+    [[[Yuwee sharedInstance] getCallManager] switchCamera];
 }
 
 - (IBAction)btnHideShowVideo:(UIButton *)sender{
-    //sender.selected = !sender.selected;
+    sender.selected = !sender.selected;
     
-    [[CallManager sharedInstance] setVideoEnabled:sender.selected];
+    [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:sender.selected];
 }
 
 - (void)presentGroupCallScreen:(BOOL)isIncoming withGroupName:(NSString *)groupName andMembers:(NSArray *)arrMembers{

@@ -24,22 +24,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 //Create User/Register User
 - (void)createUserWithName:(NSString*)strUserName
-              Email:(NSString*)strEmail
-           Password:(NSString*)strPassword
-withCompletionBlock:(CreateUserCompletionBlock)createUserCompletionHandler;
+                     Email:(NSString*)strEmail
+                  Password:(NSString*)strPassword
+       withCompletionBlock:(CreateUserCompletionBlock)createUserCompletionHandler;
 
 //Register Push Token
 - (void)registerPushTokenAPNS:(NSString*)strAPNS
-              VOIP:(NSString*)strVOIP
+                         VOIP:(NSString*)strVOIP
           withCompletionBlock:(OnRegisterPushTokenCompletionBlock)registerTokenCompletionHandler;
 
 //Create Session
 - (void)createSessionViaCredentialsWithEmail:(nonnull NSString *)strEmail
-           Password:(nonnull NSString *)strPassword
-         ExpiryTime:(nonnull NSString *)expiryTime
-withCompletionBlock:(LoginCompletionBlock)loginCompletionHandler;
+                                    Password:(nonnull NSString *)strPassword
+                                  ExpiryTime:(nonnull NSString *)expiryTime
+                         withCompletionBlock:(LoginCompletionBlock)loginCompletionHandler;
 
-- (void)createSessionViaToken:(InitParam *)initParam withCompletionBlock:(OnCreateSessionViaTokenCompletionBlock)completionHandler;
+- (void)createSessionViaToken:(InitParam *)initParam
+          withCompletionBlock:(OnCreateSessionViaTokenCompletionBlock)completionHandler;
 
 - (BOOL)isLoggedIn;
 

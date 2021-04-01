@@ -11,6 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^OnInitScreenSharingCompletionHandler)(NSString *dict, BOOL success);
+typedef void(^OnStartRecordingCompletionHandler)(NSDictionary *mDict, BOOL isSuccess);
+typedef void(^OnStopRecordingCompletionHandler)(NSString* message, BOOL isSuccess);
+
+typedef NS_ENUM(NSUInteger, RoleType) {
+    presenter,
+    subPresenter,
+    viewer,
+};
 
 @interface YWScreenShare : NSObject
 
@@ -30,6 +38,14 @@ typedef void(^OnInitScreenSharingCompletionHandler)(NSString *dict, BOOL success
 -(void)cleanUp;
 
 -(void)setEnvironment:(BOOL)isDev;
+
+-(void)startCallRecordingWithRoleType:(RoleType)roleType
+                            withMId:(NSString*)mongoId
+                  withCompletionBlock:(OnStartRecordingCompletionHandler)handler;
+
+-(void)stopCallRecordingWithRecordingId:(NSString*)recordingId
+                    withMId:(NSString*)mongoId
+                    withCompletionBlock:(OnStopRecordingCompletionHandler)handler;
 
 @end
 
