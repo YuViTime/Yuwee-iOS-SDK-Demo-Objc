@@ -46,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)processAddMemberToInitiateMCUCallWithDictionary:(nonnull NSDictionary*)responseObject;
 
+- (void)startVideoSource;
+
+- (void)stopVideoSource;
+
 - (void)setVideoEnabled:(BOOL)isEnabled;
 
 - (void)switchCamera;

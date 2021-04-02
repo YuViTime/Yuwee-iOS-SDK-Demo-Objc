@@ -86,7 +86,7 @@
 
 - (void)onRemoteCallHangUp:(NSDictionary *)callData {
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    [[CallManager sharedInstance] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
+    [[[Yuwee sharedInstance] getCallManager] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
         dispatch_async(dispatch_get_main_queue(), ^{
             [[AppDelegate sharedInstance].window.rootViewController dismissViewControllerAnimated:true completion:nil];
         });
@@ -206,7 +206,7 @@
             }
         }
         
-        [[CallManager sharedInstance] addMemberOnCall:arrAllUsersTemp andGroupName:groupName withCompletionBlock:^(BOOL isSuccess, NSDictionary *dictResponse) {
+        [[[Yuwee sharedInstance] getCallManager] addMemberOnCall:arrAllUsersTemp andGroupName:groupName withCompletionBlock:^(BOOL isSuccess, NSDictionary *dictResponse) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:true completion:nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"onAddMember" object:nil userInfo:dictResponse];
@@ -252,7 +252,7 @@
         UIButton *btnHangup = (UIButton*)sender;
         btnHangup.enabled = false;
     }
-    [[CallManager sharedInstance] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
+    [[[Yuwee sharedInstance] getCallManager] hangUpCallWithCompletionBlockHandler:^(BOOL isCallSuccess, NSDictionary *dictCallResponse){
         dispatch_async(dispatch_get_main_queue(), ^{
             [[AppDelegate sharedInstance].window.rootViewController dismissViewControllerAnimated:true completion:nil];
         });
@@ -262,14 +262,14 @@
 - (IBAction)btnMuteAudioClicked:(UIButton *)sender{
     sender.selected = !sender.selected;
     
-    [[CallManager sharedInstance] setAudioEnabled:sender.selected];
+    [[[Yuwee sharedInstance] getCallManager] setAudioEnabled:sender.selected];
 }
 
 
 - (IBAction)btnSwitchSpeakerMode:(UIButton *)sender{
     sender.selected = !sender.selected;
     
-    [[CallManager sharedInstance] onMuteAudioOutputSpeaker:sender.selected];
+    [[[Yuwee sharedInstance] getCallManager] onMuteAudioOutputSpeaker:sender.selected];
 }
 
 - (IBAction)btnSwipeCameraPressed:(UIBarButtonItem *)sender{
@@ -279,8 +279,14 @@
 
 - (IBAction)btnHideShowVideo:(UIButton *)sender{
     sender.selected = !sender.selected;
-    
-    [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:sender.selected];
+    // selected means icon is striped
+    if (sender.selected) {
+        [[[Yuwee sharedInstance] getCallManager] stopVideoSource];
+    }
+    else{
+        [[[Yuwee sharedInstance] getCallManager] startVideoSource];
+    }
+    [[[Yuwee sharedInstance] getCallManager] setVideoEnabled:!sender.selected];
 }
 
 - (void)presentGroupCallScreen:(BOOL)isIncoming withGroupName:(NSString *)groupName andMembers:(NSArray *)arrMembers{
