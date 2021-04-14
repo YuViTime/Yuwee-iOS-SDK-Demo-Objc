@@ -36,6 +36,8 @@
 
 - (void)onIncomingCallRejectSuccess:(NSDictionary *)callData;
 
+- (void)onIncomingCallActionPerformedFromOtherDevice:(NSDictionary *)data;
+
 @end
 
 @protocol YuWeeOnMemberAddedOnCallDelegate <NSObject>
@@ -101,7 +103,7 @@
 
 - (void)onStreamRemoved:(OWTRemoteStream *)remoteStream;
 
-- (void)onCallPresentersUpdated:(NSDictionary *)dict;
+- (void)onCallParticipantRoleUpdated:(NSDictionary *)dict;
 
 - (void)onCallAdminsUpdated:(NSDictionary *)dict;
 

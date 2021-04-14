@@ -87,12 +87,13 @@ typedef NS_ENUM(NSUInteger, RoleType) {
 - (void)fetchActiveParticipantsList:(OnMeetingCompletionHandler)completionHandler;
 
 -(void)startCallRecordingWithRoleType:(RoleType)roleType
-                  withSenderUserId:(NSString*)senderUserId
-                withMongoId:(NSString*)mongoId
+                     withSenderUserId:(NSString*)senderUserId
+                          withMongoId:(NSString*)mongoId
                   withCompletionBlock:(OnStartRecordingCompletionHandler)handler;
+
 -(void)stopCallRecordingWithRecordingId:(NSString*)recordingId
-withMongoId:(NSString*)mongoId
-withCompletionBlock:(OnStopRecordingCompletionHandler)handler;
+                            withMongoId:(NSString*)mongoId
+                    withCompletionBlock:(OnStopRecordingCompletionHandler)handler;
 
 @end
 

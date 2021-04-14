@@ -23,7 +23,6 @@ protocol ConferenceCallViewDelegate {
 
 class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, YuweeControlNewDelegate, YuWeeRemoteStreamSubscriptionDelegate, OnHostedMeetingDelegate, UITableViewDelegate, UITableViewDataSource, YuWeeConnectionDelegate {
     
-    
     static let kLocalVideoTag = 1
     static let kRemoteVideoTag = 2
     
@@ -371,7 +370,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                                 if let object = (UserDefaults(suiteName: self.kNotificationExtenstionIdentifier)?.object(forKey: self.kUserDetailsFromPreferance) as? [String : Any])?[kUser] {
                                     print("User Id = \(object)")
                                 }
-                                self.strLoginUserId = ((UserDefaults(suiteName: self.kNotificationExtenstionIdentifier)?.object(forKey: self.kUserDetailsFromPreferance) as? [String : Any])?[kUser] as? [String : Any])?[k_Id] as? String
+                                self.strLoginUserId = UserDefaults(suiteName: "123")?.object(forKey: k_Id) as? String
 
                                 DispatchQueue.main.async(execute: {
                                     UIApplication.shared.isIdleTimerDisabled = true
@@ -434,7 +433,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                         if let object = (UserDefaults(suiteName: self.kNotificationExtenstionIdentifier)?.object(forKey: self.kUserDetailsFromPreferance) as? [String : Any])?[kUser] {
                                                         print("User Id = \(object)")
                                                     }
-                        self.strLoginUserId = ((UserDefaults(suiteName: self.kNotificationExtenstionIdentifier)?.object(forKey: self.kUserDetailsFromPreferance) as? [String : Any])?[kUser] as? [String : Any])?[k_Id] as? String
+                        self.strLoginUserId = UserDefaults(suiteName: "123")?.object(forKey: k_Id) as? String
 
                                                     DispatchQueue.main.async(execute: {
                                                         UIApplication.shared.isIdleTimerDisabled = true
@@ -823,7 +822,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         }
     }
     
-    func onCallPresentersUpdated(_ dict: [AnyHashable : Any]!) {
+    func onCallParticipantRoleUpdated(_ dict: [AnyHashable : Any]!) {
         
         if let i = self.arrParticipants.firstIndex(where: {$0["_id"] as! String == dict["userId"] as! String}) {
             var obj = self.arrParticipants[i]
@@ -834,31 +833,42 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                 let strRole = dict["newRole"] as! String
                 
                 if (strRole == "presenter") {
-                    self.roleTypeTraining = RoleType.presenter
                     obj["isPresenter"] = 1
                     obj["isSubPresenter"] = 0
+                } else if (strRole == "subPresenter") {
+                    obj["isPresenter"] = 0
+                    obj["isSubPresenter"] = 1
+                } else if (strRole == "viewer") {
+                    obj["isPresenter"] = 0
+                    obj["isSubPresenter"] = 0
+                }
+               delegate?.updateParicipantData(dictParticipant: obj)
+            }
+        }
+        
+        if self.strLoginUserId == dict["userId"] as? String {
+            if (dict.allKeys().contains("newRole")) {
+                let strRole = dict["newRole"] as! String
+                
+                if (strRole == "presenter") {
+                    self.roleTypeTraining = RoleType.presenter
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                     }
                     publishLocalStreamWithRoleType(roleType: self.roleTypeTraining)
                 } else if (strRole == "subPresenter") {
                     self.roleTypeTraining = RoleType.subPresenter
-                    obj["isPresenter"] = 0
-                    obj["isSubPresenter"] = 1
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                     }
                     publishLocalStreamWithRoleType(roleType: self.roleTypeTraining)
                 } else if (strRole == "viewer") {
-                    obj["isPresenter"] = 0
-                    obj["isSubPresenter"] = 0
                     self.roleTypeTraining = RoleType.viewer
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                         isLocalStreamPublished = false
                     }
                 }
-               delegate?.updateParicipantData(dictParticipant: obj)
             }
         }
     }
@@ -939,6 +949,8 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
             }
         }
     }
+    
+    
     
     func onCallParticipantStatusUpdated(_ dict: [AnyHashable : Any]!) {
         

@@ -429,9 +429,9 @@ class SideMenuTableViewController: UIViewController, UITableViewDelegate, UITabl
         if (optionStr == "Drop") {
             dropParticipantPressed(onIndex: indexOptions)
         } else if (optionStr == "Make Admin") {
-            makeAdminPressed(onIndex: indexOptions, isAdmin: false)
-        } else if (optionStr == "Remove Admin") {
             makeAdminPressed(onIndex: indexOptions, isAdmin: true)
+        } else if (optionStr == "Remove Admin") {
+            makeAdminPressed(onIndex: indexOptions, isAdmin: false)
         } else if (optionStr == "Make Presenter Permanent") {
             makePresenterPressed(onIndex: indexOptions, role: "presenter", isTempPresenter: false, isPresenter: true)
         } else if (optionStr == "Make Presenter Temporary") {
