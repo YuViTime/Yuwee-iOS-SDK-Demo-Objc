@@ -93,6 +93,7 @@ typedef NS_ENUM(NSUInteger, RoleType) {
 
 -(void)stopCallRecordingWithRecordingId:(NSString*)recordingId
                             withMongoId:(NSString*)mongoId
+                      withIsRoleUpdated:(BOOL)isRoleUpdated
                     withCompletionBlock:(OnStopRecordingCompletionHandler)handler;
 
 @end

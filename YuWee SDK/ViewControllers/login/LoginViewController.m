@@ -128,6 +128,13 @@
                         [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kName] forKey:kName];
                         [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:kEmail];
                         [[[NSUserDefaults alloc] initWithSuiteName:@"123"] setObject:dictSessionCreateResponse[@"access_token"] forKey:kToken];
+                        
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[kResult][kUser][k_Id] forKey:@"ss_user_id"];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[kResult][kUser][kName] forKey:@"ss_nick_name"];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[kResult][kUser][kEmail] forKey:@"ss_email"];
+                        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.yuwee.sdkdemo.new"] setValue:dictSessionCreateResponse[@"access_token"] forKey:@"ss_auth_token"];
+                        
+                        
                         NSMutableDictionary *dictUser = [dictSessionCreateResponse[kResult][kUser] mutableCopy];
                         
                         //Removing null values from available keys

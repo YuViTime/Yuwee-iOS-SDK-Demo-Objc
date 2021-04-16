@@ -92,7 +92,7 @@ class ContainerViewController: UIViewController, ConferenceCallViewDelegate {
         if (roleType == RoleType.viewer) {
             homeController.isLocalStreamPublished = false
         } else {
-            homeController.publishLocalStreamWithRoleType(roleType: roleType)
+            homeController.publishLocalStreamWithRoleType(roleType: roleType, isRoleUpdated: false)
         }
     }
     

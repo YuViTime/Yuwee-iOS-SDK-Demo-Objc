@@ -44,6 +44,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     var isRecordingStarted = false
     var recordingId = ""
     var mongoId : String? = nil
+    var senderUserId: String? = nil
     var isAudioEnabled = true
     var isVideoEnabled = true
     var isHost = false
@@ -547,7 +548,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                         let ud = UserDefaults(suiteName: "group.com.yuwee.sdkdemo.new")
                         ud?.setValue(self.mongoId, forKey: "ss_mongo_id")
                         ud?.synchronize()
-                        self.startRecording(senderUserId: "dummy")
+                        self.startRecording(senderUserId: "dummy", isRoleUpdated: false)
                     }
                 }
 
@@ -590,7 +591,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                     } else {
                         self.roleTypeTraining = RoleType.subPresenter
                     }
-                    self.publishLocalStreamWithRoleType(roleType: self.roleTypeTraining)
+                    self.publishLocalStreamWithRoleType(roleType: self.roleTypeTraining, isRoleUpdated: false)
                 }
                 Yuwee.sharedInstance().getMeetingManager().fetchActiveParticipantsList { (dictResponse, isSuccess) in
                     
@@ -724,7 +725,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     
-    func publishLocalStreamWithRoleType(roleType: RoleType) {
+    func publishLocalStreamWithRoleType(roleType: RoleType, isRoleUpdated: Bool) {
         Yuwee.sharedInstance().getMeetingManager().publishCameraStream(roleType) { (dictResponse, isSuccess) in
             
             if (isSuccess) {
@@ -735,6 +736,9 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                         self.view.bringSubviewToFront(self.videoView)
                     } else {
                         self.view.bringSubviewToFront(self.innerView)
+                    }
+                    if isRoleUpdated{
+                        self.startRecording(senderUserId: self.senderUserId, isRoleUpdated: isRoleUpdated)
                     }
                 }
             } else {
@@ -855,18 +859,27 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                     }
-                    publishLocalStreamWithRoleType(roleType: self.roleTypeTraining)
+                    publishLocalStreamWithRoleType(roleType: self.roleTypeTraining, isRoleUpdated: true)
+                    if isRecordingStarted {
+                        self.stopRecording(isRoleUpdated: true)
+                    }
                 } else if (strRole == "subPresenter") {
                     self.roleTypeTraining = RoleType.subPresenter
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                     }
-                    publishLocalStreamWithRoleType(roleType: self.roleTypeTraining)
+                    publishLocalStreamWithRoleType(roleType: self.roleTypeTraining, isRoleUpdated: true)
+                    if isRecordingStarted {
+                        self.stopRecording(isRoleUpdated: true)
+                    }
                 } else if (strRole == "viewer") {
                     self.roleTypeTraining = RoleType.viewer
                     if (isLocalStreamPublished) {
                         Yuwee.sharedInstance().getMeetingManager().unpublishCameraStream()
                         isLocalStreamPublished = false
+                    }
+                    if isRecordingStarted {
+                        self.stopRecording(isRoleUpdated: true)
                     }
                 }
             }
@@ -1043,8 +1056,8 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         print(json)
         if (json["status"].string == "started") {
             mongoId = json["mongoId"].string!
-            startRecording(senderUserId: json["senderUserId"].string!)
-            
+            startRecording(senderUserId: json["senderUserId"].string!, isRoleUpdated: false)
+            self.senderUserId = json["senderUserId"].string!
             let ud = UserDefaults(suiteName: "group.com.yuwee.sdkdemo.new")
             ud?.setValue(json["mongoId"].string!, forKey: "ss_mongo_id")
             ud?.synchronize()
@@ -1057,7 +1070,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     
-    func startRecording(senderUserId: String?){
+    func startRecording(senderUserId: String?, isRoleUpdated: Bool){
         
         if isRecordingStarted {
             return
@@ -1080,11 +1093,14 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                 self.mongoId = data["mongoId"] as? String
                 self.isRecordingStarted = true
             }
+            else{
+                self.startRecording(senderUserId: senderUserId, isRoleUpdated: isRoleUpdated)
+            }
         }
     }
     
-    func stopRecording(){
-        Yuwee.sharedInstance().getMeetingManager().stopCallRecording(withRecordingId: recordingId, withMongoId: mongoId!) { (data, isSuccess) in
+    func stopRecording(isRoleUpdated: Bool){
+        Yuwee.sharedInstance().getMeetingManager().stopCallRecording(withRecordingId: recordingId, withMongoId: mongoId!, withIsRoleUpdated: isRoleUpdated) { (data, isSuccess) in
             if isSuccess{
                 self.isRecordingStarted = false
             }
@@ -1159,10 +1175,10 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         
         
         if isRecordingStarted {
-            stopRecording()
+            stopRecording(isRoleUpdated: false)
         }
         else{
-            self.startRecording(senderUserId: nil)
+            self.startRecording(senderUserId: nil, isRoleUpdated: false)
         }
 
     }
