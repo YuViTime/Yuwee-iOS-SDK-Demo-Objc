@@ -737,7 +737,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
                     } else {
                         self.view.bringSubviewToFront(self.innerView)
                     }
-                    if isRoleUpdated{
+                    if self.isRecordingStarted && isRoleUpdated {
                         self.startRecording(senderUserId: self.senderUserId, isRoleUpdated: isRoleUpdated)
                     }
                 }
@@ -1055,6 +1055,7 @@ class ConferenceCallViewController: UIViewController, UIGestureRecognizerDelegat
         let json = JSON(dict)
         print(json)
         if (json["status"].string == "started") {
+            self.isRecordingStarted = true;
             mongoId = json["mongoId"].string!
             startRecording(senderUserId: json["senderUserId"].string!, isRoleUpdated: false)
             self.senderUserId = json["senderUserId"].string!
