@@ -88,8 +88,6 @@ xcuserdata/
 MANIFEST
 dist/
 build/
-WebRTC.framework/
-OWT.framework/
 
 # Backup files
 *~.nib
